@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">SolitaireSolver</string>
     <string name="Tag_billede">Tag billede</string>
+    <string name="Tag_nyt_billede">Tag nyt billede</string>
 
 
 </resources>
