@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        app:srcCompat="@drawable/kabale_cruncher"
+        app:srcCompat="@drawable/kabale_cruncher_txt"
         />
 
     <ImageView
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/af"
+        app:srcCompat="@drawable/af_txt"
         />
 
     <ImageView
@@ -39,14 +39,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/gruppe5" />
+        app:srcCompat="@drawable/gruppe5_txt" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
-        android:layout_width="292dp"
-        android:layout_height="346dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/jack_of_diamond_animation" />

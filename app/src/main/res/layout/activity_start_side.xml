@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StartSide">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="256dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/card_icons" />
+
+    <ImageView
+        android:id="@+id/KabaleCruncher"
+        android:layout_marginTop="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/tag_billede_txt"
+        />
+
+
+    <Button
+        android:id="@+id/TagBillede"
+        android:layout_width="274dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="200dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="36dp"
+        android:layout_gravity="center"
+        android:text="@string/Tag_billede" />
+
+
+</LinearLayout>
