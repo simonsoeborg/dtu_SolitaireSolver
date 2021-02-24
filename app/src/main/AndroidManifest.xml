@@ -25,13 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SolitaireSolver">
 
-        <activity android:name=".Resultat"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".StartSide"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".StartLoadingScreen"
+        <activity android:name=".View.StartLoadingScreen"
             android:screenOrientation="portrait">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />

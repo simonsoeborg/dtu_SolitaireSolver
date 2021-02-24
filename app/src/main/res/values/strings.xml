@@ -2,6 +2,10 @@
     <string name="app_name">SolitaireSolver</string>
     <string name="Tag_billede">Tag billede</string>
     <string name="Tag_nyt_billede">Tag nyt billede</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tag_et_billede_af_din_kabale">Tag et billede af din kabale</string>
+    <string name="ryk_kort1_n_til_kort2">Ryk kort1 til Kort2</string>
 
 
 </resources>
