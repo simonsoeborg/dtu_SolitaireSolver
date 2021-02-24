@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartLoadingScreen">
+
+    <ImageView
+        android:id="@+id/result_card_icons"
+        android:layout_width="256dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/card_icons" />
+
+    <ImageView
+        android:id="@+id/KabaleCruncher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:srcCompat="@drawable/kabale_cruncher_txt"
+        />
+
+    <ImageView
+        android:id="@+id/af"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/af_txt"
+        />
+
+    <ImageView
+        android:id="@+id/gruppe5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/gruppe5_txt" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/jack_of_diamond_animation" />
+
+</LinearLayout>
