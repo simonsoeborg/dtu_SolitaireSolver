@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import grp5.cdio.solitairesolver.R;
+import grp5.cdio.solitairesolver.View.Fragments.Resultat;
 import grp5.cdio.solitairesolver.View.Fragments.Start;
 
 public class StartLoadingScreen extends AppCompatActivity {
@@ -38,7 +39,8 @@ public class StartLoadingScreen extends AppCompatActivity {
                 // if you are redirecting from a fragment then use getActivity() as the context.
                 Fragment fragment = new Start();
                 getSupportFragmentManager().beginTransaction()
-                        .add(R.id.FragmentFL, fragment)
+                        .replace(R.id.FragmentFL, new Start())
+                        .addToBackStack(null)
                         .commit();
             }
         };
