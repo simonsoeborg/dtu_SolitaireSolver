@@ -43,6 +43,13 @@ public class Card {
     }
 
     public boolean isLegalMove(Card toCard){
+        if(toCard == null && this.getIntValue() == 13){
+            return true;
+        }
+        if ((this.isBlack() && toCard.isRed()) || (this.isRed() && toCard.isBlack())){
+            if(this.getIntValue() + 1 == toCard.getIntValue())
+                return true;
+        }
         return false;
     }
 
