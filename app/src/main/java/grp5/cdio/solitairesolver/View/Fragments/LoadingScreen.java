@@ -1,42 +1,44 @@
 package grp5.cdio.solitairesolver.View.Fragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.fragment.app.Fragment;
+
 import grp5.cdio.solitairesolver.R;
 import grp5.cdio.solitairesolver.View.StartLoadingScreen;
 
-
-public class Start extends Fragment {
+public class LoadingScreen extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View startFrag = inflater.inflate(R.layout.fragment_start, container, false);
+        View startFrag = inflater.inflate(R.layout.activity_start_loading_screen, container, false);
 
-        Button tagBillede = startFrag.findViewById(R.id.TagBilledeBtn_startFrag);
-        Context context = StartLoadingScreen.context;
 
-        tagBillede.setOnClickListener(new View.OnClickListener() {
+        Handler h = new Handler();
+
+        Runnable r = new Runnable() {
+
             @Override
-            public void onClick(View v) {
-
-                assert getFragmentManager() != null;
+            public void run() {
+                // if you are redirecting from a fragment then use getActivity() as the context.
+                Fragment fragment = new Start();
                 getFragmentManager().beginTransaction()
-                        .replace(R.id.FragmentFL, new Resultat())
+                        .replace(R.id.FragmentFL, fragment)
                         .addToBackStack(null)
                         .commit();
+
             }
-        });
+        };
+        // The Runnable will be executed after the given delay time
+        h.postDelayed(r, 5000); // will be delayed for 3 seconds
 
         return startFrag;
     }

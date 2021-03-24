@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_container_view"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -74,10 +74,5 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/jack_of_diamond_animation" />
 
-    <FrameLayout
-        android:id="@+id/FragmentFL"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

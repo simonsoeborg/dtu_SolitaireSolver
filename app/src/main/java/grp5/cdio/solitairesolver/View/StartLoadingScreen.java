@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import grp5.cdio.solitairesolver.R;
+import grp5.cdio.solitairesolver.View.Fragments.LoadingScreen;
 import grp5.cdio.solitairesolver.View.Fragments.Resultat;
 import grp5.cdio.solitairesolver.View.Fragments.Start;
 
@@ -27,29 +28,17 @@ public class StartLoadingScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_loading_screen);
+        setContentView(R.layout.blank_start);
 
         getInstance();
         context = this;
 
-        Runnable r = new Runnable() {
-
-            @Override
-            public void run() {
-                // if you are redirecting from a fragment then use getActivity() as the context.
-                Fragment fragment = new Start();
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.FragmentFL, new Start())
-                        .addToBackStack(null)
-                        .commit();
-            }
-        };
-
-
-        Handler h = new Handler();
-
-        // The Runnable will be executed after the given delay time
-        h.postDelayed(r, 5000); // will be delayed for 3 seconds
+        // if you are redirecting from a fragment then use getActivity() as the context.
+        Fragment fragment = new LoadingScreen();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.FragmentFL, fragment)
+                .addToBackStack(null)
+                .commit();
 
     }
 }
