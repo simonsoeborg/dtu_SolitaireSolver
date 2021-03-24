@@ -29,7 +29,7 @@ public class Start extends Fragment {
         tagBillede.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context, Resultat.class));
+                assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction()
                         .replace(R.id.FragmentFL, new Resultat())
                         .addToBackStack(null)
