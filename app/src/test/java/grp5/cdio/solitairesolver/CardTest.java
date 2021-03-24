@@ -65,5 +65,4 @@ public class CardTest {
         assertFalse(cardOneHearts.isLegalMove(cardTwoHearts));
         assertFalse(cardOneHearts.isLegalMove(cardUnknown));
     }
-
 }
