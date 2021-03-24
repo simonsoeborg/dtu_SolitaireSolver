@@ -19,9 +19,9 @@ public class Card {
     @Override
     public String toString(){
         if (visible){
-            return "["+suit+value+"]";
+            return "["+suit+"-"+value+"]";
         } else {
-            return "[XX]";
+            return "[X-X]";
         }
     }
 
@@ -34,7 +34,15 @@ public class Card {
         }
     }
 
-    public boolean isLegalMove(){
+    public boolean isRed(){
+        return Suit.isRed(suit);
+    }
+
+    public boolean isBlack(){
+        return Suit.isBlack(suit);
+    }
+
+    public boolean isLegalMove(Card toCard){
         return false;
     }
 
@@ -56,6 +64,10 @@ public class Card {
 
     public FaceValue getValue() {
         return value;
+    }
+
+    public int getIntValue() {
+        return FaceValue.getValue(value);
     }
 
     public void setValue(FaceValue value) {

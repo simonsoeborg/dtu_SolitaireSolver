@@ -1,7 +1,8 @@
 package grp5.cdio.solitairesolver.Model;
 
-// get vlue FaceValue.ONE.ordinal()
+
 public enum FaceValue {
+    UNKNOWN,
     ONE,
     TWO,
     THREE,
@@ -14,6 +15,9 @@ public enum FaceValue {
     TEN,
     ELEVEN,
     TWELVE,
-    THIRTEEN,
-    UNKNOWN,
+    THIRTEEN;
+
+    public static int getValue(FaceValue value){
+        return value.ordinal();
+    }
 }
