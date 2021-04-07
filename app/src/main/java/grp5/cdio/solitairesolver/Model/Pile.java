@@ -45,4 +45,10 @@ public class Pile {
         cards.remove(cards.get(cards.size()-1));
     }
 
+
+    public Card getTopCard(){
+        return cards.get(cards.size()-1);
+    }
+
+
 }

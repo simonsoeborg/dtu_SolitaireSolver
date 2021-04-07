@@ -26,4 +26,8 @@ public class Move {
         return false;
     }
 
+    public int getScore() {
+        return score;
+    }
+
 }

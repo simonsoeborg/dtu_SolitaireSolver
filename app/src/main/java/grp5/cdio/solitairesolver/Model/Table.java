@@ -26,10 +26,33 @@ public class Table {
     public void updateTable(Table t){
     }
 
- /*   public Move getLegalMoves (Table table){
+    public ArrayList<Move> getLegalMoves (Table table){
+        ArrayList<Move> list = new ArrayList<Move>();
+        for (Pile pile: groundPile){
+            list.addAll(getLegalMove(pile.getTopCard()));
+        }
+        for (Pile pile: buildPile){
+            list.addAll(getLegalMove(pile.getTopCard()));
+        }
+        list.addAll(getLegalMove(discardPile.getTopCard()))
 
     }
-    */
+
+    public ArrayList<Move> getLegalMove (Card card){
+        ArrayList<Move> list = new ArrayList<Move>();
+
+        for (Pile pile: groundPile){
+            if (pile.isLegalMove(card)){
+
+            }
+        }
+        for (Pile pile: groundPile){
+            if (pile.isLegalMove(card)){
+
+            }
+        }
+        return list;
+    }
 
     @Override
     public String toString(){
