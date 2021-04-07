@@ -32,7 +32,7 @@ public class Start extends Fragment {
 
                 assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction()
-                        .replace(R.id.FragmentFL, new Camera())
+                        .replace(R.id.FragmentFL, new CameraFragment())
                         .addToBackStack(null)
                         .commit();
             }
