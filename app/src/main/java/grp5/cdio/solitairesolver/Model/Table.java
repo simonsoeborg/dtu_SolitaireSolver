@@ -11,13 +11,13 @@ public class Table {
     public Table(){
         this.drawPile = new Pile(24);  //
         this.buildPile = new ArrayList<Pile>();
-        buildPile.add(new pile(1));
-        buildPile.add(new pile(2));
-        buildPile.add(new pile(3));
-        buildPile.add(new pile(4));
-        buildPile.add(new pile(5));
-        buildPile.add(new pile(6));
-        buildPile.add(new pile(7));
+        buildPile.add(new Pile(1));
+        buildPile.add(new Pile(2));
+        buildPile.add(new Pile(3));
+        buildPile.add(new Pile(4));
+        buildPile.add(new Pile(5));
+        buildPile.add(new Pile(6));
+        buildPile.add(new Pile(7));
         this.groundPile = new ArrayList<Pile>(4);
         this.discardPile = new Pile(0);
     }
