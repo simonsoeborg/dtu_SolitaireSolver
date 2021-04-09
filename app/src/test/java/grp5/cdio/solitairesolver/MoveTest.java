@@ -19,8 +19,8 @@ public class MoveTest {
 
 
         //Move move = new Move();
-        Move newMove = new Move(cardKingClubs,cardKingSpades, 0, cardQueenHearts);
-        Move oldMove = new Move(cardKingSpades, cardKingClubs, 0, cardQueenHearts);
+        //Move newMove = new Move(cardKingClubs,cardKingSpades, 0, cardQueenHearts);
+        //Move oldMove = new Move(cardKingSpades, cardKingClubs, 0, cardQueenHearts);
 
 
         //assertTrue(oldMove.isInverseMove(newMove));

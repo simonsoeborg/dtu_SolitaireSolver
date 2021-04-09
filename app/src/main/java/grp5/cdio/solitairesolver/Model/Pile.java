@@ -50,5 +50,9 @@ public class Pile {
         return cards.get(cards.size()-1);
     }
 
+    public Card getBelowTopCard(){
+        return cards.get(cards.size()-2);
+    }
+
 
 }
