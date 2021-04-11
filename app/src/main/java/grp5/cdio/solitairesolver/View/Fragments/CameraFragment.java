@@ -37,6 +37,19 @@ public class CameraFragment extends Fragment  {
         View cameraFrag = inflater.inflate(R.layout.fragment_camera, container, false);
         Context context = cameraFrag.getContext();
 
+
+        // dette er den visuelle grid layout
+        View gridgrp1 = cameraFrag.findViewById(R.id.grp1Line);
+        View gridgrp2 = cameraFrag.findViewById(R.id.grp2Line);
+        View gridgrp3 = cameraFrag.findViewById(R.id.grp3Line);
+        View gridgrp4 = cameraFrag.findViewById(R.id.grp4Line);
+        View gridgrp5 = cameraFrag.findViewById(R.id.grp5Line);
+        View gridgrp6 = cameraFrag.findViewById(R.id.grp6Line);
+        View gridgrp7 = cameraFrag.findViewById(R.id.grp7Line);
+        View gridAdskilleren = cameraFrag.findViewById(R.id.adskilleren);
+
+
+
         if (!checkCameraHardware(context)) {
             Toast.makeText(context ,"Camera does not exist", Toast.LENGTH_LONG).show();
         } else if (!checkCameraAccess(context)) {
@@ -49,6 +62,19 @@ public class CameraFragment extends Fragment  {
 
             // Add a listener to the Capture button
             Button captureButton = (Button) cameraFrag.findViewById(R.id.button_capture);
+
+
+
+            // for at få den visuelle layout foran kameraet.
+            gridgrp1.bringToFront();
+            gridgrp2.bringToFront();
+            gridgrp3.bringToFront();
+            gridgrp4.bringToFront();
+            gridgrp5.bringToFront();
+            gridgrp6.bringToFront();
+            gridgrp7.bringToFront();
+            gridAdskilleren.bringToFront();
+
             captureButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
