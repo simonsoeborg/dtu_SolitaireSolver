@@ -1,24 +1,35 @@
 package grp5.cdio.solitairesolver.Model;
-
 public class Move {
+    /**
+     * Move class.
+     * <p>
+     * Used to mange the card moves
+     * moveFrom - pile to move card from
+     * moveTo - pile to move card to
+     * card - card to move
+     * score - value of move, use to determine best move
+     */
     private Pile moveFrom;
     private Pile moveTo;
     private Card card;
     private int score;
 
-    public Move(Pile from, Pile to, int score, Card card){
+    /**
+     * Create card, score is set by {@link #setScore}
+     */
+    public Move(Pile from, Pile to, Card card){
         moveFrom = from;
         moveTo = to;
-        this.score = score;
         this.card = card;
+        setScore();
     }
 
-    @Override
-    public String toString(){
-
-        return "Move "+card+" from " + moveFrom.toString() + " to " + moveTo.toString();
-    }
-
+    /**
+     * test if move is inverse
+     *
+     * @param oldMove, test if this in inverse of old move
+     * @return boolean, true = inverse move
+     */
     public boolean isInverseMove(Move oldMove){
         Card to = moveTo.getTopCard();
         Card from = moveFrom.getTopCard();
@@ -29,15 +40,17 @@ public class Move {
         return false;
     }
 
-    public int getScore() {
-        return score;
-    }
-
+    /**
+     * make move from piles movefrom -> moveto
+     */
     public void makeMove(){
         moveFrom.removeCard();
         moveTo.makeMove(card);
     }
 
+    /**
+     * set score based on Move attributes
+     */
     public void setScore() {
         //TODO vi skal have en måde at afgøre typen af bunke, for at kunne afgør score
         //Interface?
@@ -70,13 +83,28 @@ public class Move {
             case 13:
                 break;
 
-
         }
+    }
+    /**
+     * get Score
+     */
+    public int getScore() {
+        return score;
+    }
+
+    /**
+     * Override toString
+     */
+    @Override
+    public String toString(){
+
+        return "Move "+card+" from " + moveFrom.toString() + " to " + moveTo.toString();
     }
 }
 
 
-//
+//        Point list for setScore()
+
 //        Liste Træk TestMuligeTræk(Bord){
 //
 //        for byggestablerne{
