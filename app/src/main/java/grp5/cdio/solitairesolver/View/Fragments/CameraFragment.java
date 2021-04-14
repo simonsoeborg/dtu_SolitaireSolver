@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -61,7 +62,7 @@ public class CameraFragment extends Fragment  {
             preview.addView(mPreview);
 
             // Add a listener to the Capture button
-            Button captureButton = (Button) cameraFrag.findViewById(R.id.button_capture);
+            ImageButton captureButton = (ImageButton) cameraFrag.findViewById(R.id.button_capture);
 
 
 
