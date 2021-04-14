@@ -18,6 +18,16 @@ android:layout_height="fill_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/Tableau1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="90"
+            android:text="@string/Tableau1"
+            android:textColor="@color/red"
+            app:layout_constraintBottom_toBottomOf="@id/grp1Line"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <View
             android:id="@+id/grp1Line"
             android:layout_width="411dp"
@@ -73,8 +83,6 @@ android:layout_height="fill_parent"
             android:layout_height="595dp"
             android:layout_marginStart="270dp"
             android:background="#E91E1E" />
-
-
     </FrameLayout>
 
     <Button

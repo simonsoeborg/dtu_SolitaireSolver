@@ -6,6 +6,18 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tag_et_billede_af_din_kabale">Tag et billede af din kabale</string>
     <string name="ryk_kort1_n_til_kort2">Ryk kort1 til Kort2</string>
-
+    <string name="Tableau1">Tableau 1</string>
+    <string name="Tableau2">Tableau 2</string>
+    <string name="Tableau3">Tableau 3</string>
+    <string name="Tableau4">Tableau 4</string>
+    <string name="Tableau5">Tableau 5</string>
+    <string name="Tableau6">Tableau 6</string>
+    <string name="Tableau7">Tableau 7</string>
+    <string name="Stock">Stock</string>
+    <string name="Waste">3 Waste</string>
+    <string name="Foundation1">Foundation 1</string>
+    <string name="Foundation2">Foundation 2</string>
+    <string name="Foundation3">Foundation 3</string>
+    <string name="Foundation4">Foundation 4</string>
 
 </resources>
