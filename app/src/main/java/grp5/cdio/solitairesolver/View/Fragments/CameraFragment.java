@@ -39,17 +39,6 @@ public class CameraFragment extends Fragment  {
         Context context = cameraFrag.getContext();
 
 
-        // dette er den visuelle grid layout
-        View gridgrp1 = cameraFrag.findViewById(R.id.grp1Line);
-        View gridgrp2 = cameraFrag.findViewById(R.id.grp2Line);
-        View gridgrp3 = cameraFrag.findViewById(R.id.grp3Line);
-        View gridgrp4 = cameraFrag.findViewById(R.id.grp4Line);
-        View gridgrp5 = cameraFrag.findViewById(R.id.grp5Line);
-        View gridgrp6 = cameraFrag.findViewById(R.id.grp6Line);
-        View gridgrp7 = cameraFrag.findViewById(R.id.grp7Line);
-        View gridAdskilleren = cameraFrag.findViewById(R.id.adskilleren);
-
-
 
         if (!checkCameraHardware(context)) {
             Toast.makeText(context ,"Camera does not exist", Toast.LENGTH_LONG).show();
@@ -67,14 +56,52 @@ public class CameraFragment extends Fragment  {
 
 
             // for at få den visuelle layout foran kameraet.
-            gridgrp1.bringToFront();
-            gridgrp2.bringToFront();
-            gridgrp3.bringToFront();
-            gridgrp4.bringToFront();
-            gridgrp5.bringToFront();
-            gridgrp6.bringToFront();
-            gridgrp7.bringToFront();
+            // dette er den visuelle grid layout
+            View tableauLine1 = cameraFrag.findViewById(R.id.TableauLine1);
+            View tableauLine2 = cameraFrag.findViewById(R.id.TableauLine2);
+            View tableauLine3 = cameraFrag.findViewById(R.id.TableauLine3);
+            View tableauLine4 = cameraFrag.findViewById(R.id.TableauLine4);
+            View tableauLine5 = cameraFrag.findViewById(R.id.TableauLine5);
+            View tableauLine6 = cameraFrag.findViewById(R.id.TableauLine6);
+            View tableauLine7 = cameraFrag.findViewById(R.id.TableauLine7);
+            View gridAdskilleren = cameraFrag.findViewById(R.id.Adskilleren);
+
+            View tableau1txt = cameraFrag.findViewById(R.id.Tableau1txt);
+            View tableau2txt = cameraFrag.findViewById(R.id.Tableau2txt);
+            View tableau3txt = cameraFrag.findViewById(R.id.Tableau3txt);
+            View tableau4txt = cameraFrag.findViewById(R.id.Tableau4txt);
+            View tableau5txt = cameraFrag.findViewById(R.id.Tableau5txt);
+            View tableau6txt = cameraFrag.findViewById(R.id.Tableau6txt);
+            View tableau7txt = cameraFrag.findViewById(R.id.Tableau7txt);
+            View stocktxt = cameraFrag.findViewById(R.id.Stocktxt);
+            View wasteCards = cameraFrag.findViewById(R.id.Wastetxt);
+            View foundation1txt = cameraFrag.findViewById(R.id.Foundation1txt);
+            View foundation2txt = cameraFrag.findViewById(R.id.Foundation2txt);
+            View foundation3txt = cameraFrag.findViewById(R.id.Foundation3txt);
+            View foundation4txt = cameraFrag.findViewById(R.id.Foundation4txt);
+
+            tableauLine1.bringToFront();
+            tableauLine2.bringToFront();
+            tableauLine3.bringToFront();
+            tableauLine4.bringToFront();
+            tableauLine5.bringToFront();
+            tableauLine6.bringToFront();
+            tableauLine7.bringToFront();
             gridAdskilleren.bringToFront();
+
+            tableau1txt.bringToFront();
+            tableau2txt.bringToFront();
+            tableau3txt.bringToFront();
+            tableau4txt.bringToFront();
+            tableau5txt.bringToFront();
+            tableau6txt.bringToFront();
+            tableau7txt.bringToFront();
+            stocktxt.bringToFront();
+            wasteCards.bringToFront();
+            foundation1txt.bringToFront();
+            foundation2txt.bringToFront();
+            foundation3txt.bringToFront();
+            foundation4txt.bringToFront();
 
             captureButton.setOnClickListener(
                 new View.OnClickListener() {
