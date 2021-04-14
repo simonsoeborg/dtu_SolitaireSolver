@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Tableau1"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine1"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Tableau2"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine2"
                 app:layout_constraintStart_toStartOf="@+id/TableauLine1" />
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Tableau3"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine3"
                 app:layout_constraintStart_toStartOf="@+id/TableauLine2" />
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Tableau4"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine4"
                 app:layout_constraintStart_toStartOf="@+id/TableauLine3" />
@@ -107,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Tableau5"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine5"
                 app:layout_constraintStart_toStartOf="@+id/TableauLine4" />
@@ -126,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Tableau6"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine6"
                 app:layout_constraintStart_toStartOf="@+id/TableauLine5" />
@@ -145,7 +145,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Tableau7"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine7"
                 app:layout_constraintStart_toStartOf="@+id/TableauLine6" />
@@ -175,7 +175,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Stock"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine1"
@@ -186,7 +186,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Waste"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine3"
@@ -197,7 +197,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Foundation1"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
                 app:layout_constraintEnd_toStartOf="@+id/TableauLine4"
@@ -207,7 +207,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Foundation2"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
                 app:layout_constraintEnd_toStartOf="@+id/TableauLine5"
@@ -218,7 +218,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Foundation3"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
                 app:layout_constraintEnd_toStartOf="@+id/TableauLine6"
@@ -228,7 +228,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Foundation4"
-                android:textColor="@color/red"
+                android:textColor="#4CAF50"
                 android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
                 app:layout_constraintEnd_toStartOf="@+id/TableauLine7"
@@ -236,11 +236,11 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
-    
+
     <ImageButton
         android:id="@+id/button_capture"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="25dp"
         android:background="@drawable/circle"
