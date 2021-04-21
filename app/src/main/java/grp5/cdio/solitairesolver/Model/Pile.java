@@ -1,13 +1,13 @@
 package grp5.cdio.solitairesolver.Model;
 import java.util.ArrayList;
 
-public class Pile {
+public abstract class Pile {
     /**
-     * Pile clase.
+     * abstract Pile class, used as base for the {@link BuildPile} {@link GroundPile} {@link BasePile} (Move rules are different)
      * <p>
      * Used to mange an ArrayList of {@link Card}
      */
-    private ArrayList<Card> cards;
+    protected ArrayList<Card> cards;
 
     /**
      * Create Pile
@@ -48,10 +48,7 @@ public class Pile {
      * @param toCard, cord to make move to(put on top)
      * @return boolean, true = legal
      */
-    public boolean isLegalMove(Card toCard){
-        return toCard.isLegalMove(cards.get(cards.size()-1));
-    }
-
+    public abstract boolean isLegalMove(Card toCard);
     /**
      * Test if move is legal
      *
@@ -75,13 +72,18 @@ public class Pile {
 
     /**
      * get top card
+     * @return Card
      */
     public Card getTopCard(){
-        return cards.get(cards.size()-1);
+        if (!cards.isEmpty()){
+            return cards.get(cards.size()-1);
+        }
+        return null;
     }
 
     /**
      * get card below top card
+     * @return Card
      */
     public Card getBelowTopCard(){
         return cards.get(cards.size()-2);
@@ -97,6 +99,22 @@ public class Pile {
             returnValue = returnValue + card.toString();
         }
         return returnValue;
+    }
+
+    /**
+     * get size
+     * @return int size
+     */
+    public int size(){
+        return cards.size();
+    }
+
+    /**
+     * is pile empty
+     * @return boolean, true = empty
+     */
+    public boolean isEmpty(){
+        return cards.isEmpty();
     }
 
 

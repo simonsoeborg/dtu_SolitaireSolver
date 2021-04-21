@@ -11,10 +11,10 @@ public class Table {
      * drawPile - The draw pile
      * discardPile - Pile of already drawn cards
      */
-    private ArrayList<Pile> groundPile;
-    private ArrayList<Pile> buildPile;
-    private Pile drawPile;
-    private Pile discardPile;
+    public ArrayList<GroundPile> groundPile;
+    public ArrayList<BuildPile> buildPile;
+    public Pile drawPile;
+    public Pile discardPile;
 
 
 
@@ -22,17 +22,21 @@ public class Table {
      * Set up game table with 52 cards
      */
     public Table(){
-        this.drawPile = new Pile(24);
-        this.buildPile = new ArrayList<Pile>();
-        buildPile.add(new Pile(1));
-        buildPile.add(new Pile(2));
-        buildPile.add(new Pile(3));
-        buildPile.add(new Pile(4));
-        buildPile.add(new Pile(5));
-        buildPile.add(new Pile(6));
-        buildPile.add(new Pile(7));
-        this.groundPile = new ArrayList<Pile>(4);
-        this.discardPile = new Pile(0);
+        this.drawPile = new BasePile(24);
+        this.buildPile = new ArrayList<BuildPile>();
+        this.groundPile = new ArrayList<GroundPile>();
+        buildPile.add(new BuildPile(1));
+        buildPile.add(new BuildPile(2));
+        buildPile.add(new BuildPile(3));
+        buildPile.add(new BuildPile(4));
+        buildPile.add(new BuildPile(5));
+        buildPile.add(new BuildPile(6));
+        buildPile.add(new BuildPile(7));
+        groundPile.add(new GroundPile(0));
+        groundPile.add(new GroundPile(0));
+        groundPile.add(new GroundPile(0));
+        groundPile.add(new GroundPile(0));
+        this.discardPile = new BasePile(0);
     }
 
     /**
@@ -97,19 +101,20 @@ public class Table {
      */
     public ArrayList<Move> getLegalMove (Pile pileFrom){
         ArrayList<Move> list = new ArrayList<Move>();
-
-        for (Pile pile: groundPile){
-            if (pile.isLegalMove(pileFrom.getTopCard())){
-                Move move = new Move(pileFrom, pile, pileFrom.getTopCard());
-                move.setScore();
-                list.add(move);
+        if (!pileFrom.isEmpty() && pileFrom.getTopCard().isVisible()){
+            for (Pile pile: groundPile){
+                if (pile.isLegalMove(pileFrom.getTopCard())){
+                    Move move = new Move(pileFrom, pile, pileFrom.getTopCard());
+                    move.setScore();
+                    list.add(move);
+                }
             }
-        }
-        for (Pile pile: groundPile){
-            if (pile.isLegalMove(pileFrom.getTopCard())){
-                Move move = new Move(pileFrom, pile,pileFrom.getTopCard());
-                move.setScore();
-                list.add(move);
+            for (Pile pile: buildPile){
+                if (pile.isLegalMove(pileFrom.getTopCard())){
+                    Move move = new Move(pileFrom, pile,pileFrom.getTopCard());
+                    move.setScore();
+                    list.add(move);
+                }
             }
         }
         return list;

@@ -44,6 +44,20 @@ public enum Suit {
                 return false;
         }
     }
+    /**
+     * Test if suit is black
+     *
+     * @param arg1, Suit to test
+     * @param arg2, Suit to test
+     * @return boolean, true = same suit
+     */
+    public static boolean isEqual(Suit arg1, Suit arg2){
+        if (getValue(arg1) == getValue(arg2)){
+            return true;
+        }
+        return false;
+    }
+
 
 
     /**
