@@ -36,6 +36,16 @@
         app:layout_constraintTop_toBottomOf="@+id/result_card_icons"
         app:layout_constraintVertical_bias="0.18" />
 
+    <ProgressBar
+        android:id="@+id/resultProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructionTV_resultatFrag" />
+
     <Button
         android:id="@+id/TagBilledeBtn_resultatFrag"
         android:layout_width="274dp"
@@ -44,7 +54,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginBottom="50dp"
-        android:text="@string/take_again"
+        android:text="@string/detect_image"
         android:textAllCaps="false"
         app:cornerRadius="50dp"
         android:textColor="@color/black"
