@@ -22,11 +22,13 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 
+import java.util.List;
+
 import grp5.cdio.solitairesolver.R;
 import grp5.cdio.solitairesolver.View.CameraPreview;
 import grp5.cdio.solitairesolver.View.PhotoHandler;
 
-public class CameraFragment extends Fragment  {
+public class CameraFragment extends Fragment {
     private Camera mCamera;
     private CameraPreview mPreview;
     private static final int MY_CAMERA_PERMISSION_CODE = 42069;
