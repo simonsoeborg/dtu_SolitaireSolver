@@ -70,7 +70,6 @@ public class CameraFragment extends Fragment  {
             constraintlayout.bringToFront();
             constraintlayout.invalidate();
 
-
             captureButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -92,10 +91,11 @@ public class CameraFragment extends Fragment  {
         @Override
         protected String doInBackground(Object... objects) {
 
-                mCamera.takePicture(null, null, PhotoHandler.getInstance(getContext()));
-                Log.d("TEST1", "pre: ");
+            mCamera.takePicture(null, null, new PhotoHandler(getContext()));
+            Log.d("TEST1", "pre: ");
 
-                return "Executed";        }
+            return "Executed";
+        }
 
         @SuppressLint("ResourceType")
         @Override
@@ -103,6 +103,11 @@ public class CameraFragment extends Fragment  {
             Log.d("TEST2", "POSTexecuted: ");
 
             Fragment resultatFrag = new Resultat();
+            Bundle b = new Bundle();
+            b.putString("image", PhotoHandler.lastPicture);
+            resultatFrag.setArguments(b);
+
+            Log.d("AsycSavPicture", "Replacing, image: " + PhotoHandler.lastPicture);
 
             getFragmentManager().beginTransaction()
                     .replace(R.id.FragmentFL, resultatFrag)
@@ -170,6 +175,14 @@ public class CameraFragment extends Fragment  {
     /** Check if this device has a camera */
     private boolean checkCameraHardware(Context context) {
         return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA);
+    }
+
+    @Override
+    public void onResume() {
+        if (mCamera == null) {
+            mCamera = getCameraInstance();
+        }
+        super.onResume();
     }
 
     @Override

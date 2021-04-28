@@ -18,17 +18,10 @@ import grp5.cdio.solitairesolver.View.Fragments.Resultat;
 
 public class PhotoHandler implements PictureCallback {
     private final Context context;
-    public String lastPicture = null;
+    public static String lastPicture = null;
 
     public PhotoHandler(Context context) {
         this.context = context;
-    }
-
-    private static PhotoHandler instance;
-    public static PhotoHandler getInstance(Context context) {
-        if (instance != null)
-            return instance;
-        return new PhotoHandler(context);
     }
 
     @Override
@@ -50,6 +43,7 @@ public class PhotoHandler implements PictureCallback {
         File pictureFile = new File(filename);
 
         try {
+            Log.d("PhotoHandler", "Image saving to: " + filename);
             FileOutputStream fos = new FileOutputStream(pictureFile);
             fos.write(data);
             fos.close();

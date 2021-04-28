@@ -60,12 +60,13 @@ public class Resultat extends Fragment implements Runnable {
         mProgressBar.setVisibility(View.INVISIBLE);
         mButtonDetect = resultatFrag.findViewById(R.id.TagBilledeBtn_resultatFrag);
 
-        // Her skal stien til billedet der lige er blevet taget gives
-        loadAssets(PhotoHandler.getInstance(context).lastPicture);
 
         mButtonDetect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Her skal stien til billedet der lige er blevet taget gives
+                assert getArguments() != null;
+                loadAssets(getArguments().getString("image"));
                 mButtonDetect.setEnabled(false);
                 mProgressBar.setVisibility(ProgressBar.VISIBLE);
 
@@ -89,6 +90,7 @@ public class Resultat extends Fragment implements Runnable {
      * @param image
      */
     public void loadAssets(String image) {
+        Log.d("loadAssets", "Loading image: "+image);
         try {
             mModule = PyTorchAndroid.loadModuleFromAsset(context.getAssets(), "model.torchscript.pt");
             BufferedReader br = new BufferedReader(new InputStreamReader(context.getAssets().open("cards.classes.txt")));
