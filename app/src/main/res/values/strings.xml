@@ -1,11 +1,26 @@
 <resources>
     <string name="app_name">SolitaireSolver</string>
     <string name="Tag_billede">Tag billede</string>
-    <string name="Tag_nyt_billede">Tag nyt billede</string>
+    <string name="Tag_nyt_billede">Tag et nyt billede</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="tag_et_billede_af_din_kabale">Tag et billede af din kabale</string>
+    <string name="tag_et_billede_af_din_kabale">Tag et billede af dit kabale</string>
     <string name="ryk_kort1_n_til_kort2">Ryk kort1 til Kort2</string>
-
+    <string name="Tableau1">Tableau 1</string>
+    <string name="Tableau2">Tableau 2</string>
+    <string name="Tableau3">Tableau 3</string>
+    <string name="Tableau4">Tableau 4</string>
+    <string name="Tableau5">Tableau 5</string>
+    <string name="Tableau6">Tableau 6</string>
+    <string name="Tableau7">Tableau 7</string>
+    <string name="Stock">Dæk</string>
+    <string name="Waste">3 træk kort</string>
+    <string name="Foundation1">Fundament  1</string>
+    <string name="Foundation2">Fundament  2</string>
+    <string name="Foundation3">Fundament 3</string>
+    <string name="Foundation4">Fundament 4</string>
+    <string name="detect_image">Behandel billede</string>
+    <string name="take_again">Tag igen</string>
+    <string name="Continue">Forsæt</string>
 
 </resources>

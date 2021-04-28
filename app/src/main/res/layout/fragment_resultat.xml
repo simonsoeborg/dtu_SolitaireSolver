@@ -28,12 +28,23 @@
         android:layout_height="wrap_content"
         android:text="@string/ryk_kort1_n_til_kort2"
         android:textSize="48sp"
+        android:gravity="center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/result_card_icons"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.18" />
+
+    <ProgressBar
+        android:id="@+id/resultProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructionTV_resultatFrag" />
 
     <Button
         android:id="@+id/TagBilledeBtn_resultatFrag"
@@ -43,13 +54,14 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginBottom="50dp"
-        android:text="@string/Tag_billede"
+        android:text="@string/detect_image"
         android:textAllCaps="false"
+        app:cornerRadius="50dp"
         android:textColor="@color/black"
         android:textSize="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/instructionTV_resultatFrag"
         app:layout_constraintVertical_bias="1.0" />

@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -37,17 +38,8 @@ public class CameraFragment extends Fragment  {
         View cameraFrag = inflater.inflate(R.layout.fragment_camera, container, false);
         Context context = cameraFrag.getContext();
 
-
         // dette er den visuelle grid layout
-        View gridgrp1 = cameraFrag.findViewById(R.id.grp1Line);
-        View gridgrp2 = cameraFrag.findViewById(R.id.grp2Line);
-        View gridgrp3 = cameraFrag.findViewById(R.id.grp3Line);
-        View gridgrp4 = cameraFrag.findViewById(R.id.grp4Line);
-        View gridgrp5 = cameraFrag.findViewById(R.id.grp5Line);
-        View gridgrp6 = cameraFrag.findViewById(R.id.grp6Line);
-        View gridgrp7 = cameraFrag.findViewById(R.id.grp7Line);
-        View gridAdskilleren = cameraFrag.findViewById(R.id.adskilleren);
-
+        View constraintlayout = cameraFrag.findViewById(R.id.constraintlayout);
 
 
         if (!checkCameraHardware(context)) {
@@ -61,19 +53,17 @@ public class CameraFragment extends Fragment  {
             preview.addView(mPreview);
 
             // Add a listener to the Capture button
-            Button captureButton = (Button) cameraFrag.findViewById(R.id.button_capture);
+            ImageButton captureButton = (ImageButton) cameraFrag.findViewById(R.id.button_capture);
 
 
 
             // for at få den visuelle layout foran kameraet.
-            gridgrp1.bringToFront();
-            gridgrp2.bringToFront();
-            gridgrp3.bringToFront();
-            gridgrp4.bringToFront();
-            gridgrp5.bringToFront();
-            gridgrp6.bringToFront();
-            gridgrp7.bringToFront();
-            gridAdskilleren.bringToFront();
+
+            constraintlayout.bringToFront();
+            constraintlayout.invalidate();
+
+
+
 
             captureButton.setOnClickListener(
                 new View.OnClickListener() {
