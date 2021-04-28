@@ -254,7 +254,7 @@
         android:text="@string/Continue"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="13dp"
+        android:textSize="11sp"
 
         app:cornerRadius="100dp"
         app:layout_constraintEnd_toEndOf="parent"
