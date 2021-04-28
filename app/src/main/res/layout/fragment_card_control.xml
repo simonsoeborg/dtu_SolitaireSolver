@@ -164,7 +164,7 @@
             app:layout_constraintBottom_toTopOf="@+id/Tableau2txt"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine2"
             app:layout_constraintTop_toBottomOf="@+id/Adskilleren"
-            app:layout_constraintStart_toStartOf="TableauLine1"
+            app:layout_constraintStart_toStartOf="@id/TableauLine1"
             >
 
 
@@ -292,7 +292,7 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/Tableau3txt"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine3"
-            app:layout_constraintStart_toStartOf="TableauLine2"
+            app:layout_constraintStart_toStartOf="@+id/TableauLine2"
             app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
 
 
@@ -420,7 +420,7 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/Tableau4txt"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine4"
-            app:layout_constraintStart_toStartOf="TableauLine3"
+            app:layout_constraintStart_toStartOf="@id/TableauLine3"
             app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
 
             <TextView
@@ -547,7 +547,7 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/Tableau5txt"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine5"
-            app:layout_constraintStart_toStartOf="TableauLine4"
+            app:layout_constraintStart_toStartOf="@id/TableauLine4"
             app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
 
             <TextView
@@ -674,7 +674,7 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/Tableau6txt"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine6"
-            app:layout_constraintStart_toStartOf="TableauLine5"
+            app:layout_constraintStart_toEndOf="@+id/TableauLine5"
             app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
 
             <TextView
@@ -800,7 +800,7 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/Tableau7txt"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine7"
-            app:layout_constraintStart_toStartOf="TableauLine6"
+            app:layout_constraintStart_toEndOf="@id/TableauLine6"
             app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
 
             <TextView
@@ -939,7 +939,8 @@
             app:layout_constraintEnd_toStartOf="@+id/TableauLine3"
             app:layout_constraintStart_toEndOf="@+id/TableauLine1"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/wast_card1"
@@ -997,7 +998,8 @@
             app:layout_constraintEnd_toStartOf="@+id/TableauLine4"
             app:layout_constraintStart_toEndOf="@+id/TableauLine3"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/Foundation1Cards"
                 android:layout_width="wrap_content"
@@ -1026,7 +1028,8 @@
             app:layout_constraintEnd_toStartOf="@+id/TableauLine5"
             app:layout_constraintStart_toEndOf="@+id/TableauLine4"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/Foundation2Cards"
                 android:layout_width="wrap_content"
@@ -1055,7 +1058,8 @@
             app:layout_constraintEnd_toStartOf="@+id/TableauLine6"
             app:layout_constraintStart_toEndOf="@+id/TableauLine5"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/Foundation3Cards"
                 android:layout_width="wrap_content"
@@ -1084,7 +1088,8 @@
             app:layout_constraintEnd_toStartOf="@+id/TableauLine7"
             app:layout_constraintStart_toEndOf="@+id/TableauLine6"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/Foundation4Cards"
                 android:layout_width="wrap_content"
