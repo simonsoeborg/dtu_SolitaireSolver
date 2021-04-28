@@ -37,6 +37,9 @@ public class CameraFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        View windowDecorView = requireActivity().getWindow().getDecorView();
+        windowDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         View cameraFrag = inflater.inflate(R.layout.fragment_camera, container, false);
         Context context = cameraFrag.getContext();
 
