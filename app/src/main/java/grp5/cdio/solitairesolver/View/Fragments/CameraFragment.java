@@ -16,13 +16,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-
-import java.util.List;
 
 import grp5.cdio.solitairesolver.R;
 import grp5.cdio.solitairesolver.View.CameraPreview;
@@ -36,6 +33,9 @@ public class CameraFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        View windowDecorView = requireActivity().getWindow().getDecorView();
+        windowDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
 
         View cameraFrag = inflater.inflate(R.layout.fragment_camera, container, false);
         Context context = cameraFrag.getContext();
@@ -73,6 +73,11 @@ public class CameraFragment extends Fragment {
                     public void onClick(View v) {
                         // get an image from the camera
                         mCamera.takePicture(null, null, new PhotoHandler(context));
+                        assert getFragmentManager() != null;
+                        getFragmentManager().beginTransaction()
+                                .replace(R.id.FragmentFL, new CardControl())
+                                .addToBackStack(null)
+                                .commit();
                     }
                 }
             );

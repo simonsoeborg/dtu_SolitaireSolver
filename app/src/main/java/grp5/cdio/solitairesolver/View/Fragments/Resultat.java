@@ -28,6 +28,13 @@ public class Resultat extends Fragment {
             @Override
             public void onClick(View view) {
                 // Run logic to determine next move
+
+                assert getFragmentManager() != null;
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.FragmentFL, new CameraFragment())
+                        .addToBackStack(null)
+                        .commit();
+
             }
         });
 
