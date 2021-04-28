@@ -95,6 +95,9 @@ public abstract class Pile {
     @Override
     public String toString(){
         String returnValue = "";
+        if (isEmpty()){
+            return "Empty Pile";
+        }
         for (Card card: cards){
             returnValue = returnValue + card.toString();
         }

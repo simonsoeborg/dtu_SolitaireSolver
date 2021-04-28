@@ -125,6 +125,24 @@ public class Table {
      */
     @Override
     public String toString(){
-        return  "";
+        StringBuilder returnValue = new StringBuilder("Table: \n");
+
+        returnValue.append("Draw Pile: \n");
+        returnValue.append(drawPile.toString()).append("\n");
+
+        returnValue.append("Discard Pile: \n");
+        returnValue.append(discardPile.toString()).append("\n");
+
+        returnValue.append("Ground Pile: \n");
+        for(Pile pile : groundPile){
+            returnValue.append(pile.toString()).append("\n");
+        }
+
+        returnValue.append("Build Pile: \n");
+        for(Pile pile : buildPile){
+            returnValue.append(pile.toString()).append("\n");
+        }
+
+        return  returnValue.toString();
     }
 }

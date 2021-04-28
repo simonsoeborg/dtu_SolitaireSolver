@@ -20,6 +20,13 @@ public class BuildPile extends Pile {
      * @return boolean, true = legal
      */
     public boolean isLegalMove(Card toCard){
+        // Special case for King
+        if (isEmpty()){
+            if (toCard.getIntValue() == 13){
+                return true;
+            }
+            return false;
+        }
         return toCard.isLegalMove(cards.get(cards.size()-1));
     }
 }

@@ -20,6 +20,6 @@ public class BasePile extends Pile {
      * @return boolean, true = legal
      */
     public boolean isLegalMove(Card toCard){
-        return toCard.isLegalMove(cards.get(cards.size()-1));
+        return false;
     }
 }

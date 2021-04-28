@@ -31,6 +31,10 @@ public class GroundPile extends Pile{
      * @return boolean, true = legal
      */
     private boolean isLegal(Card toCard){
+        // Special case for ace
+        if (isEmpty() && toCard.getIntValue() == 1){
+            return true;
+        }
         if (!isEmpty() && getTopCard().isVisible() && Suit.isEqual(getTopCard().getSuit(), toCard.getSuit())){
             if(getTopCard().getIntValue() == toCard.getIntValue() - 1)
                 return true;

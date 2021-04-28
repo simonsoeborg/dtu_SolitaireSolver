@@ -110,6 +110,6 @@ public class Move {
     @Override
     public String toString() {
 
-        return "Move " + card + " from " + moveFrom.toString() + " to " + moveTo.toString();
+        return "Move " + card + " from pile " + moveFrom.toString() + " to pile " + moveTo.toString();
     }
 }
