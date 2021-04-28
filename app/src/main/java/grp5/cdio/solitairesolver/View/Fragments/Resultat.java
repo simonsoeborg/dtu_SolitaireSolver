@@ -34,6 +34,7 @@ import java.util.Objects;
 import grp5.cdio.solitairesolver.Logic.PrePostProcessor;
 import grp5.cdio.solitairesolver.Logic.PrePostProcessorResult;
 import grp5.cdio.solitairesolver.R;
+import grp5.cdio.solitairesolver.View.PhotoHandler;
 import grp5.cdio.solitairesolver.View.StartLoadingScreen;
 
 import static android.app.Activity.RESULT_CANCELED;
@@ -60,7 +61,7 @@ public class Resultat extends Fragment implements Runnable {
         mButtonDetect = resultatFrag.findViewById(R.id.TagBilledeBtn_resultatFrag);
 
         // Her skal stien til billedet der lige er blevet taget gives
-        loadAssets("");
+        loadAssets(PhotoHandler.getInstance(context).lastPicture);
 
         mButtonDetect.setOnClickListener(new View.OnClickListener() {
             @Override
