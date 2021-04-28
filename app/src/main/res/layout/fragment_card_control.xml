@@ -722,7 +722,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text="Hjerter 3"
                 android:textColor="@color/black" />
 
             <TextView
@@ -730,7 +730,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
 
             <TextView
@@ -738,7 +738,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
 
             <TextView
@@ -746,7 +746,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
 
             <TextView
@@ -754,7 +754,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
 
             <TextView
@@ -762,7 +762,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
 
             <TextView
@@ -770,7 +770,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -856,7 +856,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text="Spar 2"
                 android:textColor="@color/black" />
 
             <TextView
@@ -864,7 +864,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
 
             <TextView
@@ -872,7 +872,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
 
             <TextView
@@ -880,7 +880,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
 
             <TextView
@@ -888,7 +888,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
 
             <TextView
@@ -896,7 +896,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -947,7 +947,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="Bag side"
+                android:text="Spar 3"
                 android:textColor="@color/black" />
 
             <TextView
@@ -956,14 +956,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
-                android:text="Bag side"
+                android:text="Hjerter Es"
                 android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/wast_card3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bag side"
+                android:text="Ruder 7"
                 android:textColor="@color/black" />
 
         </LinearLayout>
@@ -1005,7 +1005,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="Bag side"
+                android:text="Spar Es"
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -1035,7 +1035,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -1065,7 +1065,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -1095,7 +1095,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="Bag side"
+                android:text=" "
                 android:textColor="@color/black" />
         </LinearLayout>
 
