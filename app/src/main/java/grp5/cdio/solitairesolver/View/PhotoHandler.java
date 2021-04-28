@@ -13,12 +13,22 @@ import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
+import grp5.cdio.solitairesolver.R;
+import grp5.cdio.solitairesolver.View.Fragments.Resultat;
+
 public class PhotoHandler implements PictureCallback {
     private final Context context;
     public String lastPicture = null;
 
     public PhotoHandler(Context context) {
         this.context = context;
+    }
+
+    private static PhotoHandler instance;
+    public static PhotoHandler getInstance(Context context) {
+        if (instance != null)
+            return instance;
+        return new PhotoHandler(context);
     }
 
     @Override

@@ -70,7 +70,7 @@ public class CameraFragment extends Fragment  {
                     @Override
                     public void onClick(View v) {
                         // get an image from the camera
-                        mCamera.takePicture(null, null, new PhotoHandler(context));
+                        mCamera.takePicture(null, null, PhotoHandler.getInstance(context));
                     }
                 }
             );
