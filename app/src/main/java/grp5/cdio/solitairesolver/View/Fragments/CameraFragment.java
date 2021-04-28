@@ -12,6 +12,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
@@ -69,37 +70,46 @@ public class CameraFragment extends Fragment  {
             constraintlayout.invalidate();
 
 
-            captureButton.setOnClickListener(
-                new View.OnClickListener() {
+            captureButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         runningTask = new AsycSavPicture();
                         runningTask.execute();
-
                         // get an image from the camera
                     }
                 }
             );
-
         }
-        return resultFrag;
+        Log.d("TEST", "done: ");
+
+        return cameraFrag;
     }
 
+    // Todo Der er nået gald med linje 89 - er ikke sikker på hvordan 'casten' fungere
     private final class AsycSavPicture extends AsyncTask<Void, Void, String> {
 
         @Override
         protected String doInBackground(Void... params) {
 
             mCamera.takePicture(null, null, PhotoHandler.getInstance(getContext()));
+            Log.d("TEST1", "pre: ");
+
             return "Executed";
         }
 
         @Override
         protected void onPostExecute(String result) {
-            resultat.loadAssets( PhotoHandler.getInstance(getContext()).getDir().toString());
+            Log.d("TEST2", "POSTexecuted: ");
+
+            Fragment resultatFrag = new Resultat();
+
+            //move to createEvent2 frag
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.camera_preview, resultatFrag)
+                    .addToBackStack(null)
+                    .commit();
         }
     }
-
 
 
     /** A safe way to get an instance of the Camera object. */
