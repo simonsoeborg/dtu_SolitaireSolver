@@ -86,16 +86,16 @@ public class CameraFragment extends Fragment  {
     }
 
     // Todo Der er nået gald med linje 89 - er ikke sikker på hvordan 'casten' fungere
-    private final class AsycSavPicture extends AsyncTask<Void, Void, String> {
+    private final class AsycSavPicture extends AsyncTask<Object, Void, String> {
+
 
         @Override
-        protected String doInBackground(Void... params) {
+        protected String doInBackground(Object... objects) {
 
-            mCamera.takePicture(null, null, PhotoHandler.getInstance(getContext()));
-            Log.d("TEST1", "pre: ");
+                mCamera.takePicture(null, null, PhotoHandler.getInstance(getContext()));
+                Log.d("TEST1", "pre: ");
 
-            return "Executed";
-        }
+                return "Executed";        }
 
         @Override
         protected void onPostExecute(String result) {
