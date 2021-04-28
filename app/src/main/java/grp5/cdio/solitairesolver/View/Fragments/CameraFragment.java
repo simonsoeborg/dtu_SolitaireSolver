@@ -1,6 +1,7 @@
 package grp5.cdio.solitairesolver.View.Fragments;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -88,7 +89,6 @@ public class CameraFragment extends Fragment  {
     // Todo Der er nået gald med linje 89 - er ikke sikker på hvordan 'casten' fungere
     private final class AsycSavPicture extends AsyncTask<Object, Void, String> {
 
-
         @Override
         protected String doInBackground(Object... objects) {
 
@@ -97,15 +97,15 @@ public class CameraFragment extends Fragment  {
 
                 return "Executed";        }
 
+        @SuppressLint("ResourceType")
         @Override
         protected void onPostExecute(String result) {
             Log.d("TEST2", "POSTexecuted: ");
 
             Fragment resultatFrag = new Resultat();
 
-            //move to createEvent2 frag
             getFragmentManager().beginTransaction()
-                    .replace(R.id.camera_preview, resultatFrag)
+                    .replace(R.id.FragmentFL, resultatFrag)
                     .addToBackStack(null)
                     .commit();
         }
