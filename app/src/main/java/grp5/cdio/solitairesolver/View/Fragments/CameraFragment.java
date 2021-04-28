@@ -3,8 +3,10 @@ package grp5.cdio.solitairesolver.View.Fragments;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -30,12 +32,18 @@ public class CameraFragment extends Fragment  {
     private Camera mCamera;
     private CameraPreview mPreview;
     private static final int MY_CAMERA_PERMISSION_CODE = 42069;
+    private Resultat resultat = new Resultat();
+
+    AsyncTask<?, ?, ?> runningTask;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         View cameraFrag = inflater.inflate(R.layout.fragment_camera, container, false);
+        View  resultFrag= inflater.inflate(R.layout.fragment_resultat, container, false);
+
         Context context = cameraFrag.getContext();
 
         // dette er den visuelle grid layout
@@ -55,29 +63,44 @@ public class CameraFragment extends Fragment  {
             // Add a listener to the Capture button
             ImageButton captureButton = (ImageButton) cameraFrag.findViewById(R.id.button_capture);
 
-
-
             // for at få den visuelle layout foran kameraet.
 
             constraintlayout.bringToFront();
             constraintlayout.invalidate();
 
 
-
-
             captureButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        runningTask = new AsycSavPicture();
+                        runningTask.execute();
+
                         // get an image from the camera
-                        mCamera.takePicture(null, null, PhotoHandler.getInstance(context));
                     }
                 }
             );
+
+        }
+        return resultFrag;
+    }
+
+    private final class AsycSavPicture extends AsyncTask<Void, Void, String> {
+
+        @Override
+        protected String doInBackground(Void... params) {
+
+            mCamera.takePicture(null, null, PhotoHandler.getInstance(getContext()));
+            return "Executed";
         }
 
-        return cameraFrag;
+        @Override
+        protected void onPostExecute(String result) {
+            resultat.loadAssets( PhotoHandler.getInstance(getContext()).getDir().toString());
+        }
     }
+
+
 
     /** A safe way to get an instance of the Camera object. */
     public Camera getCameraInstance(){

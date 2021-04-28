@@ -62,7 +62,7 @@ public class PhotoHandler implements PictureCallback {
         }
     }
 
-    private File getDir() {
+    public File getDir() {
         String path = "CameraAPIDemo";
         File file;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {

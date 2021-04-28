@@ -88,7 +88,7 @@ public class Resultat extends Fragment implements Runnable {
      * Indlæser modellen og billedet, så det kan behandles
      * @param image
      */
-    private void loadAssets(String image) {
+    public void loadAssets(String image) {
         try {
             mModule = PyTorchAndroid.loadModuleFromAsset(context.getAssets(), "model.torchscript.pt");
             BufferedReader br = new BufferedReader(new InputStreamReader(context.getAssets().open("cards.classes.txt")));
