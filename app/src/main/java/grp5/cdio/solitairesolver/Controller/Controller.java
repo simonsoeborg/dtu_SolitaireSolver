@@ -1,6 +1,9 @@
 package grp5.cdio.solitairesolver.Controller;
 
+import android.graphics.Bitmap;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import grp5.cdio.solitairesolver.Model.Card;
 import grp5.cdio.solitairesolver.Model.FaceValue;
@@ -19,16 +22,16 @@ public class Controller {
     /**
      * Get best move based om image
      */
-    public Move getMove(Object object){
-        createTableFromImage(object);
+    public Move getMove(HashMap<String, Bitmap> map){
+        createTableFromImage(map);
         return getBestMove();
     }
 
     /**
      * Set up game table {@link Table} from image obj
      */
-    private void createTableFromImage(Object object){
-        table = runImageRecognition(object);
+    private void createTableFromImage(HashMap<String, Bitmap> map){
+        table = runImageRecognition(map);
     }
 
     /**
@@ -46,7 +49,7 @@ public class Controller {
      *
      * @return {@link Table} made from image
      */
-    private Table runImageRecognition(Object object){
+    private Table runImageRecognition(HashMap<String, Bitmap> map){
 
         // TODO Replace with image
         // Mock data start
