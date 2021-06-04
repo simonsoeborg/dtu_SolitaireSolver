@@ -2,7 +2,10 @@ package grp5.cdio.solitairesolver.Controller;
 
 import java.util.ArrayList;
 
+import grp5.cdio.solitairesolver.Model.Card;
+import grp5.cdio.solitairesolver.Model.FaceValue;
 import grp5.cdio.solitairesolver.Model.Move;
+import grp5.cdio.solitairesolver.Model.Suit;
 import grp5.cdio.solitairesolver.Model.Table;
 
 public class Controller {
@@ -13,51 +16,58 @@ public class Controller {
      */
     private Table table;
 
-
     /**
-     * Set up game table {@link Table}
+     * Get best move based om image
      */
-    public void loadCards(){
-
+    public Move getMove(Object object){
+        createTableFromImage(object);
+        return getBestMove();
     }
 
+    /**
+     * Set up game table {@link Table} from image obj
+     */
+    private void createTableFromImage(Object object){
+        table = runImageRecognition(object);
+    }
 
     /**
      * Find best {@link Move} from table {@link Table}
      *
-     * @return the Move with highest score
+     * @return the Move with highest score fro m table
      */
-    public Move getMove(){
-        ArrayList<Move> moves = testPossibleMoves();
-        Move move = bestMove(moves);
-        return move;
+    private Move getBestMove(){
+        ArrayList<Move> moves = table.getLegalMoves();
+        return table.getBestMove(moves);
     }
 
     /**
-     * Find best {@link Move} from  an arrayList
+     * Create table {@link Table} based on image
      *
-     * @param moves, an array list of possible moves
-     * @return the Move with highest score
+     * @return {@link Table} made from image
      */
-    public Move bestMove(ArrayList<Move> moves){
-        Move best = moves.get(0);
+    private Table runImageRecognition(Object object){
 
-        for (Move move: moves){
-            if (move.getScore() > best.getScore()){
-                best = move;
-            }
-        }
-        return best;
+        // TODO Replace with image
+        // Mock data start
+        Table table = new Table();
+        Card cardQueenHearts = new Card(Suit.HEARTS, FaceValue.TWELVE);
+        Card cardKingClubs = new Card(Suit.CLUBS, FaceValue.THIRTEEN);
+        Card cardTenHearts = new Card(Suit.HEARTS, FaceValue.TEN);
+        Card cardJackClubs = new Card(Suit.CLUBS, FaceValue.ELEVEN);
+        Card cardFiveHearts = new Card(Suit.HEARTS, FaceValue.FIVE);
+        Card cardFiveClubs = new Card(Suit.CLUBS, FaceValue.FIVE);
+        Card cardFiveSpades = new Card(Suit.SPADES, FaceValue.FIVE);
 
+        table.buildPile.get(0).setCard(0, cardQueenHearts);
+        table.buildPile.get(1).setCard(1, cardKingClubs);
+        table.buildPile.get(2).setCard(2, cardTenHearts);
+        table.buildPile.get(3).setCard(3, cardJackClubs);
+        table.buildPile.get(4).setCard(4, cardFiveClubs);
+        table.buildPile.get(5).setCard(5, cardFiveHearts);
+        table.buildPile.get(6).setCard(6, cardFiveSpades);
+        // Mock data end
+
+        return table;
     }
-
-    /**
-     * Get list of legal {@link Move} from table
-     *
-     * @return an arrayList of legal moves from table
-     */
-    public ArrayList<Move> testPossibleMoves(){
-        return table.getLegalMoves();
-    }
-
 }

@@ -65,6 +65,9 @@ public class Table {
      * @return the {@link Move} with highest score
      */
     public Move getBestMove(ArrayList<Move> list){
+        if (list.size() == 0){
+            return null;
+        }
         Move bestMove = list.get(0);
         for(Move move : list){
             if (move.getScore() > bestMove.getScore()){
