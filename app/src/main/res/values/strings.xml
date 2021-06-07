@@ -14,12 +14,12 @@
     <string name="Tableau6">Tableau 6</string>
     <string name="Tableau7">Tableau 7</string>
     <string name="Stock">Dæk</string>
-    <string name="Waste">3 træk kort</string>
+    <string name="Waste">trukkene kort</string>
     <string name="Foundation1">Fundament  1</string>
     <string name="Foundation2">Fundament  2</string>
     <string name="Foundation3">Fundament 3</string>
     <string name="Foundation4">Fundament 4</string>
     <string name="take_again">Tag igen</string>
-    <string name="Continue">Forsæt</string>
+    <string name="Continue">Fortsæt</string>
 
 </resources>

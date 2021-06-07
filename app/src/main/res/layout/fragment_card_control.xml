@@ -13,7 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-27dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
 
@@ -26,14 +28,123 @@
             app:layout_constraintEnd_toEndOf="@+id/TableauLine1"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <LinearLayout
+            android:id="@+id/kortene_i_Tableau1"
+            android:layout_width="99dp"
+            android:layout_height="249dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/Tableau1txt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
+
+
+            <TextView
+                android:id="@+id/Tableau1Card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Kløver 2"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau1Card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau1Card3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau1Card4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau1Card5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau1Card6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau1Card7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau1Card8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau1Card9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau1Card10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau1Card11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau1Card12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+        </LinearLayout>
+
         <View
             android:id="@+id/TableauLine1"
             android:layout_width="2dp"
             android:layout_height="411dp"
-            android:layout_marginStart="85dp"
+            android:layout_marginStart="100dp"
             android:background="#E91E1E"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/Tableau2txt"
@@ -45,14 +156,124 @@
             app:layout_constraintEnd_toEndOf="@+id/TableauLine2"
             app:layout_constraintStart_toStartOf="@+id/TableauLine1" />
 
+        <LinearLayout
+            android:id="@+id/kortene_i_Tableau2"
+            android:layout_width="99dp"
+            android:layout_height="249dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/Tableau2txt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine2"
+            app:layout_constraintTop_toBottomOf="@+id/Adskilleren"
+            app:layout_constraintStart_toStartOf="@id/TableauLine1"
+            >
+
+
+            <TextView
+                android:id="@+id/Tableau2Card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau2Card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Hjerter 6"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau2Card3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau2Card4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau2Card5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau2Card6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau2Card7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau2Card8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau2Card9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau2Card10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau2Card11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau2Card12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+        </LinearLayout>
+
         <View
             android:id="@+id/TableauLine2"
             android:layout_width="2dp"
             android:layout_height="270dp"
-            android:layout_marginStart="170dp"
+            android:layout_marginStart="200dp"
             android:background="#E91E1E"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
         <TextView
             android:id="@+id/Tableau3txt"
@@ -63,14 +284,124 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/TableauLine3"
             app:layout_constraintStart_toStartOf="@+id/TableauLine2" />
+
+        <LinearLayout
+            android:id="@+id/kortene_i_Tableau3"
+            android:layout_width="99dp"
+            android:layout_height="249dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/Tableau3txt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine3"
+            app:layout_constraintStart_toStartOf="@+id/TableauLine2"
+            app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
+
+
+            <TextView
+                android:id="@+id/Tableau3Card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau3Card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau3Card3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Hjerter 2"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau3Card4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau3Card5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau3Card6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau3Card7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau3Card8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau3Card9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau3Card10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau3Card11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau3Card12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+        </LinearLayout>
+
         <View
             android:id="@+id/TableauLine3"
             android:layout_width="2dp"
             android:layout_height="411dp"
-            android:layout_marginStart="255dp"
+            android:layout_marginStart="300dp"
             android:background="#E91E1E"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
         <TextView
             android:id="@+id/Tableau4txt"
@@ -82,14 +413,122 @@
             app:layout_constraintEnd_toEndOf="@+id/TableauLine4"
             app:layout_constraintStart_toStartOf="@+id/TableauLine3" />
 
+        <LinearLayout
+            android:id="@+id/kortene_i_Tableau4"
+            android:layout_width="99dp"
+            android:layout_height="249dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/Tableau4txt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine4"
+            app:layout_constraintStart_toStartOf="@id/TableauLine3"
+            app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
+
+            <TextView
+                android:id="@+id/Tableau4Card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau4Card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau4Card3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau4Card4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Roder 4"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau4Card5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau4Card6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau4Card7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau4Card8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau4Card9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau4Card10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau4Card11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau4Card12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+        </LinearLayout>
+
         <View
             android:id="@+id/TableauLine4"
             android:layout_width="2dp"
             android:layout_height="411dp"
-            android:layout_marginStart="340dp"
+            android:layout_marginStart="400dp"
             android:background="#E91E1E"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
         <TextView
             android:id="@+id/Tableau5txt"
@@ -101,14 +540,122 @@
             app:layout_constraintEnd_toEndOf="@+id/TableauLine5"
             app:layout_constraintStart_toStartOf="@+id/TableauLine4" />
 
+        <LinearLayout
+            android:id="@+id/kortene_i_Tableau5"
+            android:layout_width="99dp"
+            android:layout_height="249dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/Tableau5txt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine5"
+            app:layout_constraintStart_toStartOf="@id/TableauLine4"
+            app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
+
+            <TextView
+                android:id="@+id/Tableau5Card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau5Card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau5Card3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau5Card4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau5Card5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Hjerter D"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau5Card6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau5Card7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau5Card8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau5Card9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau5Card10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau5Card11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau5Card12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+        </LinearLayout>
+
         <View
             android:id="@+id/TableauLine5"
             android:layout_width="2dp"
             android:layout_height="411dp"
-            android:layout_marginStart="425dp"
+            android:layout_marginStart="500dp"
             android:background="#E91E1E"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
         <TextView
             android:id="@+id/Tableau6txt"
@@ -120,14 +667,121 @@
             app:layout_constraintEnd_toEndOf="@+id/TableauLine6"
             app:layout_constraintStart_toStartOf="@+id/TableauLine5" />
 
+        <LinearLayout
+            android:id="@+id/kortene_i_Tableau6"
+            android:layout_width="99dp"
+            android:layout_height="249dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/Tableau6txt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine6"
+            app:layout_constraintStart_toEndOf="@+id/TableauLine5"
+            app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
+
+            <TextView
+                android:id="@+id/Tableau6Card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau6Card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau6Card3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau6Card4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau6Card5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau6Card6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Hjerter 3"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau6Card7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau6Card8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau6Card9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau6Card10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau6Card11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau6Card12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+        </LinearLayout>
+
         <View
             android:id="@+id/TableauLine6"
             android:layout_width="2dp"
             android:layout_height="411dp"
-            android:layout_marginStart="510dp"
+            android:layout_marginStart="600dp"
             android:background="#E91E1E"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/Tableau7txt"
@@ -139,44 +793,188 @@
             app:layout_constraintEnd_toEndOf="@+id/TableauLine7"
             app:layout_constraintStart_toStartOf="@+id/TableauLine6" />
 
+        <LinearLayout
+            android:id="@+id/kortene_i_Tableau7"
+            android:layout_width="99dp"
+            android:layout_height="249dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/Tableau7txt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine7"
+            app:layout_constraintStart_toEndOf="@id/TableauLine6"
+            app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
+
+            <TextView
+                android:id="@+id/Tableau7Card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau7Card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau7Card3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau7Card4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau7Card5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau7Card6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Bag side"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau7Card7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Spar 2"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau7Card8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau7Card9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau7Card10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau7Card11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/Tableau7Card12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="@color/black" />
+        </LinearLayout>
+
         <View
             android:id="@+id/TableauLine7"
             android:layout_width="2dp"
             android:layout_height="411dp"
-            android:layout_marginStart="595dp"
+            android:layout_marginStart="700dp"
             android:background="#E91E1E"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <View
             android:id="@+id/Adskilleren"
-            android:layout_width="595dp"
+            android:layout_width="700dp"
             android:layout_height="2dp"
             android:layout_marginBottom="270dp"
             android:background="#E91E1E"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
         <TextView
             android:id="@+id/Stocktxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
             android:text="@string/Stock"
             android:textColor="#3F51B5"
-            android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
             app:layout_constraintEnd_toEndOf="@+id/TableauLine1"
             app:layout_constraintStart_toStartOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/Waste3Cards"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/Wastetxt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine3"
+            app:layout_constraintStart_toEndOf="@+id/TableauLine1"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/wast_card1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Spar 3 ,"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/wast_card2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="Hjerter Es ,"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/wast_card3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ruder 7"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/Wastetxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
             android:text="@string/Waste"
             android:textColor="#3F51B5"
-            android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
             app:layout_constraintEnd_toEndOf="@+id/TableauLine3"
             app:layout_constraintStart_toStartOf="@+id/TableauLine1" />
@@ -185,43 +983,122 @@
             android:id="@+id/Foundation1txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
             android:text="@string/Foundation1"
             android:textColor="#3F51B5"
-            android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine4"
             app:layout_constraintStart_toEndOf="@+id/TableauLine3" />
+
+        <LinearLayout
+            android:id="@+id/Foundation1_linearLayout"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/Wastetxt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine4"
+            app:layout_constraintStart_toEndOf="@+id/TableauLine3"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/Foundation1Cards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Spar Es"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
         <TextView
             android:id="@+id/Foundation2txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
             android:text="@string/Foundation2"
             android:textColor="#3F51B5"
-            android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine5"
             app:layout_constraintStart_toEndOf="@+id/TableauLine4" />
+
+        <LinearLayout
+            android:id="@+id/Foundation2_linearLayout"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/Wastetxt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine5"
+            app:layout_constraintStart_toEndOf="@+id/TableauLine4"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/Foundation2Cards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text=" "
+                android:textColor="@color/black" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/Foundation3txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
             android:text="@string/Foundation3"
             android:textColor="#3F51B5"
-            android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine6"
             app:layout_constraintStart_toEndOf="@+id/TableauLine5" />
+
+        <LinearLayout
+            android:id="@+id/Foundation3_linearLayout"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/Wastetxt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine6"
+            app:layout_constraintStart_toEndOf="@+id/TableauLine5"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/Foundation3Cards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text=" "
+                android:textColor="@color/black" />
+        </LinearLayout>
+
         <TextView
             android:id="@+id/Foundation4txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
             android:text="@string/Foundation4"
             android:textColor="#3F51B5"
-            android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine7"
             app:layout_constraintStart_toEndOf="@+id/TableauLine6" />
+
+        <LinearLayout
+            android:id="@+id/Foundation4_linearLayout"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/Wastetxt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine7"
+            app:layout_constraintStart_toEndOf="@+id/TableauLine6"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/Foundation4Cards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text=" "
+                android:textColor="@color/black" />
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -254,7 +1131,7 @@
         android:text="@string/Continue"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="13dp"
+        android:textSize="11sp"
 
         app:cornerRadius="100dp"
         app:layout_constraintEnd_toEndOf="parent"

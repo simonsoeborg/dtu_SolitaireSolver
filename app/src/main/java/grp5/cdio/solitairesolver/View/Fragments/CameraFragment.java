@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,7 +17,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -26,7 +26,7 @@ import grp5.cdio.solitairesolver.R;
 import grp5.cdio.solitairesolver.View.CameraPreview;
 import grp5.cdio.solitairesolver.View.PhotoHandler;
 
-public class CameraFragment extends Fragment  {
+public class CameraFragment extends Fragment {
     private Camera mCamera;
     private CameraPreview mPreview;
     private static final int MY_CAMERA_PERMISSION_CODE = 42069;
@@ -34,6 +34,9 @@ public class CameraFragment extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        View windowDecorView = requireActivity().getWindow().getDecorView();
+        windowDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
 
         View cameraFrag = inflater.inflate(R.layout.fragment_camera, container, false);
         Context context = cameraFrag.getContext();
@@ -62,15 +65,30 @@ public class CameraFragment extends Fragment  {
             constraintlayout.bringToFront();
             constraintlayout.invalidate();
 
-
+            class takePhoto extends AsyncTask<Void, Void, Void>
+            {
+                @Override
+                protected Void doInBackground(Void... params) {
+                    // get an image from the camera
+                    mCamera.takePicture(null, null, new PhotoHandler(context));
+                    return null;
+                }
+                @Override
+                protected void onPostExecute(Void result) {
+                    assert getFragmentManager() != null;
+                    getFragmentManager().beginTransaction()
+                            .replace(R.id.FragmentFL, new CardControl())
+                            .addToBackStack(null)
+                            .commit();
+                }
+            }
 
 
             captureButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // get an image from the camera
-                        mCamera.takePicture(null, null, new PhotoHandler(context));
+                        new takePhoto().execute();
                     }
                 }
             );
@@ -78,6 +96,9 @@ public class CameraFragment extends Fragment  {
 
         return cameraFrag;
     }
+
+
+
 
     /** A safe way to get an instance of the Camera object. */
     public Camera getCameraInstance(){
