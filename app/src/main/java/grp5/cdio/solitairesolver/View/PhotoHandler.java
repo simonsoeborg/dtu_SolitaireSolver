@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,6 +19,12 @@ import android.os.Environment;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+
+import grp5.cdio.solitairesolver.R;
+import grp5.cdio.solitairesolver.View.Fragments.CardControl;
 
 public class PhotoHandler implements PictureCallback {
     private final Context context;
@@ -56,6 +63,18 @@ public class PhotoHandler implements PictureCallback {
             lastPicture = null;
             Toast.makeText(context, "Image could not be saved.", Toast.LENGTH_LONG).show();
         }
+
+        try{
+            FragmentManager fragmentManager = ((FragmentActivity) context).getSupportFragmentManager();
+
+            fragmentManager.beginTransaction()
+                    .replace(R.id.FragmentFL, new CardControl())
+                    .addToBackStack(null)
+                    .commit();
+
+        } catch (ClassCastException e) {
+            Log.d("fragManager", "Can't get the fragment manager with this");
+        }
     }
 
     private File getDir() {
@@ -74,13 +93,11 @@ public class PhotoHandler implements PictureCallback {
         return file;
     }
 
-
-
     private ArrayList<Bitmap> splitImg(String filename){
 
         Bitmap orginialPic = BitmapFactory.decodeFile(filename);
 
-        ArrayList<Bitmap> piles =  new ArrayList<Bitmap>();
+        ArrayList<Bitmap> piles =  new ArrayList<>();
 
         // Todo : Der skal specificeres de rigtige x og y kordinater (første pixel), og relevante længder. pt er de bare randome.
 

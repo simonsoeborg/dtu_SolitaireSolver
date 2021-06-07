@@ -22,6 +22,8 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 
+import javax.xml.transform.Result;
+
 import grp5.cdio.solitairesolver.R;
 import grp5.cdio.solitairesolver.View.CameraPreview;
 import grp5.cdio.solitairesolver.View.PhotoHandler;
@@ -65,39 +67,28 @@ public class CameraFragment extends Fragment {
             constraintlayout.bringToFront();
             constraintlayout.invalidate();
 
-            class takePhoto extends AsyncTask<Void, Void, Void>
-            {
+            class takePhoto extends AsyncTask<Void, Void, Void> {
                 @Override
                 protected Void doInBackground(Void... params) {
                     // get an image from the camera
                     mCamera.takePicture(null, null, new PhotoHandler(context));
+
                     return null;
                 }
-                @Override
-                protected void onPostExecute(Void result) {
-                    assert getFragmentManager() != null;
-                    getFragmentManager().beginTransaction()
-                            .replace(R.id.FragmentFL, new CardControl())
-                            .addToBackStack(null)
-                            .commit();
-                }
-            }
 
+            }
 
             captureButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        new takePhoto().execute();
+                        mCamera.takePicture(null, null, new PhotoHandler(context));
                     }
                 }
             );
         }
-
         return cameraFrag;
     }
-
-
 
 
     /** A safe way to get an instance of the Camera object. */
@@ -168,4 +159,9 @@ public class CameraFragment extends Fragment {
         }
         super.onPause();
     }
+
+
+
+
+
 }
