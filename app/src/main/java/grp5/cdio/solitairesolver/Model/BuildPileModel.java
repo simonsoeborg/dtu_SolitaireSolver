@@ -14,17 +14,26 @@ public class BuildPileModel {
     }
 
     public void insertCard(CardModel card) {
-
         BuildPile.add(card);
     }
 
     public int Predecessor(CardModel cardModel) {
+        int val = -1;
         for (CardModel element : BuildPile) {
-            // Check if the
             if(PossibleCardId.convertIdToPoints(element.getValue()) <= PossibleCardId.convertIdToPoints(cardModel.getValue())) {
-                return BuildPile.indexOf(element);
+                val = PossibleCardId.convertIdToPoints(element.getValue());
             }
         }
-        return BuildPile.indexOf(BuildPile.size()-1);
+        return val;
+    }
+
+    public int Successor(CardModel cardModel) {
+        int val = -1;
+        for (CardModel element : BuildPile) {
+            if(PossibleCardId.convertIdToPoints(element.getValue()) >= PossibleCardId.convertIdToPoints(cardModel.getValue())) {
+                val = PossibleCardId.convertIdToPoints(element.getValue());
+            }
+        }
+        return val;
     }
 }
