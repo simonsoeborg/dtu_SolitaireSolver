@@ -64,6 +64,8 @@ public class PhotoHandler implements PictureCallback {
             Toast.makeText(context, "Image could not be saved.", Toast.LENGTH_LONG).show();
         }
 
+        saveSplitImg(splitImg(lastPicture));
+
         try{
             FragmentManager fragmentManager = ((FragmentActivity) context).getSupportFragmentManager();
 
@@ -101,14 +103,44 @@ public class PhotoHandler implements PictureCallback {
 
         // Todo : Der skal specificeres de rigtige x og y kordinater (første pixel), og relevante længder. pt er de bare randome.
 
-        Bitmap foundationPile = Bitmap.createBitmap(orginialPic, 200, 0, orginialPic.getWidth(), (orginialPic.getHeight() ));
+        Bitmap foundationPile = Bitmap.createBitmap(orginialPic, 0, 0, orginialPic.getWidth(), (orginialPic.getHeight()/2 ));
         piles.add(foundationPile);
 
         Bitmap drawPile = Bitmap.createBitmap(orginialPic, 0, 0, orginialPic.getWidth()/3, (orginialPic.getHeight() / 4 ));
         piles.add(drawPile);
 
-        Bitmap buildPile = Bitmap.createBitmap(orginialPic, 0, 50, orginialPic.getWidth(), (orginialPic.getHeight() ));
+        Bitmap buildPile = Bitmap.createBitmap(orginialPic, 0, 50, orginialPic.getWidth(), (orginialPic.getHeight()/3 ));
         piles.add(buildPile);
+
         return  piles;
+    }
+
+
+    // for at gamme vores delte billeder.
+    private void saveSplitImg(ArrayList<Bitmap> piles){
+
+
+        for (int i = 0; i < piles.size(); i++) {
+            File pictureFileDir = getDir();
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyymmddhhmmss");
+            String date = dateFormat.format(new Date());
+            String photoFile = "Picture_" + date + "_"+ i +".jpg";
+
+            String filename = pictureFileDir.getPath() + File.separator + photoFile;
+
+            File pictureFile = new File(filename);
+
+            try {
+                FileOutputStream fos = new FileOutputStream(pictureFile);
+                piles.get(i).compress(Bitmap.CompressFormat.PNG, 90,fos);
+                lastPicture = filename;
+                Toast.makeText(context, "New Image saved:" + photoFile, Toast.LENGTH_LONG).show();
+            } catch (Exception error) {
+                Log.d("PhotoHandler", "File" + filename + "not saved: " + error.getMessage());
+                lastPicture = null;
+                Toast.makeText(context, "Image could not be saved.", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
