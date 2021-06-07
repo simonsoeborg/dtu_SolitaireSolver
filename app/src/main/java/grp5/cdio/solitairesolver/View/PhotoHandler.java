@@ -3,14 +3,20 @@ package grp5.cdio.solitairesolver.View;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
 import android.os.Build;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class PhotoHandler implements PictureCallback {
@@ -66,5 +72,26 @@ public class PhotoHandler implements PictureCallback {
             file.mkdirs();
         }
         return file;
+    }
+
+
+
+    private ArrayList<Bitmap> splitImg(String filename){
+
+        Bitmap orginialPic = BitmapFactory.decodeFile(filename);
+
+        ArrayList<Bitmap> piles =  new ArrayList<Bitmap>();
+
+        // Todo : Der skal specificeres de rigtige x og y kordinater (første pixel), og relevante længder. pt er de bare randome.
+
+        Bitmap foundationPile = Bitmap.createBitmap(orginialPic, 200, 0, orginialPic.getWidth(), (orginialPic.getHeight() ));
+        piles.add(foundationPile);
+
+        Bitmap drawPile = Bitmap.createBitmap(orginialPic, 0, 0, orginialPic.getWidth()/3, (orginialPic.getHeight() / 4 ));
+        piles.add(drawPile);
+
+        Bitmap buildPile = Bitmap.createBitmap(orginialPic, 0, 50, orginialPic.getWidth(), (orginialPic.getHeight() ));
+        piles.add(buildPile);
+        return  piles;
     }
 }
