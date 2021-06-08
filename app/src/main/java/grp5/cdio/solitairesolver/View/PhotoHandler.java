@@ -29,6 +29,7 @@ import grp5.cdio.solitairesolver.View.Fragments.CardControl;
 public class PhotoHandler implements PictureCallback {
     private final Context context;
     public String lastPicture = null;
+    public Bitmap orginialPic;
 
     public PhotoHandler(Context context) {
         this.context = context;
@@ -52,19 +53,22 @@ public class PhotoHandler implements PictureCallback {
 
         File pictureFile = new File(filename);
 
+        // Todo - kan nok effektiviseres således at billedet ikke behøver blive gemt før det slettes.
         try {
             FileOutputStream fos = new FileOutputStream(pictureFile);
-            fos.write(data);
-            fos.close();
-            lastPicture = filename;
-            Toast.makeText(context, "New Image saved:" + photoFile, Toast.LENGTH_LONG).show();
+             fos.write(data);
+             fos.close();
+           // lastPicture = filename;
+            orginialPic = BitmapFactory.decodeFile(filename);
+            pictureFile.delete();
+             Toast.makeText(context, "New Image er taget, passed og slettet igen:" + photoFile, Toast.LENGTH_LONG).show();
         } catch (Exception error) {
             Log.d("PhotoHandler", "File" + filename + "not saved: " + error.getMessage());
             lastPicture = null;
             Toast.makeText(context, "Image could not be saved.", Toast.LENGTH_LONG).show();
         }
 
-        saveSplitImg(splitImg(lastPicture));
+        saveSplitImg(splitImg(lastPicture, orginialPic));
 
         try{
             FragmentManager fragmentManager = ((FragmentActivity) context).getSupportFragmentManager();
@@ -95,9 +99,9 @@ public class PhotoHandler implements PictureCallback {
         return file;
     }
 
-    private ArrayList<Bitmap> splitImg(String filename){
+    private ArrayList<Bitmap> splitImg(String filename, Bitmap orginialPic){
 
-        Bitmap orginialPic = BitmapFactory.decodeFile(filename);
+      //  Bitmap orginialPic = BitmapFactory.decodeFile(filename);
 
         ArrayList<Bitmap> piles =  new ArrayList<>();
 
@@ -115,10 +119,8 @@ public class PhotoHandler implements PictureCallback {
         return  piles;
     }
 
-
     // for at gamme vores delte billeder.
     private void saveSplitImg(ArrayList<Bitmap> piles){
-
 
         for (int i = 0; i < piles.size(); i++) {
             File pictureFileDir = getDir();
