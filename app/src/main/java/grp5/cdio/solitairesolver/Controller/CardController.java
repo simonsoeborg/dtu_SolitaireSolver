@@ -11,64 +11,65 @@ import grp5.cdio.solitairesolver.Model.PossibleCardId;
 
 public class CardController {
 
+    public static int BPILES = 7;
     public static CardController cardController;
-    private BuildPileModel buildPile;
-    private FoundationPileModel foundationPile;
-    private ArrayList<BuildPileModel> buildPiles; // THESE NEEDS TO BE UPDATED IN A CONTROLLER BEFORE RUNNING
-    private ArrayList<FoundationPileModel> foundationPiles; // THESE NEEDS TO BE UPDATED IN A CONTROLLER BEFORE RUNNING
+    public static ArrayList<FoundationPileModel> foundationPiles;
+    public static ArrayList<BuildPileModel> buildPiles; // THESE NEEDS TO BE UPDATED IN A CONTROLLER BEFORE RUNNING
 
     public static void Init() {
         cardController = GetInstance();
-        cardController.buildPile = new BuildPileModel();
-        cardController.foundationPile = new FoundationPileModel();
-        cardController.foundationPiles = new ArrayList<>();
-        cardController.buildPiles = new ArrayList<>();
+        foundationPiles = InitializeFoundationPiles();
+        buildPiles = InitializeBuildPiles();
     }
 
-    public void OnAddCardToFoundationPile(CardModel card) {
-        // Check Card ID (Hjerter, Ruder, Spar, Klør)
+
+
+    public void AddCardToAFoundationPile(CardModel card) {
         if(card.getId().equals(PossibleCardId.Ids.HJERTER.toString())) {
-            HandleAdditionToPiles(card);
+            HandleAdditionToFoundationPiles(card);
         }
 
         if(card.getId().equals(PossibleCardId.Ids.RUDER.toString())) {
-            HandleAdditionToPiles(card);
+            HandleAdditionToFoundationPiles(card);
         }
 
         if(card.getId().equals(PossibleCardId.Ids.SPAR.toString())) {
-            HandleAdditionToPiles(card);
+            HandleAdditionToFoundationPiles(card);
         }
 
         if(card.getId().equals(PossibleCardId.Ids.KLØR.toString())) {
-            HandleAdditionToPiles(card);
+            HandleAdditionToFoundationPiles(card);
         }
-
     }
 
-    private void HandleAdditionToPiles(CardModel card) {
-        // Check if we have a pile for this Id
-        FoundationPileModel currentFoundationPile = GetFoundationPileWithSameId(card);
-        // If there are no cards in foundation pile, then add card to foundation pile
-        if(currentFoundationPile.FoundationPile.isEmpty()) {
-            // Check if Card is Ace, if true, create Pile
-            if(PossibleCardId.convertIdToPoints(card.getValue()) == 1) {
-                currentFoundationPile.FoundationPile.add(card);
-            }
+    public void HandleAdditionToFoundationPiles(CardModel card) {
+
+        // In case We get an Ace, then add it to a foundation pile
+        if(PossibleCardId.convertIdToPoints(card.getValue()) == 1) {
+            AddCardToEmptyFoundationPile(card);
         } else {
-            // Check predecessor and Successor and then add to pile
-            int cardValue = PossibleCardId.convertIdToPoints(card.getValue());
-            // Get the precessor
-            int pre = currentFoundationPile.Predecessor(card);
-            // Get the successor
-            int succ = currentFoundationPile.Successor(card);
-            // If cardValue is lesser than or greater than pre and successorm then add card to pile.
-            if(cardValue >= pre && cardValue <= succ) {
-                currentFoundationPile.insertCard(card, pre+1);
+            // Create an object equal to a foundation pile that exists.
+            FoundationPileModel pileWithRightId = GetFoundationPileWithSameId(card);
+            // Assert that our new pile is not null
+            assert pileWithRightId != null;
+            // If our pile is not empty, then add our card to index 0 (Top of the Tree), Pushes the other cards down
+            if(!pileWithRightId.isEmpty) {
+                pileWithRightId.getPile().add(0, card);
             }
         }
     }
 
-    public void OnAddCardToBuildPile(CardModel card) {
+    private void AddCardToEmptyFoundationPile(CardModel card) {
+        for (int i = 0; i < foundationPiles.size(); i++) {
+            if(foundationPiles.get(i).isEmpty) {
+                foundationPiles.get(i).getPile().add(card);
+                foundationPiles.get(i).isEmpty = false;
+                foundationPiles.get(i).setThisFoundationPile(card.getId());
+            }
+        }
+    }
+
+    public void AddCardToBuildPile(CardModel card) {
         String currentColor = CardColor.GetCardColor(card);
         int currentValue = PossibleCardId.convertIdToPoints(card.getValue());
         // Check all piles
@@ -96,7 +97,29 @@ public class CardController {
                 return foundationPiles.get(i);
             }
         }
-        return new FoundationPileModel();
+        // If there aren't any piles containing this Id, then return the Id as Name
+        return null;
+    }
+
+    public static ArrayList<BuildPileModel> InitializeBuildPiles() {
+        ArrayList<BuildPileModel> buildPiles = new ArrayList<>();
+        for (int i = 0; i < BPILES-1; i++) {
+            buildPiles.add(new BuildPileModel());
+        }
+        return buildPiles;
+    }
+
+    public static ArrayList<FoundationPileModel> InitializeFoundationPiles() {
+        ArrayList<FoundationPileModel> foundationPiles = new ArrayList<>();
+        FoundationPileModel foundationPile1 = new FoundationPileModel();
+        FoundationPileModel foundationPile2 = new FoundationPileModel();
+        FoundationPileModel foundationPile3 = new FoundationPileModel();
+        FoundationPileModel foundationPile4 = new FoundationPileModel();
+        foundationPiles.add(foundationPile1);
+        foundationPiles.add(foundationPile2);
+        foundationPiles.add(foundationPile3);
+        foundationPiles.add(foundationPile4);
+        return foundationPiles;
     }
 
     // Singleton method
