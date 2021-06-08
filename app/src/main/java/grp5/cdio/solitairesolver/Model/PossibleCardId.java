@@ -1,6 +1,7 @@
 package grp5.cdio.solitairesolver.Model;
 
 public class PossibleCardId {
+    // Enum for Possible Ids
     public enum Ids {
         HJERTER,
         RUDER,
@@ -8,6 +9,7 @@ public class PossibleCardId {
         KLØR
     }
 
+    // Convert Cards to int Values. Specificly the cards that has letters instead of numeric values
     public static int convertIdToPoints(String cardValue) {
         switch (cardValue) {
             case "K": return 13;

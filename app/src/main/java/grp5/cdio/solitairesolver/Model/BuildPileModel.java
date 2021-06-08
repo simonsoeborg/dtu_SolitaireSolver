@@ -4,13 +4,14 @@ import java.util.ArrayList;
 
 public class BuildPileModel {
     // King is the lowest card in the pile, Ace is the highest Card in the pile (or 2)
-    // Structure is Binary, which each new height, rotate colors from (Black to Red)
+    // Structure is Binary, with each new height, rotate colors from (Black to Red)
     public ArrayList<CardModel> BuildPile;
 
     public BuildPileModel() {
         BuildPile = new ArrayList<>();
     }
 
+    // Get the build pile Id
     public String GetBuildTypeId() {
         if(!BuildPile.isEmpty()) {
             return BuildPile.get(0).getId();
@@ -19,6 +20,7 @@ public class BuildPileModel {
         }
     }
 
+    // Inserts a card to a build pile
     public void insertCard(CardModel card) {
         BuildPile.add(card);
     }
