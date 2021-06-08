@@ -26,10 +26,16 @@ public class SSPilesTest {
 
     @Test
     public void TestBuildPiles() {
-        CardModel cardModel = new CardModel("HJERTER", "K");
+        CardModel cardModel1 = new CardModel("HJERTER", "K");
+        CardModel cardModel4 = new CardModel("KLØR", "K");
+        CardModel cardModel2 = new CardModel("HJERTER", "Q");
+        CardModel cardModel3 = new CardModel("SPAR", "Q");
         CardController cardController = CardController.GetInstance();
         CardController.Init();
-        cardController.AddCardToBuildPile(cardModel);
+        cardController.AddCardToBuildPile(cardModel1);
+        cardController.AddCardToBuildPile(cardModel4);
+        cardController.AddCardToBuildPile(cardModel2);
+        cardController.AddCardToBuildPile(cardModel3);
         for (int i = 0; i < CardController.buildPiles.size(); i++) {
             if(!CardController.buildPiles.get(i).BuildPile.isEmpty()) {
                 System.out.println(CardController.buildPiles.get(i).BuildPile.get(0).getId());
