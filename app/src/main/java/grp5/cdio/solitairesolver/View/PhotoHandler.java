@@ -103,13 +103,13 @@ public class PhotoHandler implements PictureCallback {
 
         // Todo : Der skal specificeres de rigtige x og y kordinater (første pixel), og relevante længder. pt er de bare randome.
 
-        Bitmap foundationPile = Bitmap.createBitmap(orginialPic, 0, 0, orginialPic.getWidth(), (orginialPic.getHeight()/2 ));
+        Bitmap foundationPile = Bitmap.createBitmap(orginialPic, orginialPic.getWidth()-orginialPic.getWidth()*5/8, 0, orginialPic.getWidth()*4/8, (orginialPic.getHeight()/3 ));
         piles.add(foundationPile);
 
-        Bitmap drawPile = Bitmap.createBitmap(orginialPic, 0, 0, orginialPic.getWidth()/3, (orginialPic.getHeight() / 4 ));
+        Bitmap drawPile = Bitmap.createBitmap(orginialPic, 0, 0, orginialPic.getWidth()*3/8, (orginialPic.getHeight()/3 ));
         piles.add(drawPile);
 
-        Bitmap buildPile = Bitmap.createBitmap(orginialPic, 0, 50, orginialPic.getWidth(), (orginialPic.getHeight()/3 ));
+        Bitmap buildPile = Bitmap.createBitmap(orginialPic, 0, orginialPic.getHeight()/3, orginialPic.getWidth()*7/8, (orginialPic.getHeight()*2/3 ));
         piles.add(buildPile);
 
         return  piles;

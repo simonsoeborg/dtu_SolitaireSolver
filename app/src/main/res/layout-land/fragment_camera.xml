@@ -41,8 +41,10 @@
                 android:id="@+id/TableauLine1"
                 android:layout_width="2dp"
                 android:layout_height="411dp"
-                android:layout_marginStart="100dp"
                 android:background="#E91E1E"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.125
+"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,10 +62,12 @@
                 android:id="@+id/TableauLine2"
                 android:layout_width="2dp"
                 android:layout_height="270dp"
-                android:layout_marginStart="200dp"
                 android:background="#E91E1E"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/Adskilleren" />
 
             <TextView
                 android:id="@+id/Tableau3txt"
@@ -74,14 +78,18 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine3"
                 app:layout_constraintStart_toStartOf="@+id/TableauLine2" />
+
             <View
                 android:id="@+id/TableauLine3"
                 android:layout_width="2dp"
                 android:layout_height="411dp"
-                android:layout_marginStart="300dp"
                 android:background="#E91E1E"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.375
+
+"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/Tableau4txt"
@@ -97,10 +105,11 @@
                 android:id="@+id/TableauLine4"
                 android:layout_width="2dp"
                 android:layout_height="411dp"
-                android:layout_marginStart="400dp"
                 android:background="#E91E1E"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/Tableau5txt"
@@ -116,10 +125,11 @@
                 android:id="@+id/TableauLine5"
                 android:layout_width="2dp"
                 android:layout_height="411dp"
-                android:layout_marginStart="500dp"
                 android:background="#E91E1E"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.625"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/Tableau6txt"
@@ -135,10 +145,12 @@
                 android:id="@+id/TableauLine6"
                 android:layout_width="2dp"
                 android:layout_height="411dp"
-                android:layout_marginStart="600dp"
                 android:background="#E91E1E"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.750
+"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/Tableau7txt"
@@ -150,33 +162,36 @@
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine7"
                 app:layout_constraintStart_toStartOf="@+id/TableauLine6" />
 
+
             <View
                 android:id="@+id/TableauLine7"
                 android:layout_width="2dp"
                 android:layout_height="411dp"
-                android:layout_marginStart="700dp"
                 android:background="#E91E1E"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.875
+"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <View
                 android:id="@+id/Adskilleren"
-                android:layout_width="700dp"
+                android:layout_width="wrap_content"
                 android:layout_height="2dp"
-                android:layout_marginBottom="270dp"
                 android:background="#E91E1E"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
-
-
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.333" />
 
             <TextView
                 android:id="@+id/Stocktxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
                 android:text="@string/Stock"
                 android:textColor="#4CAF50"
-                android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine1"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -185,9 +200,9 @@
                 android:id="@+id/Wastetxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
                 android:text="@string/Waste"
                 android:textColor="#4CAF50"
-                android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
                 app:layout_constraintEnd_toEndOf="@+id/TableauLine3"
                 app:layout_constraintStart_toStartOf="@+id/TableauLine1" />
@@ -196,19 +211,20 @@
                 android:id="@+id/Foundation1txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
                 android:text="@string/Foundation1"
                 android:textColor="#4CAF50"
-                android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
                 app:layout_constraintEnd_toStartOf="@+id/TableauLine4"
                 app:layout_constraintStart_toEndOf="@+id/TableauLine3" />
+
             <TextView
                 android:id="@+id/Foundation2txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
                 android:text="@string/Foundation2"
                 android:textColor="#4CAF50"
-                android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
                 app:layout_constraintEnd_toStartOf="@+id/TableauLine5"
                 app:layout_constraintStart_toEndOf="@+id/TableauLine4" />
@@ -217,36 +233,39 @@
                 android:id="@+id/Foundation3txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
                 android:text="@string/Foundation3"
                 android:textColor="#4CAF50"
-                android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
                 app:layout_constraintEnd_toStartOf="@+id/TableauLine6"
                 app:layout_constraintStart_toEndOf="@+id/TableauLine5" />
+
             <TextView
                 android:id="@+id/Foundation4txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
                 android:text="@string/Foundation4"
                 android:textColor="#4CAF50"
-                android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@+id/Adskilleren"
                 app:layout_constraintEnd_toStartOf="@+id/TableauLine7"
                 app:layout_constraintStart_toEndOf="@+id/TableauLine6" />
 
+            <ImageButton
+                android:id="@+id/button_capture"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/TableauLine7"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 
-    <ImageButton
-        android:id="@+id/button_capture"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="25dp"
-        android:background="@drawable/circle"
-        android:gravity="center"
-        android:rotation="90"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
