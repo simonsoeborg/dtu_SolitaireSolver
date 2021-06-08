@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class FoundationPileModel {
     // Ace lowest card in the pile, King highest card in the pile
-    public ArrayList<CardModel> FoundationPile;
+    public static ArrayList<CardModel> FoundationPile;
 
     public FoundationPileModel() {
         FoundationPile = new ArrayList<>();

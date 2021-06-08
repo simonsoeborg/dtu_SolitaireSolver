@@ -4,21 +4,22 @@ public class CardColor {
     private String RED = "RED";
     private String BLACK = "BLACK";
 
-    public String GetCardColor(CardModel card) {
+    public static String GetCardColor(CardModel card) {
+        CardColor cardColor = new CardColor();
         if(card.getId().equals(PossibleCardId.Ids.HJERTER.toString())){
-            return RED;
+            return cardColor.RED;
         }
 
         if(card.getId().equals(PossibleCardId.Ids.RUDER.toString())){
-            return RED;
+            return cardColor.RED;
         }
 
         if(card.getId().equals(PossibleCardId.Ids.SPAR.toString())){
-            return BLACK;
+            return cardColor.BLACK;
         }
 
         if(card.getId().equals(PossibleCardId.Ids.KLØR.toString())){
-            return BLACK;
+            return cardColor.BLACK;
         }
 
         return null;
