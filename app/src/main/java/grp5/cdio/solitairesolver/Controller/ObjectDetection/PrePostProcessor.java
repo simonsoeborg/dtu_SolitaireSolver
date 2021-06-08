@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
+// From https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection
 class Result {
     int classIndex;
     Float score;
