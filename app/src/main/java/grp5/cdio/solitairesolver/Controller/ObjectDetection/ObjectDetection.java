@@ -10,7 +10,7 @@ import org.pytorch.Tensor;
 import org.pytorch.torchvision.TensorImageUtils;
 
 import java.util.ArrayList;
-
+// Based https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection
 public class ObjectDetection {
     private Module mModule = null;
     private final Context context;
