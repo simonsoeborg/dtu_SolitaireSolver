@@ -62,9 +62,10 @@ public class CardController {
     private void AddCardToEmptyFoundationPile(CardModel card) {
         for (int i = 0; i < foundationPiles.size(); i++) {
             if(foundationPiles.get(i).isEmpty) {
+                foundationPiles.get(i).setPile(new ArrayList<>());
                 foundationPiles.get(i).getPile().add(card);
                 foundationPiles.get(i).isEmpty = false;
-                foundationPiles.get(i).setThisFoundationPile(card.getId());
+                break;
             }
         }
     }
@@ -83,8 +84,12 @@ public class CardController {
                 // Set the size for the current Buildpile
                 int size = currentBuildPile.BuildPile.size();
                 // If current Card is lesser than the last card in the buildpile, then add to build pile
-                if(currentValue < PossibleCardId.convertIdToPoints(currentBuildPile.BuildPile.get(size-1).getValue())) {
+                if(currentBuildPile.BuildPile.size() == 0) {
                     currentBuildPile.insertCard(card);
+                    break;
+                } else if (currentValue < PossibleCardId.convertIdToPoints(currentBuildPile.BuildPile.get(size-1).getValue())) {
+                    currentBuildPile.insertCard(card);
+                    break;
                 }
             }
         }
@@ -124,7 +129,6 @@ public class CardController {
 
     // Singleton method
     public static CardController GetInstance() {
-        Init();
         if(cardController == null) {
             return new CardController();
         } else {
