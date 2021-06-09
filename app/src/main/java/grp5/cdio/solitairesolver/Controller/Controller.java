@@ -21,7 +21,6 @@ public class Controller {
 
     }
 
-
     /**
      * Find best {@link Move} from table {@link Table}
      *
