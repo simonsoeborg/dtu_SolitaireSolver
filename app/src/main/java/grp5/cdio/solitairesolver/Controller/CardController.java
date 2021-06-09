@@ -2,128 +2,110 @@ package grp5.cdio.solitairesolver.Controller;
 
 import java.util.ArrayList;
 
-import grp5.cdio.solitairesolver.CardControl;
 import grp5.cdio.solitairesolver.Model.BuildPileModel;
-import grp5.cdio.solitairesolver.Model.CardColor;
 import grp5.cdio.solitairesolver.Model.CardModel;
 import grp5.cdio.solitairesolver.Model.FoundationPileModel;
-import grp5.cdio.solitairesolver.Model.PossibleCardId;
 
 public class CardController {
 
     public static int BPILES = 7;
+    public static int FPILES = 4;
     public static CardController cardController;
-    public static ArrayList<FoundationPileModel> foundationPiles;
-    public static ArrayList<BuildPileModel> buildPiles; // THESE NEEDS TO BE UPDATED IN A CONTROLLER BEFORE RUNNING
+    public ArrayList<FoundationPileModel> fList;
+    public ArrayList<BuildPileModel> bList; // THESE NEEDS TO BE UPDATED IN A CONTROLLER BEFORE RUNNING
 
-    public static void Init() {
+    public void Init() {
         cardController = GetInstance();
-        foundationPiles = InitializeFoundationPiles();
-        buildPiles = InitializeBuildPiles();
+        fList = InitializeFoundationPiles();
+        bList = InitializeBuildPiles();
     }
 
+    public void newCard(String Value, String Id) {
+        // Value == A, 2, 3 .. Q, K
+        // Id == { HJERTER, SPAR, RUDER, KLØR }
 
-
-    public void AddCardToAFoundationPile(CardModel card) {
-        if(card.getId().equals(PossibleCardId.Ids.HJERTER.toString())) {
-            HandleAdditionToFoundationPiles(card);
-        }
-
-        if(card.getId().equals(PossibleCardId.Ids.RUDER.toString())) {
-            HandleAdditionToFoundationPiles(card);
-        }
-
-        if(card.getId().equals(PossibleCardId.Ids.SPAR.toString())) {
-            HandleAdditionToFoundationPiles(card);
-        }
-
-        if(card.getId().equals(PossibleCardId.Ids.KLØR.toString())) {
-            HandleAdditionToFoundationPiles(card);
-        }
-    }
-
-    public void HandleAdditionToFoundationPiles(CardModel card) {
-
-        // In case We get an Ace, then add it to a foundation pile
-        if(PossibleCardId.convertIdToPoints(card.getValue()) == 1) {
-            AddCardToEmptyFoundationPile(card);
-        } else {
-            // Create an object equal to a foundation pile that exists.
-            FoundationPileModel pileWithRightId = GetFoundationPileWithSameId(card);
-            // Assert that our new pile is not null
-            assert pileWithRightId != null;
-            // If our pile is not empty, then add our card to index 0 (Top of the Tree), Pushes the other cards down
-            if(!pileWithRightId.isEmpty) {
-                pileWithRightId.getPile().add(0, card);
+        // If Value == A / 1
+        if(CardSpecifications.convertValueToPoints(Value) == 1) {
+            for (FoundationPileModel element : fList) {
+                if(element.isEmpty) {
+                    AddToFoundationPile(new CardModel(Id, Value), element);
+                    element.isEmpty = false;
+                    break;
+                }
             }
         }
-    }
-
-    private void AddCardToEmptyFoundationPile(CardModel card) {
-        for (int i = 0; i < foundationPiles.size(); i++) {
-            if(foundationPiles.get(i).isEmpty) {
-                foundationPiles.get(i).setPile(new ArrayList<>());
-                foundationPiles.get(i).getPile().add(card);
-                foundationPiles.get(i).isEmpty = false;
-                break;
+        // If Value == K
+        else if(CardSpecifications.convertValueToPoints(Value) == 13) {
+            for (BuildPileModel element : bList) {
+                if(element.isEmpty) {
+                    AddToBuildPile(new CardModel(Id, Value), element);
+                    element.isEmpty = false;
+                    break;
+                }
             }
         }
-    }
-
-    public void AddCardToBuildPile(CardModel card) {
-        String currentColor = CardColor.GetCardColor(card);
-        int currentValue = PossibleCardId.convertIdToPoints(card.getValue());
-        // Check all piles
-        for (int i = 0; i < buildPiles.size(); i++) {
-            // 2 Rules
-            // Card must only be placed on a card with a different color
-            if(!currentColor.equals(buildPiles.get(i).GetBuildTypeId())) {
-                // Card must only be placed on a card with a higher value
-                // Get the current BuildPile
-                BuildPileModel currentBuildPile = buildPiles.get(i);
-                // Set the size for the current Buildpile
-                int size = currentBuildPile.BuildPile.size();
-                // If current Card is lesser than the last card in the buildpile, then add to build pile
-                if(currentBuildPile.BuildPile.size() == 0) {
-                    currentBuildPile.insertCard(card);
-                    break;
-                } else if (currentValue < PossibleCardId.convertIdToPoints(currentBuildPile.BuildPile.get(size-1).getValue())) {
-                    currentBuildPile.insertCard(card);
-                    break;
+        // Else
+        else {
+            // Look if possible to add to Build pile
+            for (BuildPileModel element : bList) {
+                // If the list is not empty
+                if(!element.isEmpty) {
+                    // Get the last card in the pile
+                    int listSize = element.getPile().size();
+                    CardModel lastCardInPile = element.getPile().get(listSize-1);
+                    // If the current card has opposit card color than last Card in pile
+                    if(!CardColor.GetCardColor(new CardModel(Id, Value)).equals(CardColor.GetCardColor(lastCardInPile))) {
+                        // If the current card has a lesser value than the last Card in pile
+                        if(CardSpecifications.convertValueToPoints(Value) == CardSpecifications.convertValueToPoints(lastCardInPile.getValue()) - 1) {
+                            AddToBuildPile(new CardModel(Id, Value), element);
+                            break;
+                        }
+                    }
+                }
+            }
+            // Check for possibility to add to foundation pile
+            for (FoundationPileModel element : fList) {
+                if(!element.isEmpty) {
+                    // We always add the newest card to a foundation pile on index 0, meaning we can always check index 0, for color and value
+                    if(CardColor.GetCardColor(new CardModel(Id, Value)).equals(CardColor.GetCardColor(element.getPile().get(0)))) {
+                        if(CardSpecifications.convertValueToPoints(Value) > CardSpecifications.convertValueToPoints(element.getPile().get(0).getValue())) {
+                            AddToFoundationPile(new CardModel(Id, Value), element);
+                            break;
+                        }
+                    }
                 }
             }
         }
     }
 
-    private FoundationPileModel GetFoundationPileWithSameId(CardModel card) {
-        // Iterate through the foundation piles and check if we have a pile that already has the same id as the card.
-        for(int i = 0; i < foundationPiles.size(); i++) {
-            if(foundationPiles.get(i).equals(card.getId())) {
-                return foundationPiles.get(i);
-            }
-        }
-        // If there aren't any piles containing this Id, then return the Id as Name
-        return null;
+    private void AddToBuildPile(CardModel card, BuildPileModel buildPile) {
+        buildPile.getPile().add(card);
     }
 
-    public static ArrayList<BuildPileModel> InitializeBuildPiles() {
+    private void AddToFoundationPile(CardModel card, FoundationPileModel foundationPile) {
+        // Add to the top of the pile = index 0
+        if(foundationPile.isEmpty) {
+            foundationPile.getPile().add(card);
+        } else {
+            foundationPile.getPile().add(0, card);
+        }
+    }
+
+    private static ArrayList<BuildPileModel> InitializeBuildPiles() {
         ArrayList<BuildPileModel> buildPiles = new ArrayList<>();
-        for (int i = 0; i < BPILES-1; i++) {
+        for (int i = 0; i < BPILES; i++) {
             buildPiles.add(new BuildPileModel());
+            buildPiles.get(i).setPile(new ArrayList<>());
         }
         return buildPiles;
     }
 
-    public static ArrayList<FoundationPileModel> InitializeFoundationPiles() {
+    private static ArrayList<FoundationPileModel> InitializeFoundationPiles() {
         ArrayList<FoundationPileModel> foundationPiles = new ArrayList<>();
-        FoundationPileModel foundationPile1 = new FoundationPileModel();
-        FoundationPileModel foundationPile2 = new FoundationPileModel();
-        FoundationPileModel foundationPile3 = new FoundationPileModel();
-        FoundationPileModel foundationPile4 = new FoundationPileModel();
-        foundationPiles.add(foundationPile1);
-        foundationPiles.add(foundationPile2);
-        foundationPiles.add(foundationPile3);
-        foundationPiles.add(foundationPile4);
+        for (int i = 0; i < FPILES; i++) {
+            foundationPiles.add(new FoundationPileModel());
+            foundationPiles.get(i).setPile(new ArrayList<>());
+        }
         return foundationPiles;
     }
 
@@ -136,4 +118,55 @@ public class CardController {
         }
     }
 
+
+
+}
+
+class CardSpecifications {
+    // Convert Cards to int Values. Specificly the cards that has letters instead of numeric values
+    public static int convertValueToPoints(String cardValue) {
+        switch (cardValue) {
+            case "K": return 13;
+            case "Q": return 12;
+            case "J": return 11;
+            case "A": return 1;
+            default:
+                return Integer.parseInt(cardValue);
+        }
+    }
+
+    public enum Ids {
+        HJERTER,
+        RUDER,
+        SPAR,
+        KLØR
+    }
+}
+
+class CardColor {
+    // Define colors
+    private final static String RED = "RED";
+    private final static String BLACK = "BLACK";
+
+    // Return the card color based on the Card Id
+    public static String GetCardColor(CardModel card) {
+
+        if(card.getId().equals(CardSpecifications.Ids.HJERTER.toString())){
+            return RED;
+        }
+
+        if(card.getId().equals(CardSpecifications.Ids.RUDER.toString())){
+            return RED;
+        }
+
+        if(card.getId().equals(CardSpecifications.Ids.SPAR.toString())){
+            return BLACK;
+        }
+
+        if(card.getId().equals(CardSpecifications.Ids.KLØR.toString())){
+            return BLACK;
+        }
+
+        return null;
+    }
 }
