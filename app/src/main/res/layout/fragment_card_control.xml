@@ -36,7 +36,9 @@
             app:layout_constraintBottom_toTopOf="@+id/Tableau1txt"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Adskilleren"/>
+            app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
+
+        </LinearLayout>
 
         <View
             android:id="@+id/TableauLine1"
@@ -97,7 +99,9 @@
             app:layout_constraintBottom_toTopOf="@+id/Tableau3txt"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine3"
             app:layout_constraintStart_toStartOf="@+id/TableauLine2"
-            app:layout_constraintTop_toBottomOf="@+id/Adskilleren"/>
+            app:layout_constraintTop_toBottomOf="@+id/Adskilleren">
+
+        </LinearLayout>
 
         <View
             android:id="@+id/TableauLine3"
@@ -358,6 +362,20 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/cardback"
+            android:layout_width="89dp"
+            android:layout_height="136dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/card_back"
+            app:layout_constraintBottom_toTopOf="@+id/Stocktxt"
+            app:layout_constraintEnd_toStartOf="@+id/TableauLine1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

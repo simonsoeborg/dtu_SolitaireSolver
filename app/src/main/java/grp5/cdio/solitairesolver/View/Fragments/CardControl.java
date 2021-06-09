@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class CardControl extends Fragment {
     LinearLayout buildPile1,buildPile2, buildPile3, buildPile4, buildPile5, buildPile6, buildPile7;
     LinearLayout groundPile1,groundPile2, groundPile3, groundPile4;
     LinearLayout drawPileExist;
-    LinearLayout discardPile;
+    ImageView discardPile;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class CardControl extends Fragment {
         Button tagBillede = controlFrag.findViewById(R.id.tag_billede_igen);
         Button fortsaet = controlFrag.findViewById(R.id.Continue);
 
-        drawPileExist = controlFrag.findViewById(R.id.);
+        drawPileExist = controlFrag.findViewById(R.id.cardback);
 
         discardPile = controlFrag.findViewById(R.id.Waste3Cards);
 
