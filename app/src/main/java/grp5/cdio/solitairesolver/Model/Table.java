@@ -75,6 +75,29 @@ public class Table {
         return bestMove;
     }
 
+    public GroundPile getGroundPile(int index) {
+
+        if (index <= 3) {
+        return groundPile.get(index);
+        }
+        return null;
+    }
+
+    public BuildPile getBuildPile(int index) {
+        if (index <= 6) {
+            return buildPile.get(index);
+        }
+        return null;
+    }
+
+    public Pile getDrawPile() {
+        return drawPile;
+    }
+
+    public Pile getDiscardPile() {
+        return discardPile;
+    }
+
     /**
      * Get list of legal {@link Move}
      *
