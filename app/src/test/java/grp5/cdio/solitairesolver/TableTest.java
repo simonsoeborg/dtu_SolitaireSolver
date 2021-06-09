@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import grp5.cdio.solitairesolver.Controller.Controller;
 import grp5.cdio.solitairesolver.Model.Card;
 import grp5.cdio.solitairesolver.Model.FaceValue;
 import grp5.cdio.solitairesolver.Model.Move;
@@ -115,6 +116,5 @@ public class TableTest {
         table.buildPile.get(5).setCard(5, cardFiveHearts);
         table.buildPile.get(6).setCard(6, cardFiveSpades);
         return table;
-
     }
 }

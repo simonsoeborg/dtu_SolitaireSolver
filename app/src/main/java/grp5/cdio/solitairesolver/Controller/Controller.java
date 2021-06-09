@@ -1,9 +1,15 @@
 package grp5.cdio.solitairesolver.Controller;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 import grp5.cdio.solitairesolver.Model.Move;
 import grp5.cdio.solitairesolver.Model.Table;
+import grp5.cdio.solitairesolver.Controller.ObjectDetection.ObjectDetection;
 
 public class Controller {
     /**
@@ -12,13 +18,20 @@ public class Controller {
      * Used to mange the data model {@link Table}
      */
     private Table table;
+    private Context context;
+    private ObjectDetection dect = new ObjectDetection(context);
+    private HashMap<String, Bitmap> EmptyMap = new HashMap<>();
 
+    public Controller() {
+        loadCards(dect.analyzeImage(EmptyMap));
+    }
 
     /**
-     * Set up game table {@link Table}
+     * Set up game table
+     * Instansiate table from objectDectection {@link Table}
      */
-    public void loadCards(){
-
+    public void loadCards(Table currenTable){
+        table = currenTable;
     }
 
     /**
@@ -28,8 +41,11 @@ public class Controller {
      */
     public Move getMove(){
         ArrayList<Move> moves = testPossibleMoves();
-        Move move = bestMove(moves);
-        return move;
+        if (!moves.isEmpty()) {
+            Move move = bestMove(moves);
+            return move;
+        }
+        else return null;
     }
 
     /**
@@ -47,7 +63,6 @@ public class Controller {
             }
         }
         return best;
-
     }
 
     /**
@@ -57,6 +72,17 @@ public class Controller {
      */
     public ArrayList<Move> testPossibleMoves(){
         return table.getLegalMoves();
+    }
+
+    // Todo - Sikre at spillet ikke bliver fanget i et loop - men på et tidspunkt konkludere at spille ikke kan løses:
+    //  (Tænker man evt. kunen oprette en række variable i cachen som tjekker de tidligere best moves og sørger for at den ikke gentager dem flere gange?)
+    public void makeMove(){
+        ArrayList<Move> moves = table.getLegalMoves();
+        if (moves != null) {
+            Move move = table.getBestMove(moves);
+            move.makeMove();
+        }
+       //  System.out.println(table);
     }
 
 }

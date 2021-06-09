@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import grp5.cdio.solitairesolver.R;
+import grp5.cdio.solitairesolver.Controller.Controller;
 
 
 public class CardControl extends Fragment {
@@ -22,10 +23,12 @@ public class CardControl extends Fragment {
         Button fortsaet = controlFrag.findViewById(R.id.Continue);
 
 
+        Controller con = new Controller();
+        String bestMove = con.getMove().toString();
+
         tagBillede.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction()
                         .replace(R.id.FragmentFL, new CameraFragment())
@@ -34,14 +37,20 @@ public class CardControl extends Fragment {
             }
         });
 
-
         fortsaet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                con.makeMove();
                 assert getFragmentManager() != null;
+
+                Bundle argumemt = new Bundle();
+                argumemt.putString("bestMove", bestMove);
+
+                Resultat resultatFrag = new Resultat();
+                resultatFrag.setArguments(argumemt);
+
                 getFragmentManager().beginTransaction()
-                        .replace(R.id.FragmentFL, new Resultat())
+                        .replace(R.id.FragmentFL, resultatFrag)
                         .addToBackStack(null)
                         .commit();
             }

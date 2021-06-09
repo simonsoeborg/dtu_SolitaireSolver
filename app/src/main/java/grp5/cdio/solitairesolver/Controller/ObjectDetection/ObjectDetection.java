@@ -46,7 +46,7 @@ public class ObjectDetection {
         Card cardQueenHearts = new Card(Suit.HEARTS, FaceValue.TWELVE);
         Card cardKingHearts = new Card(Suit.HEARTS, FaceValue.THIRTEEN);
 
-        Card cardTenHearts = new Card(Suit.HEARTS, FaceValue.TEN);
+        Card cardTenSpades= new Card(Suit.SPADES, FaceValue.TEN);
         Card cardJackHearts = new Card(Suit.HEARTS, FaceValue.ELEVEN);
 
         Card cardFiveHearts = new Card(Suit.HEARTS, FaceValue.FIVE);
@@ -55,7 +55,7 @@ public class ObjectDetection {
 
         table.buildPile.get(0).setCard(0, cardQueenHearts);
         table.buildPile.get(1).setCard(1, cardKingHearts);
-        table.buildPile.get(2).setCard(2, cardTenHearts);
+        table.buildPile.get(2).setCard(2, cardTenSpades);
         table.buildPile.get(3).setCard(3, cardJackHearts);
         table.buildPile.get(4).setCard(4, cardFiveClubs);
         table.buildPile.get(5).setCard(5, cardFiveHearts);
