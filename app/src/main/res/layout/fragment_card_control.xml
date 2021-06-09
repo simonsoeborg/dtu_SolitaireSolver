@@ -47,7 +47,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.1.1"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -57,7 +57,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.1.1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -76,7 +76,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.1.2"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -86,7 +86,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.1.2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -105,7 +105,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.1.3"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -115,7 +115,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.1.3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -134,7 +134,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.1.4"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -144,7 +144,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.1.4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -163,7 +163,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.1.5"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -173,7 +173,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.1.5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -192,7 +192,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.1.6"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -202,7 +202,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.1.6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -221,7 +221,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.1.7"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -231,7 +231,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.1.7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -250,7 +250,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.1.8"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -260,7 +260,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.1.8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -279,7 +279,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.1.9"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -289,7 +289,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.1.9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -308,7 +308,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.1.10"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -318,7 +318,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.1.10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -337,7 +337,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.1.11"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -347,7 +347,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.1.11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -366,7 +366,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.1.12"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -376,7 +376,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.1.12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -427,7 +427,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.2.1"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -437,7 +437,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.2.1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -456,7 +456,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.2.2"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -466,7 +466,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.2.2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -485,7 +485,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.2.3"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -495,7 +495,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.2.3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -514,7 +514,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.2.4"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -524,7 +524,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.2.4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -543,7 +543,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.2.5"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -553,7 +553,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.2.5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -572,7 +572,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.2.6"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -582,7 +582,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.2.6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -601,7 +601,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.2.7"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -611,7 +611,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.2.7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -630,7 +630,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.2.8"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -640,7 +640,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.2.8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -659,7 +659,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.2.9"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -669,7 +669,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.2.9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -688,7 +688,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.2.10"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -698,7 +698,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.2.10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -717,7 +717,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.2.11"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -727,7 +727,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.2.11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -746,7 +746,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.2.12"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -756,7 +756,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.2.12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -807,7 +807,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.3.1"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -817,7 +817,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.3.1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -836,7 +836,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.3.2"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -846,7 +846,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.3.2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -865,7 +865,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.3.3"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -875,7 +875,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.3.3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -894,7 +894,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.3.4"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -904,7 +904,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.3.4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -923,7 +923,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.3.5"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -933,7 +933,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.3.5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -952,7 +952,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.3.6"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -962,7 +962,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.3.6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -981,7 +981,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.3.7"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -991,7 +991,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.3.7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1010,7 +1010,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.3.8"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1020,7 +1020,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.3.8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1039,7 +1039,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.3.9"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1049,7 +1049,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.3.9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1068,7 +1068,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.3.10"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1078,7 +1078,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.3.10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1097,7 +1097,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.3.11"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1107,7 +1107,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.3.11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1126,7 +1126,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.3.12"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1136,7 +1136,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.3.12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1188,7 +1188,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.4.1"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1198,7 +1198,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.4.1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1217,7 +1217,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.4.2"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1227,7 +1227,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.4.2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1246,7 +1246,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.4.3"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1256,7 +1256,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.4.3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1275,7 +1275,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.4.4"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1285,7 +1285,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.4.4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1304,7 +1304,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.4.5"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1314,7 +1314,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.4.5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1333,7 +1333,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.4.6"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1343,7 +1343,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.4.6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1362,7 +1362,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.4.7"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1372,7 +1372,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.4.7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1391,7 +1391,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.4.8"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1401,7 +1401,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.4.8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1420,7 +1420,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.4.9"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1430,7 +1430,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.4.9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1449,7 +1449,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.4.10"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1459,7 +1459,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.4.10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1478,7 +1478,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.4.11"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1488,7 +1488,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.4.11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1507,7 +1507,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView.4.12"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1517,7 +1517,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView.4.12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
