@@ -1568,7 +1568,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView5.1"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1578,7 +1578,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5.1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1597,7 +1597,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView5.2"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1607,7 +1607,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5.2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1626,7 +1626,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView5.3"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1636,7 +1636,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5.3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1655,7 +1655,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView5.4"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1665,7 +1665,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5.4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1684,7 +1684,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView5.5"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1694,7 +1694,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5.5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1713,7 +1713,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView5.6"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1723,7 +1723,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5.6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1742,7 +1742,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView5.7"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1752,7 +1752,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5.7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1771,7 +1771,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView5.8"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1781,7 +1781,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5.8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1800,7 +1800,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView5.9"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1810,7 +1810,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5.9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1829,7 +1829,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView5.10"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1839,7 +1839,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5.10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1858,7 +1858,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView5.11"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1868,7 +1868,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5.11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1887,7 +1887,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView5.12"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1897,7 +1897,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView5.12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1948,7 +1948,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView6.1"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1958,7 +1958,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView6.1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1977,7 +1977,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView6.2"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -1987,7 +1987,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView6.2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2006,7 +2006,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView6.3"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2016,7 +2016,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView6.3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2035,7 +2035,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView6.4"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2045,7 +2045,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView6.4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2064,7 +2064,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView6.5"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2074,7 +2074,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView6.5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2093,7 +2093,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView6.6"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2103,7 +2103,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView6.6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2122,7 +2122,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView6.7"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2132,7 +2132,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView6.7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2151,7 +2151,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView6.8"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2161,7 +2161,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView6.8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2180,7 +2180,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView6.9"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2190,7 +2190,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView6.9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2209,7 +2209,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView6.10"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2219,7 +2219,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView6.10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2238,7 +2238,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView6.11"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2248,7 +2248,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView6.11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2267,7 +2267,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView6.12"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2277,7 +2277,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView6.12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2327,7 +2327,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView7.1"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2337,7 +2337,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView7.1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2356,7 +2356,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView7.2"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2366,7 +2366,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView7.2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2385,7 +2385,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView7.3"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2395,7 +2395,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView7.3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2414,7 +2414,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView7.4"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2424,7 +2424,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView7.4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2443,7 +2443,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView7.5"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2453,7 +2453,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView7.5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2472,7 +2472,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView7.6"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2482,7 +2482,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView7.6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2501,7 +2501,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView7.7"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2511,7 +2511,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView7.7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2530,7 +2530,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView7.8"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2540,7 +2540,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView7.8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2559,7 +2559,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView7.9"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2569,7 +2569,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView7.9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2588,7 +2588,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView7.10"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2598,7 +2598,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView7.10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2617,7 +2617,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView7.11"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2627,7 +2627,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView7.11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2646,7 +2646,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageView7.12"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -2656,7 +2656,7 @@
                     app:srcCompat="@drawable/spades" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView7.12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
