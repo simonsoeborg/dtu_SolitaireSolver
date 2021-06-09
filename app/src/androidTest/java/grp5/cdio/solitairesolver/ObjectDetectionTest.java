@@ -15,8 +15,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
 
 import grp5.cdio.solitairesolver.Controller.ObjectDetection.ObjectDetection;
+import grp5.cdio.solitairesolver.Controller.ObjectDetection.Result;
 import grp5.cdio.solitairesolver.Model.Card;
 import grp5.cdio.solitairesolver.Model.FaceValue;
 import grp5.cdio.solitairesolver.Model.Suit;
@@ -35,6 +37,12 @@ public class ObjectDetectionTest {
         InputStream is = am.open("test.jpg");
         BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
         Bitmap bit = BitmapFactory.decodeStream(bufferedInputStream);
-        objectDetection.analyzeImage(bit);
+        ArrayList<Result> resultArrayList = objectDetection.analyzeBitmap(bit);
+        Float totalScore = new Float(0);
+        for(Result result : resultArrayList){
+            totalScore = totalScore + result.getScore();
+        }
+        Float acc = totalScore/resultArrayList.size();
     }
+
 }
