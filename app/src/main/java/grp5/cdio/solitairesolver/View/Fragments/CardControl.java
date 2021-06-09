@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,7 +29,8 @@ public class CardControl extends Fragment {
     Table genTable;
     ArrayList drawPile;
     ArrayList Pile;
-    LinearLayout buildPile1,buildPile2, buildPile3, buildPile4, buildPile5, buildPile6, buildPile7;
+    View buildPile1;
+    LinearLayout buildPile2, buildPile3, buildPile4, buildPile5, buildPile6, buildPile7;
     LinearLayout groundPile1,groundPile2, groundPile3, groundPile4;
     LinearLayout drawPileExist;
     ImageView discardPile;
@@ -86,6 +88,49 @@ public class CardControl extends Fragment {
 
         return controlFrag;
     }
+
+    private class CardControlAdapter extends BaseAdapter {
+
+        // override other abstract methods here
+        View
+
+        @Override
+        public int getCount() {
+            return 0;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup container) {
+            if (convertView == null) {
+                convertView = getLayoutInflater().inflate(R.layout.card_item, container, false);
+            }
+
+            ImageView suit = convertView.
+
+            return convertView;
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
 
     public Table genTable(){
         Table table = new Table();
