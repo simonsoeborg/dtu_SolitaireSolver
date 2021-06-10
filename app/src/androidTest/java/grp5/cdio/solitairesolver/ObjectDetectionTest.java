@@ -51,6 +51,8 @@ public class ObjectDetectionTest {
         // Dannet kort basseret på ID
         // lagt kort i matchende bunke fra top left
 
+
+        // !!! Testen virker kun ved debugging!!!
         FaceValue[] values = {FaceValue.ONE,FaceValue.TWO, FaceValue.THREE, FaceValue.FOUR ,FaceValue.FIVE, FaceValue.SIX , FaceValue.SEVEN, FaceValue.EIGHT ,FaceValue.NINE, FaceValue.TEN,
                             FaceValue.ELEVEN, FaceValue.TWELVE, FaceValue.THIRTEEN,};
         int val;
