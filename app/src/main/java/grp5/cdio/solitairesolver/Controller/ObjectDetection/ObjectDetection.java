@@ -27,6 +27,10 @@ public class ObjectDetection {
     private Module mModule = null;
     private final Context context;
 
+    public static String DRAW_PILE = "draw";
+    public static String BUILD_PILE = "build";
+    public static String GROUND_PILE = "ground";
+
     public ObjectDetection(Context context) {
         this.context = context;
     }

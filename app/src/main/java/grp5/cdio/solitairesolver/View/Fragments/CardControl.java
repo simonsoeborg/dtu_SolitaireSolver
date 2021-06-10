@@ -22,8 +22,7 @@ public class CardControl extends Fragment {
         Button tagBillede = controlFrag.findViewById(R.id.tag_billede_igen);
         Button fortsaet = controlFrag.findViewById(R.id.Continue);
 
-        Controller con = new Controller();
-        String bestMove = con.getMove().toString();
+        Controller con = Controller.getInstance();
 
         tagBillede.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,10 +38,11 @@ public class CardControl extends Fragment {
         fortsaet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                con.accounForMove();
+                //con.accounForMove();
                 assert getFragmentManager() != null;
 
                 Bundle argumemt = new Bundle();
+                String bestMove = con.getMove().toString();
                 argumemt.putString("bestMove", bestMove);
 
                 Resultat resultatFrag = new Resultat();

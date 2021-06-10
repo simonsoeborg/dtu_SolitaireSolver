@@ -32,7 +32,7 @@ public class Move {
      * @return boolean, true = inverse move
      */
     public boolean isInverseMove(Move oldMove) {
-        if (oldMove == null){
+        if (oldMove == null) {
             return false;
         }
 
@@ -44,9 +44,6 @@ public class Move {
         }
         return false;
     }
-
-
-
 
     /**
      * make move from piles movefrom -> moveto
@@ -60,50 +57,54 @@ public class Move {
      * set score based on Move attributes
      */
     public void setScore() {
+        if (card == null) {
+            score = -1;
+        }
         int value = card.getIntValue();
 
         // Test if ace can move to GroundPile(instanceof test type of pile)
         if (value == 1 && moveFrom instanceof BuildPile && moveTo instanceof GroundPile) {
             score = 95 + moveFrom.size();
             return;
-            }
+        }
 
         // Test if 2 can move to GroundPile
         if (value == 2 && moveFrom instanceof BuildPile && moveTo instanceof GroundPile) {
             score = 85 + moveFrom.size();
             return;
-            }
+        }
 
         // Test if king can move to Empty BuildPile
         if (value == 13 && moveFrom instanceof BuildPile && moveTo instanceof BuildPile && moveTo.isEmpty()) {
             score = 75 + moveFrom.size();
             return;
-            }
+        }
         // Test if card can move from BuildPile to GroundPile
         if (moveFrom instanceof BuildPile && moveTo instanceof GroundPile) {
-            score = moveFrom.size()  + 40;
+            score = moveFrom.size() + 40;
             return;
         }
 
         // Test if card can move from BuildPile to BuildPile
         if (moveFrom instanceof BuildPile && moveTo instanceof BuildPile) {
-            score = moveFrom.size()  + 30;
+            score = moveFrom.size() + 30;
             return;
         }
 
         // Test if card can move from BasePile to GroundPile
         if (moveFrom instanceof BasePile && moveTo instanceof GroundPile) {
-            score = moveFrom.size()  + 20;
+            score = moveFrom.size() + 20;
             return;
         }
 
         // Test if card can move from BasePile to BuildPile
         if (moveFrom instanceof BasePile && moveTo instanceof BuildPile) {
-            score = moveFrom.size()  + 10;
+            score = moveFrom.size() + 10;
             return;
         }
 
     }
+
     /**
      * get Score
      */
@@ -116,7 +117,9 @@ public class Move {
      */
     @Override
     public String toString() {
-
+        if (card == null) {
+            return "Draw new card";
+        }
         return "Move " + card + " from pile " + moveFrom.toString() + " to pile " + moveTo.toString();
     }
 }
