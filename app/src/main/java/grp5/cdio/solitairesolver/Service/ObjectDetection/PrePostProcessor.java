@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-package grp5.cdio.solitairesolver.Controller.ObjectDetection;
+package grp5.cdio.solitairesolver.Service.ObjectDetection;
 
 import android.graphics.Rect;
 

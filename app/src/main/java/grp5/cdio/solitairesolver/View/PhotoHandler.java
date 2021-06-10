@@ -22,7 +22,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 import grp5.cdio.solitairesolver.Controller.Controller;
-import grp5.cdio.solitairesolver.Controller.ObjectDetection.ObjectDetection;
+import grp5.cdio.solitairesolver.Service.ObjectDetection.ObjectDetection;
 import grp5.cdio.solitairesolver.R;
 import grp5.cdio.solitairesolver.View.Fragments.CardControl;
 

@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 import grp5.cdio.solitairesolver.Model.Move;
 import grp5.cdio.solitairesolver.Model.Table;
-import grp5.cdio.solitairesolver.Controller.ObjectDetection.ObjectDetection;
+import grp5.cdio.solitairesolver.Service.ObjectDetection.ObjectDetection;
 
 public class Controller {
     /**

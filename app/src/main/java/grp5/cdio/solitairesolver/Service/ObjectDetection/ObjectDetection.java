@@ -1,4 +1,4 @@
-package grp5.cdio.solitairesolver.Controller.ObjectDetection;
+package grp5.cdio.solitairesolver.Service.ObjectDetection;
 
 import android.content.Context;
 import android.graphics.Bitmap;
