@@ -51,6 +51,35 @@ public class ObjectDetectionTest {
         // Dannet kort basseret på ID
         // lagt kort i matchende bunke fra top left
 
+        FaceValue[] values = {FaceValue.ONE,FaceValue.TWO, FaceValue.THREE, FaceValue.FOUR ,FaceValue.FIVE, FaceValue.SIX , FaceValue.SEVEN, FaceValue.EIGHT ,FaceValue.NINE, FaceValue.TEN,
+                            FaceValue.ELEVEN, FaceValue.TWELVE, FaceValue.THIRTEEN,};
+        int val;
+        for (int i = 0; i < resultArrayList.size() ; i++) {
+
+            if (resultArrayList.get(i).getClassIndex()<=12) {
+                val = resultArrayList.get(i).getClassIndex();
+                Card nameTester = new Card(Suit.HEARTS, values[val]);
+                System.out.println(nameTester);
+            }
+
+            else if (resultArrayList.get(i).getClassIndex()<=25 && resultArrayList.get(i).getClassIndex()>12) {
+                val = resultArrayList.get(i).getClassIndex()%13;
+                Card nameTester = new Card(Suit.SPADES, values[val]);
+                System.out.println(nameTester);
+            }
+
+            else if (resultArrayList.get(i).getClassIndex()<=38 && resultArrayList.get(i).getClassIndex()>25) {
+                val = resultArrayList.get(i).getClassIndex()%13;
+                Card nameTester = new Card(Suit.DIAMONDS, values[val]);
+                System.out.println(nameTester);
+            }
+
+            else if (resultArrayList.get(i).getClassIndex()<=51 && resultArrayList.get(i).getClassIndex()>38) {
+                val = resultArrayList.get(i).getClassIndex()%13;
+                Card nameTester = new Card(Suit.CLUBS, values[val]);
+                System.out.println(nameTester);
+            }
+        }
 
         Float totalScore = new Float(0);
         for(Result result : resultArrayList){
