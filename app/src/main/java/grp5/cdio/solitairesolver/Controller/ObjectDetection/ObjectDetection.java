@@ -4,8 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
 
-import com.google.android.material.tabs.TabLayout;
-
 import org.pytorch.IValue;
 import org.pytorch.Module;
 import org.pytorch.PyTorchAndroid;
@@ -21,7 +19,6 @@ import java.util.List;
 
 import grp5.cdio.solitairesolver.Model.Card;
 import grp5.cdio.solitairesolver.Model.FaceValue;
-import grp5.cdio.solitairesolver.Model.Pile;
 import grp5.cdio.solitairesolver.Model.Suit;
 import grp5.cdio.solitairesolver.Model.Table;
 
@@ -71,9 +68,9 @@ public class ObjectDetection {
     public ArrayList<Result> analyzeBitmap(Bitmap bitmap) throws IOException {
         float mImgScaleX, mImgScaleY, mIvScaleX, mIvScaleY, mStartX, mStartY;
         if (mModule == null) {
-            mModule = PyTorchAndroid.loadModuleFromAsset(context.getAssets(), "best.torchscript.pt");
+            mModule = PyTorchAndroid.loadModuleFromAsset(context.getAssets(), "best.torchscript.2.pt");
         }
-        BufferedReader br = new BufferedReader(new InputStreamReader(context.getAssets().open("cards.classes.txt")));
+        BufferedReader br = new BufferedReader(new InputStreamReader(context.getAssets().open("cards.classes.2.txt")));
         String line;
         List<String> classes = new ArrayList<>();
         while ((line = br.readLine()) != null) {
@@ -85,20 +82,17 @@ public class ObjectDetection {
         mImgScaleX = (float)bitmap.getWidth() / PrePostProcessor.mInputWidth;
         mImgScaleY = (float)bitmap.getHeight() / PrePostProcessor.mInputHeight;
 
-        mIvScaleX = 1;
-        mIvScaleY  = 1;
+        //mIvScaleX = 1;
+        //mIvScaleY  = 1;
 
-        mStartX = bitmap.getWidth()/2;
-        mStartY = bitmap.getHeight()/2;
+        //mStartX = bitmap.getWidth()/2;
+        //mStartY = bitmap.getHeight()/2;
 
-        //mImgScaleX = (float)mBitmap.getWidth() / PrePostProcessor.mInputWidth;
-        //mImgScaleY = (float)mBitmap.getHeight() / PrePostProcessor.mInputHeight;
+        mIvScaleX = (bitmap.getWidth() > bitmap.getHeight() ? (float)bitmap.getWidth() / bitmap.getWidth() : (float)bitmap.getHeight() / bitmap.getHeight());
+        mIvScaleY  = (bitmap.getHeight() > bitmap.getWidth() ? (float)bitmap.getHeight() / bitmap.getHeight() : (float)bitmap.getWidth() / bitmap.getWidth());
 
-        //mIvScaleX = (mBitmap.getWidth() > mBitmap.getHeight() ? (float)mImageView.getWidth() / mBitmap.getWidth() : (float)mImageView.getHeight() / mBitmap.getHeight());
-        //mIvScaleY  = (mBitmap.getHeight() > mBitmap.getWidth() ? (float)mImageView.getHeight() / mBitmap.getHeight() : (float)mImageView.getWidth() / mBitmap.getWidth());
-
-        //mStartX = (mImageView.getWidth() - mIvScaleX * mBitmap.getWidth())/2;
-        //mStartY = (mImageView.getHeight() -  mIvScaleY * mBitmap.getHeight())/2;
+        mStartX = (bitmap.getWidth() - mIvScaleX * bitmap.getWidth())/2;
+        mStartY = (bitmap.getHeight() -  mIvScaleY * bitmap.getHeight())/2;
 
 
         Bitmap resizedBitmap = Bitmap.createScaledBitmap(bitmap, PrePostProcessor.mInputWidth, PrePostProcessor.mInputHeight, true);

@@ -13,18 +13,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
-// From https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection
-class Result {
-    int classIndex;
-    Float score;
-    Rect rect;
-
-    public Result(int cls, Float output, Rect rect) {
-        this.classIndex = cls;
-        this.score = output;
-        this.rect = rect;
-    }
-};
+;
 
 public class PrePostProcessor {
     // for yolov5 model, no need to apply MEAN and STD
@@ -37,7 +26,7 @@ public class PrePostProcessor {
 
     // model output is of size 25200*58
     private static int mOutputRow = 25200; // as decided by the YOLOv5 model for input image of size 640*640
-    private static int mOutputColumn = 58; // left, top, right, bottom, score and 53 class probability
+    private static int mOutputColumn = 57; // left, top, right, bottom, score and 52 class probability
     private static float mThreshold = 0.20f; // score above which a detection is generated
     private static int mNmsLimit = 15;
 
