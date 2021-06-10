@@ -12,13 +12,21 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.Switch;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import grp5.cdio.solitairesolver.Controller.ObjectDetection.ObjectDetection;
+import grp5.cdio.solitairesolver.Model.BasePile;
+import grp5.cdio.solitairesolver.Model.BuildPile;
 import grp5.cdio.solitairesolver.Model.Card;
 import grp5.cdio.solitairesolver.Model.FaceValue;
+import grp5.cdio.solitairesolver.Model.Pile;
 import grp5.cdio.solitairesolver.Model.Suit;
 import grp5.cdio.solitairesolver.Model.Table;
 import grp5.cdio.solitairesolver.R;
@@ -28,8 +36,9 @@ public class CardControl extends Fragment {
 
     Table genTable;
     ArrayList drawPile;
-    ArrayList Pile;
-    View buildPile1;
+    ArrayList pile;
+    ArrayList<Card> cards = new ArrayList<Card>();
+    ListView buildPile1;
     LinearLayout buildPile2, buildPile3, buildPile4, buildPile5, buildPile6, buildPile7;
     LinearLayout groundPile1,groundPile2, groundPile3, groundPile4;
     LinearLayout drawPileExist;
@@ -58,6 +67,30 @@ public class CardControl extends Fragment {
         buildPile5 = controlFrag.findViewById(R.id.kortene_i_Tableau5);
         buildPile6 = controlFrag.findViewById(R.id.kortene_i_Tableau6);
         buildPile7 = controlFrag.findViewById(R.id.kortene_i_Tableau7);
+
+        // Test Table
+        Table table = genTable();
+        // Test Table
+
+        ArrayList<ListView> buildPiles = new ArrayList<ListView>();
+        buildPiles.add(buildPile1);
+        CardControlAdapter adapter;
+        BuildPile buildPile;
+
+        for (int i = 0; i < 7; i++) {
+            buildPile = table.buildPile.get(i);
+            cards = buildPile.getCards();
+            adapter = new CardControlAdapter(buildPile1, cards);
+            adapter.notifyDataSetChanged();
+        }
+
+
+
+
+
+
+
+
 
 
 
@@ -91,9 +124,17 @@ public class CardControl extends Fragment {
 
     private class CardControlAdapter extends BaseAdapter {
 
-        // override other abstract methods here
-        View
+        ArrayList<Card> cards;
+        View basePile;
+        ImageView suit;
+        TextView faceValue;
 
+        public CardControlAdapter(View basePile, ArrayList<Card> cards) {
+            this.basePile = basePile;
+            this.cards = cards;
+        }
+
+        // override other abstract methods here
         @Override
         public int getCount() {
             return 0;
@@ -111,19 +152,87 @@ public class CardControl extends Fragment {
 
         @Override
         public View getView(int position, View convertView, ViewGroup container) {
-            if (convertView == null) {
-                convertView = getLayoutInflater().inflate(R.layout.card_item, container, false);
+            basePile = convertView;
+            Card item = cards.get(position);
+            if (basePile == null) {
+                basePile = getLayoutInflater().inflate(R.layout.card_item, container, false);
             }
 
-            ImageView suit = convertView.
+            suit = basePile.findViewById(R.id.suit);
+            faceValue = basePile.findViewById(R.id.faceValue);
+
+            findCardValues(item);
 
             return convertView;
         }
 
+        private void findCardValues(Card item) {
+            // finds suit and color of the card
+            int color = getResources().getColor(R.color.black);
+            switch (item.getSuit().ordinal()) {
+                case 1:
+                    Picasso.get().load(R.drawable.hearts).into(suit);
+                    color = getResources().getColor(R.color.mørkerød);
+                    break;
+                case 2:
+                    Picasso.get().load(R.drawable.clubs).into(suit);
+                    color = getResources().getColor(R.color.black);
+                    break;
+                case 3:
+                    Picasso.get().load(R.drawable.diamonds).into(suit);
+                    color = getResources().getColor(R.color.mørkerød);
+                    break;
+                case 4:
+                    Picasso.get().load(R.drawable.spades).into(suit);
+                    color = getResources().getColor(R.color.black);
+                    break;
+            }
 
-
+            // Finds face value of the card
+            faceValue.setTextColor(color);
+            switch (item.getValue().ordinal()) {
+                case 1:
+                    faceValue.setText("A");
+                    break;
+                case 2:
+                    faceValue.setText("2");
+                    break;
+                case 3:
+                    faceValue.setText("3");
+                    break;
+                case 4:
+                    faceValue.setText("4");
+                    break;
+                case 5:
+                    faceValue.setText("5");
+                    break;
+                case 6:
+                    faceValue.setText("6");
+                    break;
+                case 7:
+                    faceValue.setText("7");
+                    break;
+                case 8:
+                    faceValue.setText("8");
+                    break;
+                case 9:
+                    faceValue.setText("9");
+                    break;
+                case 10:
+                    faceValue.setText(getResources().getText(R.string.ten));
+                    break;
+                case 11:
+                    faceValue.setText("J");
+                    break;
+                case 12:
+                    faceValue.setText("Q");
+                    break;
+                case 13:
+                    faceValue.setText("K");
+                    break;
+            }
+        }
     }
-
 
 
 
