@@ -1,5 +1,6 @@
 package grp5.cdio.solitairesolver.View.Fragments;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
@@ -20,6 +21,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import grp5.cdio.solitairesolver.Controller.ObjectDetection.ObjectDetection;
 import grp5.cdio.solitairesolver.Model.BasePile;
@@ -38,8 +40,7 @@ public class CardControl extends Fragment {
     ArrayList drawPile;
     ArrayList pile;
     ArrayList<Card> cards = new ArrayList<Card>();
-    ListView buildPile1;
-    LinearLayout buildPile2, buildPile3, buildPile4, buildPile5, buildPile6, buildPile7;
+    ListView buildPile1, buildPile2, buildPile3, buildPile4, buildPile5, buildPile6, buildPile7;
     LinearLayout groundPile1,groundPile2, groundPile3, groundPile4;
     LinearLayout drawPileExist;
     ImageView discardPile;
@@ -51,14 +52,14 @@ public class CardControl extends Fragment {
         Button tagBillede = controlFrag.findViewById(R.id.tag_billede_igen);
         Button fortsaet = controlFrag.findViewById(R.id.Continue);
 
-        drawPileExist = controlFrag.findViewById(R.id.cardback);
-
-        discardPile = controlFrag.findViewById(R.id.Waste3Cards);
-
-        groundPile1 = controlFrag.findViewById(R.id.Foundation1_linearLayout);
-        groundPile2 = controlFrag.findViewById(R.id.Foundation2_linearLayout);
-        groundPile3 = controlFrag.findViewById(R.id.Foundation3_linearLayout);
-        groundPile4 = controlFrag.findViewById(R.id.Foundation4_linearLayout);
+//        drawPileExist = controlFrag.findViewById(R.id.cardback);
+//
+//        discardPile = controlFrag.findViewById(R.id.Waste3Cards);
+//
+//        groundPile1 = controlFrag.findViewById(R.id.Foundation1_linearLayout);
+//        groundPile2 = controlFrag.findViewById(R.id.Foundation2_linearLayout);
+//        groundPile3 = controlFrag.findViewById(R.id.Foundation3_linearLayout);
+//        groundPile4 = controlFrag.findViewById(R.id.Foundation4_linearLayout);
 
         buildPile1 = controlFrag.findViewById(R.id.kortene_i_Tableau1);
         buildPile2 = controlFrag.findViewById(R.id.kortene_i_Tableau2);
@@ -72,17 +73,25 @@ public class CardControl extends Fragment {
         Table table = genTable();
         // Test Table
 
-        ArrayList<ListView> buildPiles = new ArrayList<ListView>();
+        ArrayList<ListView> buildPiles = new ArrayList<>();
         buildPiles.add(buildPile1);
-        CardControlAdapter adapter;
-        BuildPile buildPile;
+        buildPiles.add(buildPile2);
+        buildPiles.add(buildPile3);
+        buildPiles.add(buildPile4);
+        buildPiles.add(buildPile5);
+        buildPiles.add(buildPile6);
+        buildPiles.add(buildPile7);
 
-        for (int i = 0; i < 7; i++) {
-            buildPile = table.buildPile.get(i);
-            cards = buildPile.getCards();
-            adapter = new CardControlAdapter(buildPile1, cards);
-            adapter.notifyDataSetChanged();
+        CardControlAdapter adapter;
+
+        for (int i = 0; i < buildPiles.size(); i++) {
+            cards = table.buildPile.get(i).getCards();
+            adapter = new CardControlAdapter(cards);
+            buildPiles.get(i).setAdapter(adapter);
+            buildPiles.get(i).setVisibility(View.VISIBLE);
         }
+
+
 
 
 
@@ -124,20 +133,18 @@ public class CardControl extends Fragment {
 
     private class CardControlAdapter extends BaseAdapter {
 
-        ArrayList<Card> cards;
-        View basePile;
-        ImageView suit;
+        private final List<Card> items;
+        ImageView suit, back;
         TextView faceValue;
 
-        public CardControlAdapter(View basePile, ArrayList<Card> cards) {
-            this.basePile = basePile;
-            this.cards = cards;
+        public CardControlAdapter(List<Card> cards) {
+            this.items = cards;
         }
 
         // override other abstract methods here
         @Override
         public int getCount() {
-            return 0;
+            return items.size();
         }
 
         @Override
@@ -151,20 +158,32 @@ public class CardControl extends Fragment {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup container) {
-            basePile = convertView;
-            Card item = cards.get(position);
-            if (basePile == null) {
-                basePile = getLayoutInflater().inflate(R.layout.card_item, container, false);
+        public View getView(int position, View convertView, ViewGroup parent) {
+            Card item = items.get(position);
+            if (convertView == null) {
+                convertView = getLayoutInflater().inflate(R.layout.card_item, parent, false);
             }
 
-            suit = basePile.findViewById(R.id.suit);
-            faceValue = basePile.findViewById(R.id.faceValue);
+            suit = convertView.findViewById(R.id.suit);
+            back = convertView.findViewById(R.id.back);
+            faceValue = convertView.findViewById(R.id.faceValue);
 
-            findCardValues(item);
+            if (item.getSuit().ordinal() != 0) {
+                suit.setVisibility(View.VISIBLE);
+                faceValue.setVisibility(View.VISIBLE);
+                back.setVisibility(View.GONE);
+                findCardValues(item);
+            }
+
 
             return convertView;
         }
+
+        private void addItem(Card card){
+            items.add(card);
+            notifyDataSetChanged();
+        }
+
 
         private void findCardValues(Card item) {
             // finds suit and color of the card
