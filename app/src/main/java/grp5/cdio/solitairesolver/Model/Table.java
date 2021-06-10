@@ -90,12 +90,22 @@ public class Table {
         return null;
     }
 
+    public void setBuildPile(int index, int cards) {
+        if (index <= 6) {
+            this.buildPile.set(index, new BuildPile(cards));
+        }
+    }
+
     public Pile getDrawPile() {
         return drawPile;
     }
 
     public Pile getDiscardPile() {
         return discardPile;
+    }
+
+    public void setDiscardPile(Pile discardPile) {
+        this.discardPile = discardPile;
     }
 
     /**
