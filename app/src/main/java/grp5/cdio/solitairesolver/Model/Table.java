@@ -76,11 +76,16 @@ public class Table {
     }
 
     public GroundPile getGroundPile(int index) {
-
         if (index <= 3) {
         return groundPile.get(index);
         }
         return null;
+    }
+
+    public void setGroundPile(int index, int cards) {
+        if (index <= 3) {
+            this.groundPile.set(index, new GroundPile(cards));
+        }
     }
 
     public BuildPile getBuildPile(int index) {

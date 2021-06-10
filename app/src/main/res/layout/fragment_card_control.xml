@@ -261,45 +261,14 @@
             app:layout_constraintEnd_toEndOf="@+id/TableauLine3"
             app:layout_constraintStart_toStartOf="@+id/TableauLine1" />
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/groundPile1"
             android:layout_width="99dp"
             android:layout_height="30dp"
             app:layout_constraintBottom_toTopOf="@+id/Foundation1txt"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine4"
             app:layout_constraintStart_toEndOf="@+id/TableauLine3"
-            app:layout_constraintTop_toTopOf="parent" >
-
-            <LinearLayout
-                android:layout_width="99dp"
-                android:layout_height="30dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-
-                <ImageView
-                    android:id="@+id/suit1"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="25dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/spades" />
-
-                <TextView
-                    android:id="@+id/faceValue1"
-                    android:layout_width="49dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Q"
-                    android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Foundation1txt"
@@ -312,46 +281,14 @@
             app:layout_constraintEnd_toStartOf="@+id/TableauLine4"
             app:layout_constraintStart_toEndOf="@+id/TableauLine3" />
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/groundPile2"
             android:layout_width="99dp"
             android:layout_height="30dp"
-            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/Foundation2txt"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine5"
             app:layout_constraintStart_toEndOf="@+id/TableauLine4"
-            app:layout_constraintTop_toTopOf="parent" >
-
-            <LinearLayout
-                android:layout_width="99dp"
-                android:layout_height="30dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-
-                <ImageView
-                    android:id="@+id/suit2"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="25dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/spades" />
-
-                <TextView
-                    android:id="@+id/faceValue2"
-                    android:layout_width="49dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Q"
-                    android:visibility="invisible"
-                    android:textColor="@color/black"
-                    android:textSize="22sp" />
-
-            </LinearLayout>
-        </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Foundation2txt"
@@ -364,46 +301,15 @@
             app:layout_constraintEnd_toStartOf="@+id/TableauLine5"
             app:layout_constraintStart_toEndOf="@+id/TableauLine4" />
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/groundPile3"
             android:layout_width="99dp"
             android:layout_height="30dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/Foundation3txt"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine6"
             app:layout_constraintStart_toEndOf="@+id/TableauLine5"
-            app:layout_constraintTop_toTopOf="parent" >
-
-            <LinearLayout
-                android:layout_width="99dp"
-                android:layout_height="30dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-
-                <ImageView
-                    android:id="@+id/suit3"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="25dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/spades" />
-
-                <TextView
-                    android:id="@+id/faceValue3"
-                    android:layout_width="49dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Q"
-                    android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Foundation3txt"
@@ -416,45 +322,14 @@
             app:layout_constraintEnd_toStartOf="@+id/TableauLine6"
             app:layout_constraintStart_toEndOf="@+id/TableauLine5" />
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/groundPile4"
             android:layout_width="99dp"
             android:layout_height="30dp"
             app:layout_constraintBottom_toTopOf="@+id/Foundation4txt"
             app:layout_constraintEnd_toStartOf="@+id/TableauLine7"
             app:layout_constraintStart_toEndOf="@+id/TableauLine6"
-            app:layout_constraintTop_toTopOf="parent" >
-
-            <LinearLayout
-                android:layout_width="99dp"
-                android:layout_height="30dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-
-                <ImageView
-                    android:id="@+id/suit4"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="25dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/spades" />
-
-                <TextView
-                    android:id="@+id/faceValue4"
-                    android:layout_width="49dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Q"
-                    android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Foundation4txt"

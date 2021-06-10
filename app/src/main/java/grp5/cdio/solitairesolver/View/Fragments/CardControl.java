@@ -33,7 +33,7 @@ public class CardControl extends Fragment {
     ArrayList pile;
     ArrayList<Card> cards;
     ListView buildPile1, buildPile2, buildPile3, buildPile4, buildPile5, buildPile6,
-             buildPile7, discardPile;
+             buildPile7, groundPile1, groundPile2, groundPile3, groundPile4, discardPile;
     ImageView drawPileExist;
 
     @Override
@@ -55,6 +55,12 @@ public class CardControl extends Fragment {
         buildPile6 = controlFrag.findViewById(R.id.kortene_i_Tableau6);
         buildPile7 = controlFrag.findViewById(R.id.kortene_i_Tableau7);
 
+        groundPile1 = controlFrag.findViewById(R.id.groundPile1);
+        groundPile2 = controlFrag.findViewById(R.id.groundPile2);
+        groundPile3 = controlFrag.findViewById(R.id.groundPile3);
+        groundPile4 = controlFrag.findViewById(R.id.groundPile4);
+
+
         ArrayList<ListView> buildPiles = new ArrayList<>();
         buildPiles.add(buildPile1);
         buildPiles.add(buildPile2);
@@ -63,6 +69,12 @@ public class CardControl extends Fragment {
         buildPiles.add(buildPile5);
         buildPiles.add(buildPile6);
         buildPiles.add(buildPile7);
+
+        ArrayList<ListView> groundPiles = new ArrayList<>();
+        groundPiles.add(groundPile1);
+        groundPiles.add(groundPile2);
+        groundPiles.add(groundPile3);
+        groundPiles.add(groundPile4);
 
         PileAdapter adapter;
 
@@ -79,8 +91,8 @@ public class CardControl extends Fragment {
             adapter = new PileAdapter(cards);
             discardPile.setAdapter(adapter);
             discardPile.setVisibility(View.VISIBLE);
-
         }
+
 
 
         for (int i = 0; i < buildPiles.size(); i++) {
@@ -88,6 +100,16 @@ public class CardControl extends Fragment {
             adapter = new PileAdapter(cards);
             buildPiles.get(i).setAdapter(adapter);
             buildPiles.get(i).setVisibility(View.VISIBLE);
+        }
+
+
+
+        for (int i = 0; i < groundPiles.size(); i++) {
+            cards = new ArrayList<>();
+            cards.add(table.groundPile.get(i).getTopCard());
+            adapter = new PileAdapter(cards);
+            groundPiles.get(i).setAdapter(adapter);
+            groundPiles.get(i).setVisibility(View.VISIBLE);
         }
 
 
@@ -262,10 +284,15 @@ public class CardControl extends Fragment {
         Card cardFiveClubs = new Card(Suit.CLUBS, FaceValue.FIVE);
         Card cardFiveSpades = new Card(Suit.SPADES, FaceValue.FIVE);
 
-        table.setDiscardPile(new BasePile(2));
+        table.setDiscardPile(new BasePile(3));
         table.setBuildPile(6, 11);
+        table.setGroundPile(0,1);
+        table.setGroundPile(1,1);
+        table.setGroundPile(2,1);
+        table.setGroundPile(3,1);
         table.getDiscardPile().setCard(0, cardThreeDiamonds);
         table.getDiscardPile().setCard(1, cardJackDiamonds);
+        table.getDiscardPile().setCard(2, new Card(Suit.CLUBS, FaceValue.TWO));
 
 
         table.buildPile.get(0).setCard(0, cardQueenHearts);
@@ -279,6 +306,15 @@ public class CardControl extends Fragment {
         table.buildPile.get(6).setCard(8, new Card(Suit.HEARTS, FaceValue.SIX));
         table.buildPile.get(6).setCard(9, cardFiveSpades);
         table.buildPile.get(6).setCard(10, new Card(Suit.DIAMONDS, FaceValue.FOUR));
+
+        table.groundPile.get(0).setCard(0, new Card(Suit.HEARTS, FaceValue.ONE));
+        table.groundPile.get(1).setCard(0, new Card(Suit.SPADES, FaceValue.THREE));
+        table.groundPile.get(2).setCard(0, new Card(Suit.DIAMONDS, FaceValue.TWO));
+        table.groundPile.get(3).setCard(0, new Card(Suit.CLUBS, FaceValue.ONE));
+
+
+
+
         return table;
     }
 
