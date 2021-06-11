@@ -84,35 +84,5 @@ public class CardTest {
     }
 
 
-    @Test
-    public void testIsLegalMove() {
-        Card cardOneHearts = new Card(Suit.HEARTS, FaceValue.ONE);
-        Card cardTwoClubs = new Card(Suit.CLUBS, FaceValue.TWO);
-        Card cardTwoHearts = new Card(Suit.HEARTS, FaceValue.TWO);
-        Card cardThreeDiamonds = new Card(Suit.DIAMONDS, FaceValue.THREE);
-        Card cardFourSpades = new Card(Suit.SPADES, FaceValue.FOUR);
-        Card cardFiveClubs = new Card(Suit.CLUBS, FaceValue.FIVE);
-        Card cardSixDiamonds = new Card(Suit.DIAMONDS, FaceValue.SIX);
-        Card cardSevenSpades = new Card(Suit.SPADES, FaceValue.SEVEN);
-        Card cardEightClubs = new Card(Suit.CLUBS, FaceValue.EIGHT);
-        Card cardNineHearts = new Card(Suit.HEARTS, FaceValue.NINE);
-        Card cardTenDiamonds = new Card(Suit.DIAMONDS, FaceValue.TEN);
-        Card cardJackClubs = new Card(Suit.CLUBS, FaceValue.ELEVEN);
-        Card cardQueenHearts = new Card(Suit.HEARTS, FaceValue.TWELVE);
-        Card cardKingClubs = new Card(Suit.CLUBS, FaceValue.THIRTEEN);
-        Card cardUnknown = new Card();
 
-        assertTrue(cardOneHearts.isLegalMove(cardTwoClubs));
-        assertTrue(cardThreeDiamonds.isLegalMove(cardFourSpades));
-        assertTrue(cardFiveClubs.isLegalMove(cardSixDiamonds));
-        assertTrue(cardTenDiamonds.isLegalMove(cardJackClubs));
-        assertTrue(cardJackClubs.isLegalMove(cardQueenHearts));
-        assertTrue(cardQueenHearts.isLegalMove(cardKingClubs));
-        assertTrue(cardKingClubs.isLegalMove(null));
-
-        assertFalse(cardOneHearts.isLegalMove(cardTwoHearts));
-        assertFalse(cardOneHearts.isLegalMove(cardUnknown));
-        assertFalse(cardSevenSpades.isLegalMove(cardEightClubs));
-        assertFalse(cardNineHearts.isLegalMove(cardTenDiamonds));
-    }
 }
