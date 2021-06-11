@@ -18,8 +18,7 @@ public class Controller {
      */
     private Table table;
     private HashMap<String, Bitmap> EmptyMap = new HashMap<>();
-//    private static Move lastMove;
-//    private Move nextMove;
+    private Move lastMove;
     private static Controller single_instance = null;
 
     private Controller() {
@@ -67,7 +66,18 @@ public class Controller {
        if (moves.isEmpty()){
            return null;
        }
+
+       Move best = table.getBestMove(moves);
+       if(lastMove.isInverseMove(best)){
+           moves.remove(best);
+       }
+
+       if (moves.isEmpty()){
+           return null;
+       }
+
        return table.getBestMove(moves);
+
     }
 
     /**
