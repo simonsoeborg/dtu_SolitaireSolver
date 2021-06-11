@@ -22,5 +22,6 @@
     <string name="detect_image">Behandel billede</string>
     <string name="take_again">Tag igen</string>
     <string name="Continue">Fortsæt</string>
+    <string name="ten">10</string>
 
 </resources>

@@ -19,10 +19,14 @@ public class Resultat extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        Bundle bundle = this.getArguments();
         View resultatFrag = inflater.inflate(R.layout.fragment_resultat, container, false);
         Context context = StartLoadingScreen.context;
         TextView instructionTV = resultatFrag.findViewById(R.id.instructionTV_resultatFrag);
         Button tagBilledeBtn = resultatFrag.findViewById(R.id.TagBilledeBtn_resultatFrag);
+
+        instructionTV.setText(bundle.getString("bestMove"));
 
         tagBilledeBtn.setOnClickListener(new View.OnClickListener() {
             @Override

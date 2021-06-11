@@ -32,6 +32,10 @@ public class Move {
      * @return boolean, true = inverse move
      */
     public boolean isInverseMove(Move oldMove) {
+        if (oldMove == null){
+            return false;
+        }
+
         Card to = moveTo.getTopCard();
         Card from = moveFrom.getTopCard();
 
@@ -40,6 +44,9 @@ public class Move {
         }
         return false;
     }
+
+
+
 
     /**
      * make move from piles movefrom -> moveto

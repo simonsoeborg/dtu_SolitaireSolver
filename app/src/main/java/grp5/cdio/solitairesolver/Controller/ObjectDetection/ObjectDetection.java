@@ -37,11 +37,12 @@ public class ObjectDetection {
      * @param map HashMap of bitmaps. Key is draw, build or ground
      */
     public Table analyzeImage(HashMap<String, Bitmap> map){
+
         Table table = new Table();
         Card cardQueenHearts = new Card(Suit.HEARTS, FaceValue.TWELVE);
         Card cardKingHearts = new Card(Suit.HEARTS, FaceValue.THIRTEEN);
 
-        Card cardTenHearts = new Card(Suit.HEARTS, FaceValue.TEN);
+        Card cardFourHearts= new Card(Suit.HEARTS, FaceValue.FOUR);
         Card cardJackHearts = new Card(Suit.HEARTS, FaceValue.ELEVEN);
 
         Card cardFiveHearts = new Card(Suit.HEARTS, FaceValue.FIVE);
@@ -50,14 +51,13 @@ public class ObjectDetection {
 
         table.buildPile.get(0).setCard(0, cardQueenHearts);
         table.buildPile.get(1).setCard(1, cardKingHearts);
-        table.buildPile.get(2).setCard(2, cardTenHearts);
+        table.buildPile.get(2).setCard(2, cardFourHearts);
         table.buildPile.get(3).setCard(3, cardJackHearts);
         table.buildPile.get(4).setCard(4, cardFiveClubs);
         table.buildPile.get(5).setCard(5, cardFiveHearts);
         table.buildPile.get(6).setCard(6, cardFiveSpades);
         return table;
     }
-
 
 
     /**
@@ -102,7 +102,6 @@ public class ObjectDetection {
         final float[] outputs = outputTensor.getDataAsFloatArray();
         Log.d("Run", "" + outputs.length);
         return PrePostProcessor.outputsToNMSPredictions(outputs, mImgScaleX, mImgScaleY, mIvScaleX, mIvScaleY, mStartX, mStartY);
-
 
     }
 }
