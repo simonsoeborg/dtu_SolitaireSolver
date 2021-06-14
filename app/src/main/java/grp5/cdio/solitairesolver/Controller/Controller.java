@@ -98,15 +98,15 @@ public class Controller {
        }
 
        Move best = table.getBestMove(moves);
-       if(lastMove.isInverseMove(best)){
+       if(lastMove != null && lastMove.isInverseMove(best)){
            moves.remove(best);
-       }
+           if (moves.isEmpty()){
+               return null;
+           }
 
-       if (moves.isEmpty()){
-           return null;
+           return table.getBestMove(moves);
        }
-
-       return table.getBestMove(moves);
+       return best;
 
     }
 

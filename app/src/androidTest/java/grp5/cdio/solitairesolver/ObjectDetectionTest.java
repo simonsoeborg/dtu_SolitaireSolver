@@ -15,6 +15,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import grp5.cdio.solitairesolver.Model.Card;
+import grp5.cdio.solitairesolver.Model.FaceValue;
+import grp5.cdio.solitairesolver.Model.Suit;
 import grp5.cdio.solitairesolver.Service.ObjectDetection.ObjectDetection;
 import grp5.cdio.solitairesolver.Service.ObjectDetection.Result;
 
@@ -47,7 +50,7 @@ public class ObjectDetectionTest {
 
 
         // !!! Testen virker kun ved debugging!!!
-        FaceValue[] values = {FaceValue.ONE,FaceValue.TWO, FaceValue.THREE, FaceValue.FOUR ,FaceValue.FIVE, FaceValue.SIX , FaceValue.SEVEN, FaceValue.EIGHT ,FaceValue.NINE, FaceValue.TEN,
+        FaceValue[] values = {FaceValue.ONE, FaceValue.TWO, FaceValue.THREE, FaceValue.FOUR ,FaceValue.FIVE, FaceValue.SIX , FaceValue.SEVEN, FaceValue.EIGHT ,FaceValue.NINE, FaceValue.TEN,
                             FaceValue.ELEVEN, FaceValue.TWELVE, FaceValue.THIRTEEN,};
         int val;
         for (int i = 0; i < resultArrayList.size() ; i++) {
