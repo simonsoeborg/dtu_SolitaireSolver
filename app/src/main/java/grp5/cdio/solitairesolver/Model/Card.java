@@ -64,22 +64,7 @@ public class Card {
         return Suit.isBlack(suit);
     }
 
-    /**
-     * Test if move is legal
-     *
-     * @param toCard, cord to make move to(put on top)
-     * @return boolean, true = legal
-     */
-    public boolean isLegalMove(Card toCard){
-        if(toCard == null && this.getIntValue() == 13){
-            return true;
-        }
-        if ((this.isBlack() && toCard.isRed()) || (this.isRed() && toCard.isBlack())){
-            if(this.getIntValue() + 1 == toCard.getIntValue())
-                return true;
-        }
-        return false;
-    }
+
 
     /**
      * Override toString

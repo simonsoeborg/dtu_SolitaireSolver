@@ -1,5 +1,7 @@
 package grp5.cdio.solitairesolver.Model;
 
+import java.util.ArrayList;
+
 /**
  * BuildPile, Seven piles that make up the main table.
  */
@@ -27,6 +29,14 @@ public class BuildPile extends Pile {
             }
             return false;
         }
-        return toCard.isLegalMove(cards.get(cards.size()-1));
+        Card topcard = cards.get(cards.size()-1);
+        if ((topcard.isBlack() && toCard.isRed()) || (topcard.isRed() && toCard.isBlack())){
+            if(topcard.getIntValue() - 1 == toCard.getIntValue())
+                return true;
+        }
+        return false;
+
     }
+
 }
+

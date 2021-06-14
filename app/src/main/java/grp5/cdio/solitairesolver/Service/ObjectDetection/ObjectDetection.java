@@ -1,4 +1,4 @@
-package grp5.cdio.solitairesolver.Controller.ObjectDetection;
+package grp5.cdio.solitairesolver.Service.ObjectDetection;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -26,6 +26,10 @@ import grp5.cdio.solitairesolver.Model.Table;
 public class ObjectDetection {
     private Module mModule = null;
     private final Context context;
+
+    public static String DRAW_PILE = "draw";
+    public static String BUILD_PILE = "build";
+    public static String GROUND_PILE = "ground";
 
     public ObjectDetection(Context context) {
         this.context = context;

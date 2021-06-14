@@ -130,10 +130,11 @@ public class CardControl extends Fragment {
         fortsaet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                con.accounForMove();
+                //con.accounForMove();
                 assert getFragmentManager() != null;
 
                 Bundle argumemt = new Bundle();
+                String bestMove = con.getMove().toString();
                 argumemt.putString("bestMove", bestMove);
 
                 Resultat resultatFrag = new Resultat();

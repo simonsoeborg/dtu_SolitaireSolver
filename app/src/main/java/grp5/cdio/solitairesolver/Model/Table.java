@@ -16,8 +16,6 @@ public class Table {
     public Pile drawPile;
     public Pile discardPile;
 
-
-
     /**
      * Set up game table with 52 cards
      */
@@ -38,26 +36,6 @@ public class Table {
         groundPile.add(new GroundPile(0));
         this.discardPile = new BasePile(0);
     }
-
-    /**
-     * Make best {@link Move}
-     *
-     */
-    public void updateTable(){
-        ArrayList<Move> list = getLegalMoves();
-        Move move = getBestMove(list);
-        makeMove(move);
-    }
-
-    /**
-     * Make/update table based on a {@link Move}
-     *
-     * @param move to make
-     */
-    public void makeMove(Move move){
-        move.makeMove();
-    }
-
     /**
      * Get the {@link Move} with highest
      *
