@@ -1,5 +1,6 @@
 package grp5.cdio.solitairesolver.View.Fragments;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,8 +17,10 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import grp5.cdio.solitairesolver.Controller.ObjectDetection.ObjectDetection;
 import grp5.cdio.solitairesolver.Model.BasePile;
 import grp5.cdio.solitairesolver.Model.Card;
 import grp5.cdio.solitairesolver.Model.FaceValue;
@@ -81,8 +84,11 @@ public class CardControl extends Fragment {
 
         PileAdapter adapter;
 
+
+
         // Test Table
-        Table table = genTable();
+        ObjectDetection objectDetection = new ObjectDetection(getContext());
+        Table table = objectDetection.analyzeImage();
         // Test Table
 
         if (table.getDrawPile() != null) {
