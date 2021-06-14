@@ -11,10 +11,10 @@ public class Table {
      * drawPile - The draw pile
      * discardPile - Pile of already drawn cards
      */
-    public ArrayList<GroundPile> groundPile;
-    public ArrayList<BuildPile> buildPile;
-    public Pile drawPile;
-    public Pile discardPile;
+    private ArrayList<GroundPile> groundPile;
+    private ArrayList<BuildPile> buildPile;
+    private Pile drawPile;
+    private Pile discardPile;
 
     /**
      * Set up game table with 52 cards
@@ -54,30 +54,20 @@ public class Table {
     }
 
     public GroundPile getGroundPile(int index) {
-        if (index <= 3) {
+        if (index < groundPile.size()) {
         return groundPile.get(index);
         }
         return null;
     }
 
-    public void setGroundPile(int index, int cards) {
-        if (index <= 3) {
-            this.groundPile.set(index, new GroundPile(cards));
-        }
-    }
 
     public BuildPile getBuildPile(int index) {
-        if (index <= 6) {
+        if (index < buildPile.size()) {
             return buildPile.get(index);
         }
         return null;
     }
 
-    public void setBuildPile(int index, int cards) {
-        if (index <= 6) {
-            this.buildPile.set(index, new BuildPile(cards));
-        }
-    }
 
     public Pile getDrawPile() {
         return drawPile;
@@ -87,9 +77,6 @@ public class Table {
         return discardPile;
     }
 
-    public void setDiscardPile(Pile discardPile) {
-        this.discardPile = discardPile;
-    }
 
     /**
      * Get list of legal {@link Move}
@@ -115,7 +102,7 @@ public class Table {
      * @param pileFrom, the {@link Pile} to test for legal moves
      * @return ArrayList of all legal {@link Move}
      */
-    public ArrayList<Move> getLegalMove (Pile pileFrom){
+    private ArrayList<Move> getLegalMove (Pile pileFrom){
         ArrayList<Move> list = new ArrayList<Move>();
         if (!pileFrom.isEmpty() && pileFrom.getTopCard().isVisible()){
             for (Pile pile: groundPile){

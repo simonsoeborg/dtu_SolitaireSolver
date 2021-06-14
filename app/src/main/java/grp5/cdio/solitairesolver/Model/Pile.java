@@ -39,7 +39,15 @@ public abstract class Pile {
      * @return boolean, true = same card
      */
     public boolean isEqual(Card toTest){
-        return cards.get(cards.size()-1).isEqual(toTest);
+
+        Card card = getTopCard();
+
+        if(card != null){
+            return card.isEqual(toTest);
+        }
+        return false;
+
+
     }
 
     /**
@@ -67,7 +75,11 @@ public abstract class Pile {
      * remove top card
      */
     public void removeCard(){
-        cards.remove(cards.get(cards.size()-1));
+
+        Card card = getTopCard();
+        if(card != null){
+            cards.remove(card);
+        }
     }
 
     /**
@@ -87,13 +99,7 @@ public abstract class Pile {
         return null;
     }
 
-    /**
-     * get card below top card
-     * @return Card
-     */
-    public Card getBelowTopCard(){
-        return cards.get(cards.size()-2);
-    }
+
 
     /**
      * Override toString
