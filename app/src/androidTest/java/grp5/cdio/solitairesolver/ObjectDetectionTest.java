@@ -89,5 +89,4 @@ public class ObjectDetectionTest {
         }
         Float acc = totalScore/resultArrayList.size();
     }
-
 }
