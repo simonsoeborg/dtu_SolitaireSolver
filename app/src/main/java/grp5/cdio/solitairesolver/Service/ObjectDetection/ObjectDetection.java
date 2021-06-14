@@ -74,7 +74,7 @@ public class ObjectDetection {
         if (mModule == null) {
             mModule = PyTorchAndroid.loadModuleFromAsset(context.getAssets(), "best.torchscript.2.pt");
         }
-        BufferedReader br = new BufferedReader(new InputStreamReader(context.getAssets().open("cards.classes.2.txt")));
+        BufferedReader br = new BufferedReader(new InputStreamReader(context.getAssets().open("cards.classes.3.txt")));
         String line;
         List<String> classes = new ArrayList<>();
         while ((line = br.readLine()) != null) {

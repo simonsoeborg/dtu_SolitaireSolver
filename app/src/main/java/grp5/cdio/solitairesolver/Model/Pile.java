@@ -71,6 +71,12 @@ public abstract class Pile {
     }
 
     /**
+     * get all cards in pile
+     * @return Card
+     */
+    public ArrayList<Card> getCards(){return cards;}
+
+    /**
      * get top card
      * @return Card
      */

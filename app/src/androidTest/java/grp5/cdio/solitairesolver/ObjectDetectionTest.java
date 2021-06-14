@@ -13,6 +13,7 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import grp5.cdio.solitairesolver.Service.ObjectDetection.ObjectDetection;
 import grp5.cdio.solitairesolver.Service.ObjectDetection.Result;
@@ -32,6 +33,50 @@ public class ObjectDetectionTest {
         BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
         Bitmap bit = BitmapFactory.decodeStream(bufferedInputStream);
         ArrayList<Result> resultArrayList = objectDetection.analyzeBitmap(bit);
+
+        // top left - lav left giver mest left maks 2 instanser af hvert kort
+        // bottom right
+
+        //prøv evt at teste med andre billeder
+        // cluster metode i java?
+
+        // Fundet alle med samme id
+        // lave linje med top left, evt byg buffer løbende(Se på hvad der er af afstand pt fra de andres billeder)
+        // Dannet kort basseret på ID
+        // lagt kort i matchende bunke fra top left
+
+
+        // !!! Testen virker kun ved debugging!!!
+        FaceValue[] values = {FaceValue.ONE,FaceValue.TWO, FaceValue.THREE, FaceValue.FOUR ,FaceValue.FIVE, FaceValue.SIX , FaceValue.SEVEN, FaceValue.EIGHT ,FaceValue.NINE, FaceValue.TEN,
+                            FaceValue.ELEVEN, FaceValue.TWELVE, FaceValue.THIRTEEN,};
+        int val;
+        for (int i = 0; i < resultArrayList.size() ; i++) {
+
+            if (resultArrayList.get(i).getClassIndex()<=12) {
+                val = resultArrayList.get(i).getClassIndex();
+                Card nameTester = new Card(Suit.HEARTS, values[val]);
+                System.out.println(nameTester);
+            }
+
+            else if (resultArrayList.get(i).getClassIndex()<=25 && resultArrayList.get(i).getClassIndex()>12) {
+                val = resultArrayList.get(i).getClassIndex()%13;
+                Card nameTester = new Card(Suit.SPADES, values[val]);
+                System.out.println(nameTester);
+            }
+
+            else if (resultArrayList.get(i).getClassIndex()<=38 && resultArrayList.get(i).getClassIndex()>25) {
+                val = resultArrayList.get(i).getClassIndex()%13;
+                Card nameTester = new Card(Suit.DIAMONDS, values[val]);
+                System.out.println(nameTester);
+            }
+
+            else if (resultArrayList.get(i).getClassIndex()<=51 && resultArrayList.get(i).getClassIndex()>38) {
+                val = resultArrayList.get(i).getClassIndex()%13;
+                Card nameTester = new Card(Suit.CLUBS, values[val]);
+                System.out.println(nameTester);
+            }
+        }
+
         Float totalScore = new Float(0);
         for(Result result : resultArrayList){
             totalScore = totalScore + result.getScore();

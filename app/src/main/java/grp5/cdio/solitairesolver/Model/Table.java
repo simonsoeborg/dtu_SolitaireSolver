@@ -53,6 +53,44 @@ public class Table {
         return bestMove;
     }
 
+    public GroundPile getGroundPile(int index) {
+        if (index <= 3) {
+        return groundPile.get(index);
+        }
+        return null;
+    }
+
+    public void setGroundPile(int index, int cards) {
+        if (index <= 3) {
+            this.groundPile.set(index, new GroundPile(cards));
+        }
+    }
+
+    public BuildPile getBuildPile(int index) {
+        if (index <= 6) {
+            return buildPile.get(index);
+        }
+        return null;
+    }
+
+    public void setBuildPile(int index, int cards) {
+        if (index <= 6) {
+            this.buildPile.set(index, new BuildPile(cards));
+        }
+    }
+
+    public Pile getDrawPile() {
+        return drawPile;
+    }
+
+    public Pile getDiscardPile() {
+        return discardPile;
+    }
+
+    public void setDiscardPile(Pile discardPile) {
+        this.discardPile = discardPile;
+    }
+
     /**
      * Get list of legal {@link Move}
      *
