@@ -116,7 +116,7 @@ public class PhotoHandler implements PictureCallback {
         Bitmap drawPile = Bitmap.createBitmap(orginialPic, 0, 0, orginialPic.getWidth() * 3 / 8, (orginialPic.getHeight() / 3));
         piles.put(ObjectDetection.DRAW_PILE, drawPile);
 
-        Bitmap buildPile = Bitmap.createBitmap(orginialPic, 0, orginialPic.getHeight() / 3, orginialPic.getWidth() * 7 / 8, (orginialPic.getHeight() * 2 / 3));
+        Bitmap buildPile = Bitmap.createBitmap(orginialPic, 0, orginialPic.getHeight() / (29/10), orginialPic.getWidth() * 7 / 8, (orginialPic.getHeight()  / 2));
         piles.put(ObjectDetection.BUILD_PILE, buildPile);
 
         return piles;

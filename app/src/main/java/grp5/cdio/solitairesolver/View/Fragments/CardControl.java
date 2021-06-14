@@ -82,7 +82,7 @@ public class CardControl extends Fragment {
         PileAdapter adapter;
 
         // Test Table
-        Table table = genTable();
+        Table table = con.getTable();
         // Test Table
 
         if (table.getDrawPile() != null) {
@@ -187,11 +187,13 @@ public class CardControl extends Fragment {
             back = convertView.findViewById(R.id.back);
             faceValue = convertView.findViewById(R.id.faceValue4);
 
-            if (item.getSuit().ordinal() != 0) {
-                suit.setVisibility(View.VISIBLE);
-                faceValue.setVisibility(View.VISIBLE);
-                back.setVisibility(View.GONE);
-                findCardValues(item);
+            if (item != null) {
+                if (item.getSuit().ordinal() != 0) {
+                    suit.setVisibility(View.VISIBLE);
+                    faceValue.setVisibility(View.VISIBLE);
+                    back.setVisibility(View.GONE);
+                    findCardValues(item);
+                }
             }
 
 
@@ -305,6 +307,7 @@ public class CardControl extends Fragment {
 
 
         table.buildPile.get(0).setCard(0, cardQueenHearts);
+        table.buildPile.get(0).removeCard();
         table.buildPile.get(1).setCard(1, cardKingHearts);
         table.buildPile.get(2).setCard(2, cardTenHearts);
         table.buildPile.get(3).setCard(3, cardJackHearts);
