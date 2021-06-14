@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import grp5.cdio.solitairesolver.Model.Card;
 import grp5.cdio.solitairesolver.Model.FaceValue;
@@ -32,7 +33,7 @@ public class ObjectDetectionTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         ObjectDetection objectDetection = new ObjectDetection(appContext);
         AssetManager am = appContext.getAssets();
-        InputStream is = am.open("test.jpg");
+        InputStream is = am.open("IMG_test3.jpg");
         BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
         Bitmap bit = BitmapFactory.decodeStream(bufferedInputStream);
         ArrayList<Result> resultArrayList = objectDetection.analyzeBitmap(bit);
@@ -50,31 +51,33 @@ public class ObjectDetectionTest {
 
 
         // !!! Testen virker kun ved debugging!!!
-        FaceValue[] values = {FaceValue.ONE, FaceValue.TWO, FaceValue.THREE, FaceValue.FOUR ,FaceValue.FIVE, FaceValue.SIX , FaceValue.SEVEN, FaceValue.EIGHT ,FaceValue.NINE, FaceValue.TEN,
-                            FaceValue.ELEVEN, FaceValue.TWELVE, FaceValue.THIRTEEN,};
+        FaceValue[] values = {FaceValue.TEN, FaceValue.TWO, FaceValue.THREE, FaceValue.FOUR ,FaceValue.FIVE, FaceValue.SIX , FaceValue.SEVEN, FaceValue.EIGHT ,FaceValue.NINE, FaceValue.ONE,
+                            FaceValue.ELEVEN, FaceValue.THIRTEEN, FaceValue.TWELVE};
+
         int val;
         for (int i = 0; i < resultArrayList.size() ; i++) {
 
-            if (resultArrayList.get(i).getClassIndex()<=12) {
-                val = resultArrayList.get(i).getClassIndex();
+            if ((resultArrayList.get(i).getClassIndex()+1)%4==3) {
+
+                val = resultArrayList.get(i).getClassIndex()/4;
                 Card nameTester = new Card(Suit.HEARTS, values[val]);
                 System.out.println(nameTester);
             }
 
-            else if (resultArrayList.get(i).getClassIndex()<=25 && resultArrayList.get(i).getClassIndex()>12) {
-                val = resultArrayList.get(i).getClassIndex()%13;
+            else if ((resultArrayList.get(i).getClassIndex()+1)%4==0) {
+                val = resultArrayList.get(i).getClassIndex()/4;
                 Card nameTester = new Card(Suit.SPADES, values[val]);
                 System.out.println(nameTester);
             }
 
-            else if (resultArrayList.get(i).getClassIndex()<=38 && resultArrayList.get(i).getClassIndex()>25) {
-                val = resultArrayList.get(i).getClassIndex()%13;
+            else if ((resultArrayList.get(i).getClassIndex()+1)%4==2) {
+                val = resultArrayList.get(i).getClassIndex()/4;
                 Card nameTester = new Card(Suit.DIAMONDS, values[val]);
                 System.out.println(nameTester);
             }
 
-            else if (resultArrayList.get(i).getClassIndex()<=51 && resultArrayList.get(i).getClassIndex()>38) {
-                val = resultArrayList.get(i).getClassIndex()%13;
+            else if ((resultArrayList.get(i).getClassIndex()+1)%4==1) {
+                val = resultArrayList.get(i).getClassIndex()/4;
                 Card nameTester = new Card(Suit.CLUBS, values[val]);
                 System.out.println(nameTester);
             }
