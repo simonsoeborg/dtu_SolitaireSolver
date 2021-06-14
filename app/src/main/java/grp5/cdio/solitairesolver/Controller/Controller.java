@@ -6,7 +6,10 @@ import android.graphics.Bitmap;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import grp5.cdio.solitairesolver.Model.Card;
+import grp5.cdio.solitairesolver.Model.FaceValue;
 import grp5.cdio.solitairesolver.Model.Move;
+import grp5.cdio.solitairesolver.Model.Suit;
 import grp5.cdio.solitairesolver.Model.Table;
 import grp5.cdio.solitairesolver.Service.ObjectDetection.ObjectDetection;
 
@@ -39,6 +42,33 @@ public class Controller {
         ObjectDetection dect = new ObjectDetection(context);
         Table currentTable = dect.analyzeImage(map);
         table = currentTable;
+    }
+
+    /**
+     * get game table
+     */
+    public Table getTable(){
+        Table mocktable = new Table();
+        Card cardQueenHearts = new Card(Suit.HEARTS, FaceValue.TWELVE);
+        Card cardKingHearts = new Card(Suit.HEARTS, FaceValue.THIRTEEN);
+
+        Card cardFourHearts= new Card(Suit.HEARTS, FaceValue.FOUR);
+        Card cardJackHearts = new Card(Suit.HEARTS, FaceValue.ELEVEN);
+
+        Card cardFiveHearts = new Card(Suit.HEARTS, FaceValue.FIVE);
+        Card cardFiveClubs = new Card(Suit.CLUBS, FaceValue.FIVE);
+        Card cardFiveSpades = new Card(Suit.SPADES, FaceValue.FIVE);
+
+        mocktable.buildPile.get(0).setCard(0, cardQueenHearts);
+        mocktable.buildPile.get(1).setCard(1, cardKingHearts);
+        mocktable.buildPile.get(2).setCard(2, cardFourHearts);
+        mocktable.buildPile.get(3).setCard(3, cardJackHearts);
+        mocktable.buildPile.get(4).setCard(4, cardFiveClubs);
+        mocktable.buildPile.get(5).setCard(5, cardFiveHearts);
+        mocktable.buildPile.get(6).setCard(6, cardFiveSpades);
+        return mocktable;
+
+        // return table
     }
 
     /**
