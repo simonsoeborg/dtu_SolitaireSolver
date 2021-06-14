@@ -82,7 +82,8 @@ public class CardControl extends Fragment {
         PileAdapter adapter;
 
         // Test Table
-        Table table = genTable();
+        Table table = con.getTable();
+       // Table table = genTable();
         // Test Table
 
         if (table.getDrawPile() != null) {
@@ -112,7 +113,8 @@ public class CardControl extends Fragment {
             cards.add(table.groundPile.get(i).getTopCard());
             adapter = new PileAdapter(cards);
             groundPiles.get(i).setAdapter(adapter);
-            groundPiles.get(i).setVisibility(View.VISIBLE);
+            if(table.getGroundPile(i).size() == 0)
+                groundPiles.get(i).setVisibility(View.GONE);
         }
 
 
@@ -187,11 +189,13 @@ public class CardControl extends Fragment {
             back = convertView.findViewById(R.id.back);
             faceValue = convertView.findViewById(R.id.faceValue4);
 
-            if (item.getSuit().ordinal() != 0) {
-                suit.setVisibility(View.VISIBLE);
-                faceValue.setVisibility(View.VISIBLE);
-                back.setVisibility(View.GONE);
-                findCardValues(item);
+            if (item != null) {
+                if( item.getSuit().ordinal() != 0) {
+                    suit.setVisibility(View.VISIBLE);
+                    faceValue.setVisibility(View.VISIBLE);
+                    back.setVisibility(View.GONE);
+                    findCardValues(item);
+                }
             }
 
 
