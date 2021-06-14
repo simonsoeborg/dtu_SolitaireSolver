@@ -44,7 +44,7 @@ public class CardControl extends Fragment {
         Button tagBillede = controlFrag.findViewById(R.id.tag_billede_igen);
         Button fortsaet = controlFrag.findViewById(R.id.Continue);
 
-        Controller con = new Controller();
+        Controller con = Controller.getInstance();
         String bestMove = con.getMove().toString();
         drawPileExist = controlFrag.findViewById(R.id.cardback);
 
