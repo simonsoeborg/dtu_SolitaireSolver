@@ -90,33 +90,15 @@ public class ObjectDetectionTest {
         }
         Float acc = totalScore/resultArrayList.size();
 
+        ArrayList<Result> sortedResultArrayList = sortList(resultArrayList);
+    }
 
+    public ArrayList<Result> sortList(ArrayList<Result> arr) {
         ArrayList<Result> sortedList = new ArrayList<>();
+        sortedList.add(arr.get(0));
 
-        sortedList.add(resultArrayList.get(0));
-
-     /*   int i = 0;
-        // For each loops
-        for (Result result : resultArrayList) {
-            for (Result sorting : sortedList) {
-                if (sorting.getClassIndex() != result.getClassIndex()) {
-                    if (sorting.getRect().left > result.getRect().left) {
-                        sortedList.add(i, result);
-                    } else {
-                        sortedList.add(result);
-                    }
-                }
-            }
-            i++;
-        }*/
-
-        // Card { TopRightCornor, TopLeftCornor, BottomRightCornor, BottomLeftCornor }
-        // Højeste venstre værdi Top Left Cornor, Lavest Venstre Værdi Bottom Left Cornor
-        // New {
-
-        // For loops
-        for (int i = 0; i < resultArrayList.size(); i++) {
-            Result currentObj = resultArrayList.get(i);
+        for (int i = 0; i < arr.size(); i++) {
+            Result currentObj = arr.get(i);
             if(!sortedList.contains(currentObj)) {
                 for (int j = 0; j < sortedList.size(); j++) {
                     if(currentObj.getRect().left < sortedList.get(j).getRect().left) {
@@ -129,24 +111,6 @@ public class ObjectDetectionTest {
                 }
             }
         }
-
-
-
-
-/*        for (Result element : resultArrayList) {
-
-            for (int i = 0; i < sortedList.size(); i++) {
-
-                if (sortedList.get(i).getClassIndex()!=element.getClassIndex()){
-
-                    if (sortedList.get(i).getRect().left < element.getRect().left){
-                        sortedList.add(element);
-                    }
-                    else{
-                        sortedList.add(i, element);
-                    }
-                }
-            }
-        }*/
+        return sortedList;
     }
 }
