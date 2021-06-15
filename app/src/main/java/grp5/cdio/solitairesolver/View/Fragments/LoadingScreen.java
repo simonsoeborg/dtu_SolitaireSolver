@@ -38,7 +38,7 @@ public class LoadingScreen extends Fragment {
             }
         };
         // The Runnable will be executed after the given delay time
-        h.postDelayed(r, 5000); // will be delayed for 3 seconds
+        h.postDelayed(r, 1000); // will be delayed for 3 seconds
 
         return startFrag;
     }

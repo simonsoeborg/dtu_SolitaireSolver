@@ -1,6 +1,7 @@
 package grp5.cdio.solitairesolver.View.Fragments;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
@@ -13,6 +14,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +23,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+
+import java.util.List;
 
 import javax.xml.transform.Result;
 
@@ -52,10 +56,18 @@ public class CameraFragment extends Fragment {
         } else if (!checkCameraAccess(context)) {
             Toast.makeText(context ,"Missing rights, please grant", Toast.LENGTH_LONG).show();
         } else {
-            mCamera = getCameraInstance();
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            ((Activity) getContext()).getWindowManager()
+                    .getDefaultDisplay()
+                    .getMetrics(displayMetrics);
+            mCamera = getCameraInstance(displayMetrics);
             mPreview = new CameraPreview(context, mCamera);
             FrameLayout preview = (FrameLayout) cameraFrag.findViewById(R.id.camera_preview);
             preview.addView(mPreview);
+            //ViewGroup.LayoutParams params = preview.getLayoutParams();
+            //params.width = (Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels)) / 9 * 16;
+            //params.height = (Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels));
+            //preview.setLayoutParams(params);
 
             // Add a listener to the Capture button
             ImageButton captureButton = (ImageButton) cameraFrag.findViewById(R.id.button_capture);
@@ -90,9 +102,8 @@ public class CameraFragment extends Fragment {
         return cameraFrag;
     }
 
-
     /** A safe way to get an instance of the Camera object. */
-    public Camera getCameraInstance(){
+    public Camera getCameraInstance(DisplayMetrics displayMetrics){
         Camera c = null;
         try {
             int i = findRearFacingCamera();
@@ -100,6 +111,10 @@ public class CameraFragment extends Fragment {
                 c = Camera.open(); // attempt to get a Camera instance
             else
                 c = Camera.open(i);
+            Camera.Parameters params = c.getParameters();
+            params.setPreviewSize((Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels)) / 9 * 16, Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels));
+            params.setPictureSize((Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels)) / 9 * 16, Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels));
+            c.setParameters(params);
         }
         catch (Exception e){
             // Camera is not available (in use or does not exist)
