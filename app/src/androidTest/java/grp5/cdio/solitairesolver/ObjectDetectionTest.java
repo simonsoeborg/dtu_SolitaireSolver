@@ -13,6 +13,7 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -91,6 +92,10 @@ public class ObjectDetectionTest {
         Float acc = totalScore/resultArrayList.size();
 
         ArrayList<Result> sortedResultArrayList = sortList(resultArrayList);
+
+        ArrayList<Result> DoneResultArrayList = removeDuplicates(sortedResultArrayList);
+
+        System.out.println("havelåge");
     }
 
 
@@ -116,13 +121,25 @@ public class ObjectDetectionTest {
     }
 
     public ArrayList<Result> removeDuplicates(ArrayList<Result> arr) {
-        ArrayList<Result> cleanList = new ArrayList<>();
-
-        for (int i = 0; i < arr.size(); i++) {
-
-
+        for (int i = arr.size()-1; i > 0; i--) {
+            if (contains(arr, arr.get(i).getClassIndex())) {
+                arr.remove(i);
             }
-        return  cleanList;
+        }
+        return  arr;
     }
+
+    private boolean contains(Collection<Result> c, int classIndex) {
+        int counter = 0;
+        for (Result o : c) {
+            if (o != null && o.getClassIndex() == classIndex) {
+                counter++;
+            }
+        }
+        return counter > 1;
+    }
+
+
+
 
 }

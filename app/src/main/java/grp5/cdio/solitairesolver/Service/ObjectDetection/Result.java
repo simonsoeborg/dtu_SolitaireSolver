@@ -15,10 +15,11 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 // From https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection
-public class Result {
+public class Result implements Comparable<Result>{
     int classIndex;
     Float score;
     Rect rect;
@@ -39,5 +40,9 @@ public class Result {
 
     public Rect getRect() {
         return rect;
+    }
+
+    public int compareTo(Result result) {
+        return Integer.compare(rect.left, result.getRect().left);
     }
 }
