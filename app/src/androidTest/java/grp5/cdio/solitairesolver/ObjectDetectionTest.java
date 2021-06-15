@@ -52,39 +52,6 @@ public class ObjectDetectionTest {
         // lagt kort i matchende bunke fra top left
 
 
-        // !!! Testen virker kun ved debugging!!!
-        FaceValue[] values = {FaceValue.TEN, FaceValue.TWO, FaceValue.THREE, FaceValue.FOUR ,FaceValue.FIVE, FaceValue.SIX , FaceValue.SEVEN, FaceValue.EIGHT ,FaceValue.NINE, FaceValue.ONE,
-                            FaceValue.ELEVEN, FaceValue.THIRTEEN, FaceValue.TWELVE};
-
-        int val;
-        for (int i = 0; i < resultArrayList.size() ; i++) {
-
-            if ((resultArrayList.get(i).getClassIndex()+1)%4==3) {
-
-                val = resultArrayList.get(i).getClassIndex()/4;
-                Card nameTester = new Card(Suit.HEARTS, values[val]);
-                System.out.println(nameTester);
-            }
-
-            else if ((resultArrayList.get(i).getClassIndex()+1)%4==0) {
-                val = resultArrayList.get(i).getClassIndex()/4;
-                Card nameTester = new Card(Suit.SPADES, values[val]);
-                System.out.println(nameTester);
-            }
-
-            else if ((resultArrayList.get(i).getClassIndex()+1)%4==2) {
-                val = resultArrayList.get(i).getClassIndex()/4;
-                Card nameTester = new Card(Suit.DIAMONDS, values[val]);
-                System.out.println(nameTester);
-            }
-
-            else if ((resultArrayList.get(i).getClassIndex()+1)%4==1) {
-                val = resultArrayList.get(i).getClassIndex()/4;
-                Card nameTester = new Card(Suit.CLUBS, values[val]);
-                System.out.println(nameTester);
-            }
-        }
-
         Float totalScore = new Float(0);
         for(Result result : resultArrayList){
             totalScore = totalScore + result.getScore();
@@ -95,6 +62,8 @@ public class ObjectDetectionTest {
 
         ArrayList<Result> DoneResultArrayList = removeDuplicates(sortedResultArrayList);
 
+        ArrayList<Card> namestest = getNames(DoneResultArrayList);
+        System.out.println(namestest.toString());
         System.out.println("havelåge");
     }
 
@@ -139,7 +108,41 @@ public class ObjectDetectionTest {
         return counter > 1;
     }
 
+    public ArrayList<Card> getNames (ArrayList<Result> arr){
+        FaceValue[] values = {FaceValue.TEN, FaceValue.TWO, FaceValue.THREE, FaceValue.FOUR ,FaceValue.FIVE, FaceValue.SIX , FaceValue.SEVEN, FaceValue.EIGHT ,FaceValue.NINE, FaceValue.ONE,
+                FaceValue.ELEVEN, FaceValue.THIRTEEN, FaceValue.TWELVE};
 
+        ArrayList<Card> names = new ArrayList<>();
 
+        int val;
+        for (int i = 0; i < arr.size() ; i++) {
+
+            if ((arr.get(i).getClassIndex()+1)%4==3) {
+
+                val = arr.get(i).getClassIndex()/4;
+                Card nameTester = new Card(Suit.HEARTS, values[val]);
+                names.add(nameTester);
+            }
+
+            else if ((arr.get(i).getClassIndex()+1)%4==0) {
+                val = arr.get(i).getClassIndex()/4;
+                Card nameTester = new Card(Suit.SPADES, values[val]);
+                names.add(nameTester);
+            }
+
+            else if ((arr.get(i).getClassIndex()+1)%4==2) {
+                val = arr.get(i).getClassIndex()/4;
+                Card nameTester = new Card(Suit.DIAMONDS, values[val]);
+                names.add(nameTester);
+            }
+
+            else if ((arr.get(i).getClassIndex()+1)%4==1) {
+                val = arr.get(i).getClassIndex()/4;
+                Card nameTester = new Card(Suit.CLUBS, values[val]);
+                names.add(nameTester);
+            }
+        }
+        return names;
+    }
 
 }
