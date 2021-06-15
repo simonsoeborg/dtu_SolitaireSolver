@@ -13,6 +13,7 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -88,5 +89,25 @@ public class ObjectDetectionTest {
             totalScore = totalScore + result.getScore();
         }
         Float acc = totalScore/resultArrayList.size();
+
+
+        ArrayList<Result> sortedList = new ArrayList<>();
+
+        sortedList.add(resultArrayList.get(0));
+        for (Result element : resultArrayList) {
+
+            for (int i = 0; i < sortedList.size(); i++) {
+
+                if (sortedList.get(i).getClassIndex()!=element.getClassIndex()){
+
+                    if (sortedList.get(i).getRect().left < element.getRect().left){
+                        sortedList.add(element);
+                    }
+                    else{
+                        sortedList.add(i, element);
+                    }
+                }
+            }
+        }
     }
 }
