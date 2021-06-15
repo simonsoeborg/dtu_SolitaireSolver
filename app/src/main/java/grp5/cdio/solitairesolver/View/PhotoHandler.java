@@ -1,8 +1,11 @@
 package grp5.cdio.solitairesolver.View;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
 import android.os.Build;
@@ -13,8 +16,11 @@ import android.widget.Toast;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -102,22 +108,48 @@ public class PhotoHandler implements PictureCallback {
         return file;
     }
 
-    private HashMap<String, Bitmap> splitImg(String filename, Bitmap orginialPic) {
+    private HashMap<String, Bitmap> splitImg(String filename, Bitmap orginialPic){
+        Bitmap background = null;
+        try {
+            AssetManager am = context.getAssets();
+            InputStream is = am.open("blackBackground.jpg");
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
+            background = BitmapFactory.decodeStream(bufferedInputStream);
+        } catch (IOException e){
+            System.out.println("no picture found");
+        }
 
-            //  Bitmap orginialPic = BitmapFactory.decodeFile(filename);
+        //  Bitmap orginialPic = BitmapFactory.decodeFile(filename);
+        HashMap<String, Bitmap> piles = new HashMap<>();
+        Bitmap bmOverlayFound = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig());
+        Bitmap bmOverlayDraw =  Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig());
+        Bitmap bmOverlayBuild = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig());
+        Bitmap bmOverlaytotal = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig());
 
-            HashMap<String, Bitmap> piles = new HashMap<>();
 
-            Bitmap foundationPile = Bitmap.createBitmap(orginialPic, orginialPic.getWidth() - orginialPic.getWidth() * 5 / 8, 0, orginialPic.getWidth() * 4 / 8, (orginialPic.getHeight() / 3));
-            piles.put(ObjectDetection.GROUND_PILE, foundationPile);
+        Bitmap foundationPile = Bitmap.createBitmap(orginialPic, orginialPic.getWidth() - orginialPic.getWidth() * 5 / 8, 0, orginialPic.getWidth() * 4 / 8, (orginialPic.getHeight() / 3));
+        Canvas canvasFoundation = new Canvas(bmOverlayFound);
+        canvasFoundation.drawBitmap(background, new Matrix(), null);
+        canvasFoundation.drawBitmap(foundationPile, 0, 0, null);
+        piles.put(ObjectDetection.GROUND_PILE, bmOverlayFound);
 
-            Bitmap drawPile = Bitmap.createBitmap(orginialPic, 0, 0, orginialPic.getWidth() * 3 / 8, (orginialPic.getHeight() / 3));
-            piles.put(ObjectDetection.DRAW_PILE, drawPile);
+        Bitmap drawPile = Bitmap.createBitmap(orginialPic, 0, 0, orginialPic.getWidth() * 3 / 8, (orginialPic.getHeight() / 3));
+        Canvas canvasDraw = new Canvas(bmOverlayDraw);
+        canvasDraw.drawBitmap(background, new Matrix(), null);
+        canvasDraw.drawBitmap(drawPile, 0, 0, null);
+        piles.put(ObjectDetection.DRAW_PILE, bmOverlayDraw);
 
-            Bitmap buildPile = Bitmap.createBitmap(orginialPic, 0, orginialPic.getHeight() / 3, orginialPic.getWidth() * 7 / 8, (orginialPic.getHeight() * 2 / 3));
-            piles.put(ObjectDetection.BUILD_PILE, buildPile);
+        Bitmap buildPile = Bitmap.createBitmap(orginialPic, 0, orginialPic.getHeight() / 3, orginialPic.getWidth() * 7 / 8, (orginialPic.getHeight() * 2 / 3));
+        Canvas canvasBuild = new Canvas(bmOverlayBuild);
+        canvasBuild.drawBitmap(background, new Matrix(), null);
+        canvasBuild.drawBitmap(buildPile, 0, 0, null);
+        piles.put(ObjectDetection.BUILD_PILE, bmOverlayBuild);
 
-            return piles;
+        Canvas canvasfull = new Canvas(bmOverlaytotal);
+        canvasfull.drawBitmap(background, new Matrix(), null);
+        canvasfull.drawBitmap(orginialPic, 0, 0, null);
+        piles.put("total", bmOverlaytotal);
+        return piles;
         }
 
     // for at gamme vores delte billeder.
