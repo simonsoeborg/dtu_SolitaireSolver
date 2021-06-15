@@ -64,10 +64,10 @@ public class CameraFragment extends Fragment {
             mPreview = new CameraPreview(context, mCamera);
             FrameLayout preview = (FrameLayout) cameraFrag.findViewById(R.id.camera_preview);
             preview.addView(mPreview);
-            //ViewGroup.LayoutParams params = preview.getLayoutParams();
-            //params.width = (Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels)) / 9 * 16;
-            //params.height = (Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels));
-            //preview.setLayoutParams(params);
+            ViewGroup.LayoutParams params = preview.getLayoutParams();
+            params.width = (Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels)) / 9 * 16;
+            params.height = (Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels));
+            preview.setLayoutParams(params);
 
             // Add a listener to the Capture button
             ImageButton captureButton = (ImageButton) cameraFrag.findViewById(R.id.button_capture);
