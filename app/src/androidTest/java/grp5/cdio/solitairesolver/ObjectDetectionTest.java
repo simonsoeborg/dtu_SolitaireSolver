@@ -94,7 +94,35 @@ public class ObjectDetectionTest {
         ArrayList<Result> sortedList = new ArrayList<>();
 
         sortedList.add(resultArrayList.get(0));
-        for (Result element : resultArrayList) {
+
+        // For each loops
+        for (Result result : resultArrayList) {
+            for (Result sorting : sortedList) {
+                if(sorting.getRect().left > result.getRect().left) {
+                    sortedList.add(sortedList.indexOf(sorting), result);
+                } else {
+                    sortedList.add(result);
+                }
+            }
+        }
+
+        // For loops
+        for (int i = 0; i < resultArrayList.size(); i++) {
+            for (int j = 0; j < sortedList.size(); j++) {
+                if(!sortedList.contains(resultArrayList.get(i))) {
+                    if(sortedList.get(j).getRect().left < resultArrayList.get(i).getRect().left) {
+                        sortedList.add(resultArrayList.get(i));
+                    } else {
+                        sortedList.add(j, resultArrayList.get(i));
+                    }
+                }
+            }
+        }
+
+
+
+
+/*        for (Result element : resultArrayList) {
 
             for (int i = 0; i < sortedList.size(); i++) {
 
@@ -108,6 +136,6 @@ public class ObjectDetectionTest {
                     }
                 }
             }
-        }
+        }*/
     }
 }
