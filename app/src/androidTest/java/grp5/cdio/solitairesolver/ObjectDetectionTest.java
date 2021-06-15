@@ -93,6 +93,7 @@ public class ObjectDetectionTest {
         ArrayList<Result> sortedResultArrayList = sortList(resultArrayList);
     }
 
+
     public ArrayList<Result> sortList(ArrayList<Result> arr) {
         ArrayList<Result> sortedList = new ArrayList<>();
         sortedList.add(arr.get(0));
@@ -113,4 +114,15 @@ public class ObjectDetectionTest {
         }
         return sortedList;
     }
+
+    public ArrayList<Result> removeDuplicates(ArrayList<Result> arr) {
+        ArrayList<Result> cleanList = new ArrayList<>();
+
+        for (int i = 0; i < arr.size(); i++) {
+
+
+            }
+        return  cleanList;
+    }
+
 }
