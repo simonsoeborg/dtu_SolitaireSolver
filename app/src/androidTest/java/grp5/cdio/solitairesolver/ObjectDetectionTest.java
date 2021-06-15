@@ -110,18 +110,23 @@ public class ObjectDetectionTest {
             i++;
         }*/
 
+        // Card { TopRightCornor, TopLeftCornor, BottomRightCornor, BottomLeftCornor }
+        // Højeste venstre værdi Top Left Cornor, Lavest Venstre Værdi Bottom Left Cornor
+        // New {
+
         // For loops
         for (int i = 0; i < resultArrayList.size(); i++) {
-            if(!sortedList.contains(resultArrayList.get(i))) {
+            Result currentObj = resultArrayList.get(i);
+            if(!sortedList.contains(currentObj)) {
                 for (int j = 0; j < sortedList.size(); j++) {
-                        if(sortedList.get(j).getRect().left < resultArrayList.get(i).getRect().left) {
-                            sortedList.add(resultArrayList.get(i));
-                            j=0;
-                        } else {
-                            sortedList.add(j, resultArrayList.get(i));
-                            j=0;
-                        }
+                    if(currentObj.getRect().left < sortedList.get(j).getRect().left) {
+                        sortedList.add(j, currentObj);
+                        break;
                     }
+                }
+                if(!sortedList.contains(currentObj)) {
+                    sortedList.add(currentObj);
+                }
             }
         }
 
