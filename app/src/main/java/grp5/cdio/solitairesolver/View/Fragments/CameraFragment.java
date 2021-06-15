@@ -113,8 +113,8 @@ public class CameraFragment extends Fragment {
                 c = Camera.open(i);
             Camera.Parameters params = c.getParameters();
             params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
-            params.setPreviewSize((Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels)) / 9 * 16, Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels));
-            params.setPictureSize((Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels)) / 9 * 16, Math.min(displayMetrics.heightPixels, displayMetrics.widthPixels));
+            params.setPreviewSize(1920, 1080);
+            params.setPictureSize(1920, 1080);
             c.setParameters(params);
         }
         catch (Exception e){
