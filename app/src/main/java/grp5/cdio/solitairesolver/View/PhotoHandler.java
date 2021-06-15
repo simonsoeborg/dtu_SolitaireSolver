@@ -104,23 +104,21 @@ public class PhotoHandler implements PictureCallback {
 
     private HashMap<String, Bitmap> splitImg(String filename, Bitmap orginialPic) {
 
-        //  Bitmap orginialPic = BitmapFactory.decodeFile(filename);
+            //  Bitmap orginialPic = BitmapFactory.decodeFile(filename);
 
-        HashMap<String, Bitmap> piles = new HashMap<>();
+            HashMap<String, Bitmap> piles = new HashMap<>();
 
-        // Todo : Der skal specificeres de rigtige x og y kordinater (første pixel), og relevante længder. pt er de bare randome.
+            Bitmap foundationPile = Bitmap.createBitmap(orginialPic, orginialPic.getWidth() - orginialPic.getWidth() * 5 / 8, 0, orginialPic.getWidth() * 4 / 8, (orginialPic.getHeight() / 3));
+            piles.put(ObjectDetection.GROUND_PILE, foundationPile);
 
-        Bitmap foundationPile = Bitmap.createBitmap(orginialPic, orginialPic.getWidth() - orginialPic.getWidth() * 5 / 8, 0, orginialPic.getWidth() * 4 / 8, (orginialPic.getHeight() / 3));
-        piles.put(ObjectDetection.GROUND_PILE, foundationPile);
+            Bitmap drawPile = Bitmap.createBitmap(orginialPic, 0, 0, orginialPic.getWidth() * 3 / 8, (orginialPic.getHeight() / 3));
+            piles.put(ObjectDetection.DRAW_PILE, drawPile);
 
-        Bitmap drawPile = Bitmap.createBitmap(orginialPic, 0, 0, orginialPic.getWidth() * 3 / 8, (orginialPic.getHeight() / 3));
-        piles.put(ObjectDetection.DRAW_PILE, drawPile);
+            Bitmap buildPile = Bitmap.createBitmap(orginialPic, 0, orginialPic.getHeight() / 3, orginialPic.getWidth() * 7 / 8, (orginialPic.getHeight() * 2 / 3));
+            piles.put(ObjectDetection.BUILD_PILE, buildPile);
 
-        Bitmap buildPile = Bitmap.createBitmap(orginialPic, 0, orginialPic.getHeight() / (29/10), orginialPic.getWidth() * 7 / 8, (orginialPic.getHeight()  / 2));
-        piles.put(ObjectDetection.BUILD_PILE, buildPile);
-
-        return piles;
-    }
+            return piles;
+        }
 
     // for at gamme vores delte billeder.
     private void saveSplitImg(HashMap<String, Bitmap>  map) {
