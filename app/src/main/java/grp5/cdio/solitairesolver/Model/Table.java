@@ -36,6 +36,17 @@ public class Table {
         groundPile.add(new GroundPile(0));
         this.discardPile = new BasePile(0);
     }
+
+    public void makeMove(Move move, Card card){
+        if (move.card == null || move.getScore() == -1 ||  move.getScore() == 5){
+            discardPile.getCards().add(card);
+        } else {
+            move.makeMove();
+            if (card != null){
+                move.moveFrom.setCard(move.moveFrom.size()-1, card);
+            }
+        }
+    }
     /**
      * Get the {@link Move} with highest
      *
@@ -58,6 +69,10 @@ public class Table {
         return groundPile.get(index);
         }
         return null;
+    }
+
+    public ArrayList<GroundPile> getGroundPiles() {
+        return groundPile;
     }
 
     public void setGroundPile(int index, int cards) {
