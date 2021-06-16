@@ -40,7 +40,7 @@ public class ObjectDetectionTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         ObjectDetection objectDetection = new ObjectDetection(appContext);
         AssetManager am = appContext.getAssets();
-        InputStream is = am.open("test7.png");
+        InputStream is = am.open("img_test4_build_black.jpg");
         BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
         bit = BitmapFactory.decodeStream(bufferedInputStream);
         ArrayList<Result> resultArrayList = objectDetection.analyzeBitmap(bit);
@@ -64,6 +64,8 @@ public class ObjectDetectionTest {
         Float acc = totalScore/resultArrayList.size();
 
         ArrayList<Result> sortedResultArrayList = sortList(resultArrayList);
+
+        Collections.sort(resultArrayList);
 
         ArrayList<Result> DoneResultArrayList = removeDuplicates(sortedResultArrayList);
 
@@ -115,34 +117,34 @@ public class ObjectDetectionTest {
         return counter > 1;
     }
 
-    public Card getNames (Result arr){
+    public Card getNames (Result result){
         FaceValue[] values = {FaceValue.TEN, FaceValue.TWO, FaceValue.THREE, FaceValue.FOUR,
                 FaceValue.FIVE, FaceValue.SIX, FaceValue.SEVEN, FaceValue.EIGHT, FaceValue.NINE,
                 FaceValue.ONE, FaceValue.ELEVEN, FaceValue.THIRTEEN, FaceValue.TWELVE};
 
         int val;
 
-        if ((arr.getClassIndex()+1)%4==3) {
+        if ((result.getClassIndex()+1)%4==3) {
 
-            val = arr.getClassIndex()/4;
+            val = result.getClassIndex()/4;
             Card nameTester = new Card(Suit.HEARTS, values[val]);
             return nameTester;
         }
 
-        else if ((arr.getClassIndex()+1)%4==0) {
-            val = arr.getClassIndex()/4;
+        else if ((result.getClassIndex()+1)%4==0) {
+            val = result.getClassIndex()/4;
             Card nameTester = new Card(Suit.SPADES, values[val]);
             return nameTester;
         }
 
-        else if ((arr.getClassIndex()+1)%4==2) {
-            val = arr.getClassIndex()/4;
+        else if ((result.getClassIndex()+1)%4==2) {
+            val = result.getClassIndex()/4;
             Card nameTester = new Card(Suit.DIAMONDS, values[val]);
             return nameTester;
         }
 
-        else if ((arr.getClassIndex()+1)%4==1) {
-            val = arr.getClassIndex()/4;
+        else if ((result.getClassIndex()+1)%4==1) {
+            val = result.getClassIndex()/4;
             Card nameTester = new Card(Suit.CLUBS, values[val]);
             return nameTester;
         }
@@ -150,31 +152,67 @@ public class ObjectDetectionTest {
     }
 
     private Table cardSorter(ArrayList<Result> result) {
-        Table table = new Table();
-        Card card;
-        int width = bit.getWidth();
+        ArrayList<Result> b0 = new ArrayList<>();
+        ArrayList<Result> b1 = new ArrayList<>();
+        ArrayList<Result> b2 = new ArrayList<>();
+        ArrayList<Result> b3 = new ArrayList<>();
+        ArrayList<Result> b4 = new ArrayList<>();
+        ArrayList<Result> b5 = new ArrayList<>();
+        ArrayList<Result> b6 = new ArrayList<>();
+
+        int width = bit.getWidth() * 7/8;
 
         for (int i = 0; i < result.size(); i++) {
             int x = result.get(i).getRect().left;
-            card = getNames(result.get(i));
             if (0 < x && x < width/7) {
-                table.buildPile.get(0).addCard(card);
+                b0.add(result.get(i));
             } else if (width/7 < x && x < 2*width/7) {
-                table.buildPile.get(1).addCard(card);
+                b1.add(result.get(i));
             } else if (2*width/7 < x && x < 3*width/7) {
-                table.buildPile.get(2).addCard(card);
+                b2.add(result.get(i));
             } else if (3*width/7 < x && x < 4*width/7) {
-                table.buildPile.get(3).addCard(card);
+                b3.add(result.get(i));
             } else if (4*width/7 < x && x < 5*width/7) {
-                table.buildPile.get(4).addCard(card);
+                b4.add(result.get(i));
             } else if (5*width/7 < x && x < 6*width/7) {
-                table.buildPile.get(5).addCard(card);
+                b5.add(result.get(i));
             } else if (6*width/7 < x && x < width) {
-                table.buildPile.get(6).addCard(card);
+                b6.add(result.get(i));
             }
         }
 
+        Collections.sort(b0);
+        Collections.sort(b1);
+        Collections.sort(b2);
+        Collections.sort(b3);
+        Collections.sort(b4);
+        Collections.sort(b5);
+        Collections.sort(b6);
 
+        Table table = new Table();
+        Card card;
+
+        for (Result o : b0) {
+            table.buildPile.get(0).addCard(getNames(o));
+        }
+        for (Result o : b1) {
+            table.buildPile.get(1).addCard(getNames(o));
+        }
+        for (Result o : b2) {
+            table.buildPile.get(2).addCard(getNames(o));
+        }
+        for (Result o : b3) {
+            table.buildPile.get(3).addCard(getNames(o));
+        }
+        for (Result o : b4) {
+            table.buildPile.get(4).addCard(getNames(o));
+        }
+        for (Result o : b5) {
+            table.buildPile.get(5).addCard(getNames(o));
+        }
+        for (Result o : b6) {
+            table.buildPile.get(6).addCard(getNames(o));
+        }
 
 
 

@@ -43,6 +43,6 @@ public class Result implements Comparable<Result>{
     }
 
     public int compareTo(Result result) {
-        return Integer.compare(rect.left, result.getRect().left);
+        return Integer.compare(rect.top, result.getRect().top);
     }
 }
