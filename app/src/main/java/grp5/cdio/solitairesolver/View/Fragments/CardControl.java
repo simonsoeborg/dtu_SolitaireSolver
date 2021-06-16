@@ -30,8 +30,6 @@ import grp5.cdio.solitairesolver.Controller.Controller;
 public class CardControl extends Fragment {
 
     Table genTable;
-    ArrayList drawPile;
-    ArrayList pile;
     ArrayList<Card> cards;
     ListView buildPile1, buildPile2, buildPile3, buildPile4, buildPile5, buildPile6,
              buildPile7, groundPile1, groundPile2, groundPile3, groundPile4, discardPile;
@@ -113,6 +111,12 @@ public class CardControl extends Fragment {
             adapter = new PileAdapter(cards);
             groundPiles.get(i).setAdapter(adapter);
             groundPiles.get(i).setVisibility(View.VISIBLE);
+        }
+
+        for (ListView lv : groundPiles) {
+            if (cards.size() == 0) {
+                lv.setVisibility(View.INVISIBLE);
+            }
         }
 
 
