@@ -110,6 +110,8 @@ public class PhotoHandler implements PictureCallback {
 
     private HashMap<String, Bitmap> splitImg(String filename, Bitmap orginialPic){
         Bitmap background = null;
+        orginialPic.setHeight(640);
+        orginialPic.setWidth(640);
         try {
             AssetManager am = context.getAssets();
             InputStream is = am.open("blackBackground.jpg");
