@@ -68,8 +68,7 @@ public class PhotoHandler implements PictureCallback {
             BitmapFactory.Options opt = new BitmapFactory.Options();
             opt.inMutable = true;
             originalPic = BitmapFactory.decodeFile(filename, opt);
-            //originalPic = BitmapFactory.decodeFile(filename);
-            pictureFile.delete();
+            //pictureFile.delete();
             Toast.makeText(context, "New Image er taget, passed og slettet igen:" + photoFile, Toast.LENGTH_LONG).show();
         } catch (Exception error) {
             Log.d("PhotoHandler", "File" + filename + "not saved: " + error.getMessage());
@@ -111,10 +110,9 @@ public class PhotoHandler implements PictureCallback {
         return file;
     }
 
-    private HashMap<String, Bitmap> splitImg(String filename, Bitmap orginialPic){
+    private HashMap<String, Bitmap> splitImg(String filename, Bitmap orgPic){
         Bitmap background = null;
-        orginialPic.setHeight(640);
-        orginialPic.setWidth(640);
+        Bitmap orginialPic = Bitmap.createScaledBitmap(orgPic, 640, 360, false);
         try {
             AssetManager am = context.getAssets();
             InputStream is = am.open("blackBackground.jpg");
