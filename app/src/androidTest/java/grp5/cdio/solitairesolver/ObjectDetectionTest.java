@@ -69,6 +69,7 @@ public class ObjectDetectionTest {
         Table table = new Table();
         table = buildPileSorter(DoneResultArrayList, table);
 
+
         System.out.println(table.toString());
 
         System.out.println("havelåge");
