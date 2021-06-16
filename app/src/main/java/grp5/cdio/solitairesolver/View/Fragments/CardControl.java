@@ -43,7 +43,7 @@ public class CardControl extends Fragment {
         Button fortsaet = controlFrag.findViewById(R.id.Continue);
 
         Controller con = Controller.getInstance();
-        String bestMove = con.getMove().toString();
+        //String bestMove = con.getMove().toString();
         drawPileExist = controlFrag.findViewById(R.id.cardback);
 
         discardPile = controlFrag.findViewById(R.id.Waste3Cards);
@@ -113,11 +113,12 @@ public class CardControl extends Fragment {
             groundPiles.get(i).setVisibility(View.VISIBLE);
         }
 
-        for (ListView lv : groundPiles) {
-            if (cards.size() == 0) {
-                lv.setVisibility(View.INVISIBLE);
+        if (cards == null) {
+            for (int i = 0; i < groundPiles.size(); i++) {
+                groundPiles.get(i).setVisibility(View.INVISIBLE);
             }
         }
+
 
 
         tagBillede.setOnClickListener(new View.OnClickListener() {
