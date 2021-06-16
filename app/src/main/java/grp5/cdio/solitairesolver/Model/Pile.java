@@ -64,6 +64,13 @@ public abstract class Pile {
     }
 
     /**
+     * add top card
+     */
+    public void addCard(Card card){
+        cards.add(card);
+    }
+
+    /**
      * remove top card
      */
     public void removeCard(){
