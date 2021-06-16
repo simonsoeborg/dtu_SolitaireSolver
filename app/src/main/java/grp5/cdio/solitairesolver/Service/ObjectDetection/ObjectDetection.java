@@ -42,7 +42,7 @@ public class ObjectDetection {
     /**
      * Get Table from bitmaps
      *
-     * @param map HashMap of bitmaps. Key is draw, build or ground
+     * @param map HashMap of bitmaps. Key is draw, build or ground.
      */
     public Table analyzeImage(HashMap<String, Bitmap> map) throws IOException {
         Table table = new Table();
