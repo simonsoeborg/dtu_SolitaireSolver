@@ -24,6 +24,7 @@ public class Controller {
     private HashMap<String, Bitmap> EmptyMap = new HashMap<>();
     private Move lastMove;
     private static Controller single_instance = null;
+    private ObjectDetection dect;
 
     private Controller() {
     }
@@ -40,7 +41,7 @@ public class Controller {
      * Instansiate table from objectDectection {@link Table}
      */
     public void loadCards(Context context, HashMap<String, Bitmap> map) throws IOException {
-        ObjectDetection dect = new ObjectDetection(context);
+        dect = new ObjectDetection(context);
         Table currentTable = dect.analyzeImage(map);
         table = currentTable;
     }
@@ -49,27 +50,7 @@ public class Controller {
      * get game table
      */
     public Table getTable(){
-        Table mocktable = new Table();
-        Card cardQueenHearts = new Card(Suit.HEARTS, FaceValue.TWELVE);
-        Card cardKingHearts = new Card(Suit.HEARTS, FaceValue.THIRTEEN);
-
-        Card cardFourHearts= new Card(Suit.HEARTS, FaceValue.FOUR);
-        Card cardJackHearts = new Card(Suit.HEARTS, FaceValue.ELEVEN);
-
-        Card cardFiveHearts = new Card(Suit.HEARTS, FaceValue.FIVE);
-        Card cardFiveClubs = new Card(Suit.CLUBS, FaceValue.FIVE);
-        Card cardFiveSpades = new Card(Suit.SPADES, FaceValue.FIVE);
-
-        mocktable.buildPile.get(0).setCard(0, cardQueenHearts);
-        mocktable.buildPile.get(1).setCard(1, cardKingHearts);
-        mocktable.buildPile.get(2).setCard(2, cardFourHearts);
-        mocktable.buildPile.get(3).setCard(3, cardJackHearts);
-        mocktable.buildPile.get(4).setCard(4, cardFiveClubs);
-        mocktable.buildPile.get(5).setCard(5, cardFiveHearts);
-        mocktable.buildPile.get(6).setCard(6, cardFiveSpades);
-        return mocktable;
-
-        // return table
+        return dect.getTable();
     }
 
     /**
