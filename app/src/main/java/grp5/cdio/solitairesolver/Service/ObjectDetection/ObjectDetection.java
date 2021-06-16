@@ -34,6 +34,7 @@ public class ObjectDetection {
     public static String BUILD_PILE = "build";
     public static String GROUND_PILE = "ground";
     public static Bitmap total;
+    public Table table = new Table();
 
     public ObjectDetection(Context context) {
         this.context = context;
@@ -45,7 +46,6 @@ public class ObjectDetection {
      * @param map HashMap of bitmaps. Key is draw, build or ground.
      */
     public Table analyzeImage(HashMap<String, Bitmap> map) throws IOException {
-        Table table = new Table();
         Bitmap build = map.get(BUILD_PILE);
         Bitmap draw = map.get(DRAW_PILE);
         Bitmap ground = map.get(GROUND_PILE);
@@ -120,6 +120,10 @@ public class ObjectDetection {
         Log.d("Run", "" + outputs.length);
         return PrePostProcessor.outputsToNMSPredictions(outputs, mImgScaleX, mImgScaleY, mIvScaleX, mIvScaleY, mStartX, mStartY);
 
+    }
+
+    public Table getTable() {
+        return table;
     }
 
     public ArrayList<Result> sortList(ArrayList<Result> arr) {
