@@ -107,17 +107,14 @@ public class CardControl extends Fragment {
 
         for (int i = 0; i < groundPiles.size(); i++) {
             cards = new ArrayList<>();
-            cards.add(table.groundPile.get(i).getTopCard());
-            adapter = new PileAdapter(cards);
-            groundPiles.get(i).setAdapter(adapter);
-            groundPiles.get(i).setVisibility(View.VISIBLE);
-        }
-
-        if (cards == null) {
-            for (int i = 0; i < groundPiles.size(); i++) {
-                groundPiles.get(i).setVisibility(View.INVISIBLE);
+            if (table.groundPile.get(i).getTopCard() != null) {
+                cards.add(table.groundPile.get(i).getTopCard());
+                adapter = new PileAdapter(cards);
+                groundPiles.get(i).setAdapter(adapter);
+                groundPiles.get(i).setVisibility(View.VISIBLE);
             }
         }
+
 
 
 
