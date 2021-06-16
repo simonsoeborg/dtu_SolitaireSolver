@@ -1,11 +1,9 @@
 package grp5.cdio.solitairesolver;
 
-import com.google.android.material.tabs.TabLayout;
-
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import grp5.cdio.solitairesolver.Model.BasePile;
@@ -19,58 +17,67 @@ import grp5.cdio.solitairesolver.Model.Table;
 
 public class GameTest {
     @Test
+    public void testGame(){
+        for (int j = 0 ; j < 10000; j ++){
+            runGame();
+        }
+
+    }
+
+
     public void runGame() {
         ArrayList<Card> cards = makeCards();
-        ArrayList<Card> cardsOnBoard = new ArrayList<Card>(cards.subList(0,7)); // 7 cards
-        ArrayList<Card> cardsHiddenOnBoard = new ArrayList<Card>(cards.subList(7,28)); // 21 cards
-        ArrayList<Card> cardsInDraw = new ArrayList<Card>(cards.subList(28,52)); // 24 cards
+        Collections.shuffle(cards);
+        ArrayList<Card> cardsOnBoard = new ArrayList<Card>(cards.subList(0, 7)); // 7 cards
+        ArrayList<Card> cardsHiddenOnBoard = new ArrayList<Card>(cards.subList(7, 28)); // 21 cards
+        ArrayList<Card> cardsInDraw = new ArrayList<Card>(cards.subList(28, 52)); // 24 cards
         ArrayList<Card> cardsInDiscard = new ArrayList<>();
-        boolean play = true;
 
         Table table = makeTestTable(cardsOnBoard);
+            for (int i = 0; i < 4000; i++) {
+                ArrayList<Move> legalMoves = table.getLegalMoves();
+                Move move = table.getBestMove(legalMoves);
 
-        for(int i = 0; i < 100 ; i++){
-            ArrayList<Move> legalMoves = table.getLegalMoves();
-            Move move = table.getBestMove(legalMoves);
-
-            Card cardToAddToBoard = null;
-            if (move.getScore() == -1 || move.getScore() == 5){
-                cardToAddToBoard = cardsInDraw.get(0);
-                cardsInDiscard.add(cardToAddToBoard);
-                cardsInDraw.remove(cardToAddToBoard);
-            }
-            else {
-                if(move.moveFrom instanceof BasePile){
-                    cardsInDiscard.remove(cardsInDiscard.size()-1);
+                Card cardToAddToBoard = null;
+                if (move.getScore() == -1 || move.getScore() == 5) {
+                    if (cardsInDraw.isEmpty()) {
+                        System.out.println("Cannot solve");
+                        break;
+                    }
+                    cardToAddToBoard = cardsInDraw.get(0);
+                    cardsInDiscard.add(cardToAddToBoard);
+                    cardsInDraw.remove(cardToAddToBoard);
+                } else {
+                    if (move.moveFrom instanceof BasePile) {
+                        cardsInDiscard.remove(cardsInDiscard.size() - 1);
+                    } else if (move.moveFrom instanceof BuildPile && move.moveFrom.size() > 1 ) {
+                        if (!move.moveFrom.getCards().get(move.moveFrom.getCards().size()-2).isVisible()){
+                            cardToAddToBoard = cardsHiddenOnBoard.get(0);
+                            cardsHiddenOnBoard.remove(cardToAddToBoard);
+                        }
+                    }
                 }
-                else if(move.moveFrom instanceof BuildPile && move.moveFrom.size() > 1){
-                    cardToAddToBoard = cardsHiddenOnBoard.get(0);
-                    cardsHiddenOnBoard.remove(cardToAddToBoard);
-                }
-            }
 
-            table.makeMove(move, cardToAddToBoard);
-            boolean done = true;
-            for(GroundPile pile : table.getGroundPiles()){
-                if(pile.size() != 13){
-                    done = false;
+                table.makeMove(move, cardToAddToBoard);
+                boolean done = true;
+                for (GroundPile pile : table.getGroundPiles()) {
+                    if (pile.size() != 13) {
+                        done = false;
+                    }
                 }
-            }
-            System.out.println(move);
-            System.out.println(move.getScore());
-            System.out.println(table);
-            if (done){
-                System.out.println("Done in "+i+" Moves");
-                break;
-            }
 
-            if(cardsInDraw.isEmpty() && cardsInDiscard.size() > 1){
-                cardsInDraw = cardsInDiscard;
-                cardsInDiscard.clear();
-                table.discardPile.getCards().clear();
+                if (done) {
+                    System.out.println("Done in " + i + " Moves");
+                    break;
+                }
+
+                if (cardsInDraw.isEmpty() && cardsInDiscard.size() > 1) {
+                    cardsInDraw = cardsInDiscard;
+                    cardsInDiscard.clear();
+                    table.discardPile.getCards().clear();
+                }
             }
         }
-    }
     public Table makeTestTable(List<Card> cards){
         Table table = new Table();
         table.buildPile.get(0).setCard(0, cards.get(0));
