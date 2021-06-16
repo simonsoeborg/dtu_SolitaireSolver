@@ -35,7 +35,7 @@ import grp5.cdio.solitairesolver.View.Fragments.CardControl;
 public class PhotoHandler implements PictureCallback {
     private final Context context;
     public String lastPicture = null;
-    public Bitmap orginialPic;
+    public Bitmap originalPic;
 
     public PhotoHandler(Context context) {
         this.context = context;
@@ -65,7 +65,10 @@ public class PhotoHandler implements PictureCallback {
             fos.write(data);
             fos.close();
             // lastPicture = filename;
-            orginialPic = BitmapFactory.decodeFile(filename);
+            BitmapFactory.Options opt = new BitmapFactory.Options();
+            opt.inMutable = true;
+            originalPic = BitmapFactory.decodeFile(filename, opt);
+            //originalPic = BitmapFactory.decodeFile(filename);
             pictureFile.delete();
             Toast.makeText(context, "New Image er taget, passed og slettet igen:" + photoFile, Toast.LENGTH_LONG).show();
         } catch (Exception error) {
@@ -75,7 +78,7 @@ public class PhotoHandler implements PictureCallback {
         }
 
         Controller con = Controller.getInstance();
-        HashMap<String, Bitmap> list = splitImg(lastPicture, orginialPic);
+        HashMap<String, Bitmap> list = splitImg(lastPicture, originalPic);
         saveSplitImg(list);
         con.loadCards(context, list);
 
