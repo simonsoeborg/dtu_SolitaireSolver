@@ -74,7 +74,6 @@ public class ObjectDetectionTest {
         System.out.println("havelåge");
     }
 
-
     public ArrayList<Result> sortList(ArrayList<Result> arr) {
         ArrayList<Result> sortedList = new ArrayList<>();
         if (arr.size() > 0) {

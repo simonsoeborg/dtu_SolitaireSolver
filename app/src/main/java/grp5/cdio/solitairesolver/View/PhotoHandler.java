@@ -35,7 +35,7 @@ import grp5.cdio.solitairesolver.View.Fragments.CardControl;
 public class PhotoHandler implements PictureCallback {
     private final Context context;
     public String lastPicture = null;
-    public Bitmap orginialPic;
+    public Bitmap originalPic;
 
     public PhotoHandler(Context context) {
         this.context = context;
@@ -65,8 +65,10 @@ public class PhotoHandler implements PictureCallback {
             fos.write(data);
             fos.close();
             // lastPicture = filename;
-            orginialPic = BitmapFactory.decodeFile(filename);
-            pictureFile.delete();
+            BitmapFactory.Options opt = new BitmapFactory.Options();
+            opt.inMutable = true;
+            originalPic = BitmapFactory.decodeFile(filename, opt);
+            //pictureFile.delete();
             Toast.makeText(context, "New Image er taget, passed og slettet igen:" + photoFile, Toast.LENGTH_LONG).show();
         } catch (Exception error) {
             Log.d("PhotoHandler", "File" + filename + "not saved: " + error.getMessage());
@@ -75,7 +77,7 @@ public class PhotoHandler implements PictureCallback {
         }
 
         Controller con = Controller.getInstance();
-        HashMap<String, Bitmap> list = splitImg(lastPicture, orginialPic);
+        HashMap<String, Bitmap> list = splitImg(lastPicture, originalPic);
         saveSplitImg(list);
         con.loadCards(context, list);
 
@@ -108,8 +110,9 @@ public class PhotoHandler implements PictureCallback {
         return file;
     }
 
-    private HashMap<String, Bitmap> splitImg(String filename, Bitmap orginialPic){
+    private HashMap<String, Bitmap> splitImg(String filename, Bitmap orgPic){
         Bitmap background = null;
+        Bitmap orginialPic = Bitmap.createScaledBitmap(orgPic, 640, 360, false);
         try {
             AssetManager am = context.getAssets();
             InputStream is = am.open("blackBackground.jpg");
