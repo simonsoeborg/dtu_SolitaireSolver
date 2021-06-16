@@ -110,9 +110,13 @@ public class PhotoHandler implements PictureCallback {
         return file;
     }
 
-    private HashMap<String, Bitmap> splitImg(String filename, Bitmap orgPic){
+    private HashMap<String, Bitmap> splitImg(String filename, Bitmap originalPic){
+        // Hvis billedet af en eller anden grund ikke er mutable, lav en kopi af den selv
+        if (!originalPic.isMutable()) {
+            originalPic = originalPic.copy(Bitmap.Config.ARGB_8888, true);
+        }
         Bitmap background = null;
-        Bitmap orginialPic = Bitmap.createScaledBitmap(orgPic, 640, 360, false);
+        //Bitmap originalPic = Bitmap.createScaledBitmap(orgPic, 1920, 360, false);
         try {
             AssetManager am = context.getAssets();
             InputStream is = am.open("blackBackground.jpg");
@@ -124,34 +128,34 @@ public class PhotoHandler implements PictureCallback {
 
         //  Bitmap orginialPic = BitmapFactory.decodeFile(filename);
         HashMap<String, Bitmap> piles = new HashMap<>();
-        Bitmap bmOverlayFound = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig());
-        Bitmap bmOverlayDraw =  Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig());
-        Bitmap bmOverlayBuild = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig());
-        Bitmap bmOverlaytotal = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig());
+        Bitmap bmOverlayDraw =  Bitmap.createBitmap(background.getWidth()/3, background.getHeight()/3, background.getConfig()); // 1/3 bredde af 1920 er nok
+        Bitmap bmOverlayFound = Bitmap.createBitmap(background.getWidth()/2, background.getHeight()/2, background.getConfig()); // halv bredde af 1920 er nok
+        Bitmap bmOverlayBuild = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig()); // Fuld bredde
+        Bitmap bmOverlayTotal = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig()); // Fuld bredde
 
 
-        Bitmap foundationPile = Bitmap.createBitmap(orginialPic, orginialPic.getWidth() - orginialPic.getWidth() * 5 / 8, 0, orginialPic.getWidth() * 4 / 8, (orginialPic.getHeight() / 3));
-        Canvas canvasFoundation = new Canvas(bmOverlayFound);
-        canvasFoundation.drawBitmap(background, new Matrix(), null);
-        canvasFoundation.drawBitmap(foundationPile, 0, 0, null);
-        piles.put(ObjectDetection.GROUND_PILE, bmOverlayFound);
-
-        Bitmap drawPile = Bitmap.createBitmap(orginialPic, 0, 0, orginialPic.getWidth() * 3 / 8, (orginialPic.getHeight() / 3));
+        Bitmap drawPile = Bitmap.createBitmap(originalPic, 0, 0, originalPic.getWidth() * 3 / 8, (originalPic.getHeight() / 3));
         Canvas canvasDraw = new Canvas(bmOverlayDraw);
         canvasDraw.drawBitmap(background, new Matrix(), null);
         canvasDraw.drawBitmap(drawPile, 0, 0, null);
         piles.put(ObjectDetection.DRAW_PILE, bmOverlayDraw);
 
-        Bitmap buildPile = Bitmap.createBitmap(orginialPic, 0, orginialPic.getHeight() / 3, orginialPic.getWidth() * 7 / 8, (orginialPic.getHeight() * 2 / 3));
+        Bitmap foundationPile = Bitmap.createBitmap(originalPic, originalPic.getWidth() - originalPic.getWidth() * 5 / 8, 0, originalPic.getWidth() * 4 / 8, (originalPic.getHeight() / 3));
+        Canvas canvasFoundation = new Canvas(bmOverlayFound);
+        canvasFoundation.drawBitmap(background, new Matrix(), null);
+        canvasFoundation.drawBitmap(foundationPile, 0, 0, null);
+        piles.put(ObjectDetection.GROUND_PILE, bmOverlayFound);
+
+        Bitmap buildPile = Bitmap.createBitmap(originalPic, 0, originalPic.getHeight() / 3, originalPic.getWidth() * 7 / 8, (originalPic.getHeight() * 2 / 3));
         Canvas canvasBuild = new Canvas(bmOverlayBuild);
         canvasBuild.drawBitmap(background, new Matrix(), null);
         canvasBuild.drawBitmap(buildPile, 0, 0, null);
         piles.put(ObjectDetection.BUILD_PILE, bmOverlayBuild);
 
-        Canvas canvasfull = new Canvas(bmOverlaytotal);
-        canvasfull.drawBitmap(background, new Matrix(), null);
-        canvasfull.drawBitmap(orginialPic, 0, 0, null);
-        piles.put("total", bmOverlaytotal);
+        Canvas canvasFull = new Canvas(bmOverlayTotal);
+        canvasFull.drawBitmap(background, new Matrix(), null);
+        canvasFull.drawBitmap(originalPic, 0, 0, null);
+        piles.put("total", bmOverlayTotal);
         return piles;
         }
 
