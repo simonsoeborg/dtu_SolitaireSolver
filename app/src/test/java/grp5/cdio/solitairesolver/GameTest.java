@@ -16,12 +16,17 @@ import grp5.cdio.solitairesolver.Model.Suit;
 import grp5.cdio.solitairesolver.Model.Table;
 
 public class GameTest {
+    private int lost = 0;
+    private int won = 0;
+
     @Test
     public void testGame(){
-        for (int j = 0 ; j < 10000; j ++){
+        for (int j = 0 ; j < 100; j ++){
             runGame();
         }
 
+        System.out.println("Won: " + won);
+        System.out.println("Lost: " + lost);
     }
 
 
@@ -41,7 +46,8 @@ public class GameTest {
                 Card cardToAddToBoard = null;
                 if (move.getScore() == -1 || move.getScore() == 5) {
                     if (cardsInDraw.isEmpty()) {
-                        System.out.println("Cannot solve");
+                        lost++;
+                        System.out.println("lost");
                         break;
                     }
                     cardToAddToBoard = cardsInDraw.get(0);
@@ -67,7 +73,8 @@ public class GameTest {
                 }
 
                 if (done) {
-                    System.out.println("Done in " + i + " Moves");
+                    won++;
+                    System.out.println("won");
                     break;
                 }
 
