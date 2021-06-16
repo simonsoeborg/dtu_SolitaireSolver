@@ -20,7 +20,7 @@ public class Table {
      * Set up game table with 52 cards
      */
     public Table(){
-        this.drawPile = new BasePile(24);
+        this.drawPile = new BasePile(0);
         this.buildPile = new ArrayList<BuildPile>();
         this.groundPile = new ArrayList<GroundPile>();
         buildPile.add(new BuildPile(0));
