@@ -12,6 +12,7 @@ import org.junit.Test;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -21,6 +22,7 @@ import java.util.List;
 import grp5.cdio.solitairesolver.Model.Card;
 import grp5.cdio.solitairesolver.Model.FaceValue;
 import grp5.cdio.solitairesolver.Model.Suit;
+import grp5.cdio.solitairesolver.Model.Table;
 import grp5.cdio.solitairesolver.Service.ObjectDetection.ObjectDetection;
 import grp5.cdio.solitairesolver.Service.ObjectDetection.Result;
 
@@ -29,15 +31,18 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class ObjectDetectionTest {
+
+    Bitmap bit;
+
     @Test
     public void useAppContext() throws IOException {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         ObjectDetection objectDetection = new ObjectDetection(appContext);
         AssetManager am = appContext.getAssets();
-        InputStream is = am.open("img_test4_build_black.jpg");
+        InputStream is = am.open("test7.png");
         BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
-        Bitmap bit = BitmapFactory.decodeStream(bufferedInputStream);
+        bit = BitmapFactory.decodeStream(bufferedInputStream);
         ArrayList<Result> resultArrayList = objectDetection.analyzeBitmap(bit);
 
         // top left - lav left giver mest left maks 2 instanser af hvert kort
@@ -62,15 +67,18 @@ public class ObjectDetectionTest {
 
         ArrayList<Result> DoneResultArrayList = removeDuplicates(sortedResultArrayList);
 
-        ArrayList<Card> namestest = getNames(DoneResultArrayList);
-        System.out.println(namestest.toString());
+        Table table = cardSorter(DoneResultArrayList);
+
+        System.out.println(table.toString());
+
         System.out.println("havelåge");
     }
 
     public ArrayList<Result> sortList(ArrayList<Result> arr) {
         ArrayList<Result> sortedList = new ArrayList<>();
-        sortedList.add(arr.get(0));
-
+        if (arr.size() > 0) {
+            sortedList.add(arr.get(0));
+        }
         for (int i = 0; i < arr.size(); i++) {
             Result currentObj = arr.get(i);
             if(!sortedList.contains(currentObj)) {
@@ -107,41 +115,73 @@ public class ObjectDetectionTest {
         return counter > 1;
     }
 
-    public ArrayList<Card> getNames (ArrayList<Result> arr){
-        FaceValue[] values = {FaceValue.TEN, FaceValue.TWO, FaceValue.THREE, FaceValue.FOUR ,FaceValue.FIVE, FaceValue.SIX , FaceValue.SEVEN, FaceValue.EIGHT ,FaceValue.NINE, FaceValue.ONE,
-                FaceValue.ELEVEN, FaceValue.THIRTEEN, FaceValue.TWELVE};
-
-        ArrayList<Card> names = new ArrayList<>();
+    public Card getNames (Result arr){
+        FaceValue[] values = {FaceValue.TEN, FaceValue.TWO, FaceValue.THREE, FaceValue.FOUR,
+                FaceValue.FIVE, FaceValue.SIX, FaceValue.SEVEN, FaceValue.EIGHT, FaceValue.NINE,
+                FaceValue.ONE, FaceValue.ELEVEN, FaceValue.THIRTEEN, FaceValue.TWELVE};
 
         int val;
-        for (int i = 0; i < arr.size() ; i++) {
 
-            if ((arr.get(i).getClassIndex()+1)%4==3) {
+        if ((arr.getClassIndex()+1)%4==3) {
 
-                val = arr.get(i).getClassIndex()/4;
-                Card nameTester = new Card(Suit.HEARTS, values[val]);
-                names.add(nameTester);
-            }
+            val = arr.getClassIndex()/4;
+            Card nameTester = new Card(Suit.HEARTS, values[val]);
+            return nameTester;
+        }
 
-            else if ((arr.get(i).getClassIndex()+1)%4==0) {
-                val = arr.get(i).getClassIndex()/4;
-                Card nameTester = new Card(Suit.SPADES, values[val]);
-                names.add(nameTester);
-            }
+        else if ((arr.getClassIndex()+1)%4==0) {
+            val = arr.getClassIndex()/4;
+            Card nameTester = new Card(Suit.SPADES, values[val]);
+            return nameTester;
+        }
 
-            else if ((arr.get(i).getClassIndex()+1)%4==2) {
-                val = arr.get(i).getClassIndex()/4;
-                Card nameTester = new Card(Suit.DIAMONDS, values[val]);
-                names.add(nameTester);
-            }
+        else if ((arr.getClassIndex()+1)%4==2) {
+            val = arr.getClassIndex()/4;
+            Card nameTester = new Card(Suit.DIAMONDS, values[val]);
+            return nameTester;
+        }
 
-            else if ((arr.get(i).getClassIndex()+1)%4==1) {
-                val = arr.get(i).getClassIndex()/4;
-                Card nameTester = new Card(Suit.CLUBS, values[val]);
-                names.add(nameTester);
+        else if ((arr.getClassIndex()+1)%4==1) {
+            val = arr.getClassIndex()/4;
+            Card nameTester = new Card(Suit.CLUBS, values[val]);
+            return nameTester;
+        }
+        return null;
+    }
+
+    private Table cardSorter(ArrayList<Result> result) {
+        Table table = new Table();
+        Card card;
+        int width = bit.getWidth();
+
+        for (int i = 0; i < result.size(); i++) {
+            int x = result.get(i).getRect().left;
+            card = getNames(result.get(i));
+            if (0 < x && x < width/7) {
+                table.buildPile.get(0).addCard(card);
+            } else if (width/7 < x && x < 2*width/7) {
+                table.buildPile.get(1).addCard(card);
+            } else if (2*width/7 < x && x < 3*width/7) {
+                table.buildPile.get(2).addCard(card);
+            } else if (3*width/7 < x && x < 4*width/7) {
+                table.buildPile.get(3).addCard(card);
+            } else if (4*width/7 < x && x < 5*width/7) {
+                table.buildPile.get(4).addCard(card);
+            } else if (5*width/7 < x && x < 6*width/7) {
+                table.buildPile.get(5).addCard(card);
+            } else if (6*width/7 < x && x < width) {
+                table.buildPile.get(6).addCard(card);
             }
         }
-        return names;
+
+
+
+
+
+        return table;
     }
+
+
+
 
 }
