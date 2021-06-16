@@ -3,6 +3,7 @@ package grp5.cdio.solitairesolver.Controller;
 import android.content.Context;
 import android.graphics.Bitmap;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -38,7 +39,7 @@ public class Controller {
      * Set up game table
      * Instansiate table from objectDectection {@link Table}
      */
-    public void loadCards(Context context, HashMap<String, Bitmap> map){
+    public void loadCards(Context context, HashMap<String, Bitmap> map) throws IOException {
         ObjectDetection dect = new ObjectDetection(context);
         Table currentTable = dect.analyzeImage(map);
         table = currentTable;

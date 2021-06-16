@@ -79,7 +79,11 @@ public class PhotoHandler implements PictureCallback {
         Controller con = Controller.getInstance();
         HashMap<String, Bitmap> list = splitImg(lastPicture, originalPic);
         saveSplitImg(list);
-        con.loadCards(context, list);
+        try {
+            con.loadCards(context, list);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         try {
             FragmentManager fragmentManager = ((FragmentActivity) context).getSupportFragmentManager();
