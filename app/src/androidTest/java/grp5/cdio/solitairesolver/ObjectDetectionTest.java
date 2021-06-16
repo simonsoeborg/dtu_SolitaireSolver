@@ -12,12 +12,9 @@ import org.junit.Test;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 
 import grp5.cdio.solitairesolver.Model.Card;
 import grp5.cdio.solitairesolver.Model.FaceValue;
@@ -69,7 +66,8 @@ public class ObjectDetectionTest {
 
         ArrayList<Result> DoneResultArrayList = removeDuplicates(sortedResultArrayList);
 
-        Table table = cardSorter(DoneResultArrayList);
+        Table table = new Table();
+        table = buildPileSorter(DoneResultArrayList, table);
 
         System.out.println(table.toString());
 
@@ -151,7 +149,7 @@ public class ObjectDetectionTest {
         return null;
     }
 
-    private Table cardSorter(ArrayList<Result> result) {
+    private Table buildPileSorter(ArrayList<Result> result, Table table) {
         ArrayList<Result> b0 = new ArrayList<>();
         ArrayList<Result> b1 = new ArrayList<>();
         ArrayList<Result> b2 = new ArrayList<>();
@@ -162,22 +160,22 @@ public class ObjectDetectionTest {
 
         int width = bit.getWidth() * 7/8;
 
-        for (int i = 0; i < result.size(); i++) {
-            int x = result.get(i).getRect().left;
+        for (Result o : result) {
+            int x = o.getRect().left;
             if (0 < x && x < width/7) {
-                b0.add(result.get(i));
+                b0.add(o);
             } else if (width/7 < x && x < 2*width/7) {
-                b1.add(result.get(i));
+                b1.add(o);
             } else if (2*width/7 < x && x < 3*width/7) {
-                b2.add(result.get(i));
+                b2.add(o);
             } else if (3*width/7 < x && x < 4*width/7) {
-                b3.add(result.get(i));
+                b3.add(o);
             } else if (4*width/7 < x && x < 5*width/7) {
-                b4.add(result.get(i));
+                b4.add(o);
             } else if (5*width/7 < x && x < 6*width/7) {
-                b5.add(result.get(i));
+                b5.add(o);
             } else if (6*width/7 < x && x < width) {
-                b6.add(result.get(i));
+                b6.add(o);
             }
         }
 
@@ -188,9 +186,6 @@ public class ObjectDetectionTest {
         Collections.sort(b4);
         Collections.sort(b5);
         Collections.sort(b6);
-
-        Table table = new Table();
-        Card card;
 
         for (Result o : b0) {
             table.buildPile.get(0).addCard(getNames(o));
@@ -214,12 +209,42 @@ public class ObjectDetectionTest {
             table.buildPile.get(6).addCard(getNames(o));
         }
 
+        return table;
+    }
 
+    private Table groundPileSorter(ArrayList<Result> result, Table table) {
+
+        int width = bit.getWidth() / 2;
+        Card card;
+
+        for (Result o : result) {
+            int x = o.getRect().left;
+            card = getNames(o);
+            if (0 < x && x < width/4) {
+                table.groundPile.get(0).addCard(card);
+            } else if (width/7 < x && x < 2*width/4) {
+                table.groundPile.get(1).addCard(card);
+            } else if (2*width/7 < x && x < 3*width/4) {
+                table.groundPile.get(2).addCard(card);
+            } else if (3*width/7 < x && x < width) {
+                table.groundPile.get(3).addCard(card);
+            }
+        }
 
         return table;
     }
 
+    private Table discardPileSorter(ArrayList<Result> result, Table table) {
 
+        Card card;
+
+        for (Result o : result) {
+            card = getNames(o);
+            table.discardPile.addCard(card);
+        }
+
+        return table;
+    }
 
 
 }
