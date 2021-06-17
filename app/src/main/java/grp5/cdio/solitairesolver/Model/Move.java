@@ -90,7 +90,7 @@ public class Move {
         }
 
         // Test if king can move to Empty BuildPile
-        if (value == 13 && moveFrom instanceof BuildPile && moveTo instanceof BuildPile && moveTo.isEmpty() && moveFrom.size() > 1) {
+        if (value == 13 && moveFrom instanceof BuildPile && moveTo instanceof BuildPile && moveTo.isEmpty() && !moveFrom.isEmpty()) {
             score = 75 + moveFrom.size();
             return;
         }
@@ -129,6 +129,20 @@ public class Move {
      */
     public int getScore() {
         return score;
+    }
+
+    public boolean isInverse(Move move){
+        if (move == null || move.card == null || move.moveFrom == null || move.moveTo == null){
+            return false;
+        }
+        if (card == null || moveFrom == null || moveTo == null){
+            return false;
+        }
+
+        if (moveFrom.equals(move.moveTo) && moveTo.equals(move.moveFrom) && card.isEqual(move.card)){
+            return true;
+        }
+        return false;
     }
 
     /**

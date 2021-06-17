@@ -39,7 +39,7 @@ public class GameTest {
         ArrayList<Card> cardsInDiscard = new ArrayList<>();
 
         Table table = makeTestTable(cardsOnBoard);
-            for (int i = 0; i < 4000; i++) {
+            for (int i = 0; i < 10000; i++) {
                 ArrayList<Move> legalMoves = table.getLegalMoves();
                 Move move = table.getBestMove(legalMoves);
 
@@ -108,8 +108,8 @@ public class GameTest {
                     lost++;
                     System.out.println("lost");
                 }
-                System.out.println(table);
-                System.out.println(move);
+                //System.out.println(table);
+                //System.out.println(move);
             }
 
         }

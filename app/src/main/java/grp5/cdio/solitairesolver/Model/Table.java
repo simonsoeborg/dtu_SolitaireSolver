@@ -1,6 +1,5 @@
 package grp5.cdio.solitairesolver.Model;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 public class Table {
     /**
@@ -16,7 +15,7 @@ public class Table {
     public ArrayList<BuildPile> buildPile;
     public Pile drawPile;
     public Pile discardPile;
-    private Move lastMove;
+    private ArrayList<Move> lastMoveList;
 
     /**
      * Set up game table with 52 cards
@@ -37,10 +36,14 @@ public class Table {
         groundPile.add(new GroundPile(0));
         groundPile.add(new GroundPile(0));
         this.discardPile = new BasePile(0);
+        lastMoveList = new ArrayList<>();
     }
 
     public void makeMove(Move move, Card card){
-        lastMove = move;
+        if(lastMoveList.size() > 5){
+            lastMoveList.remove(0);
+        }
+        lastMoveList.add(move);
         if (move.card == null || move.getScore() == -1 ||  move.getScore() == 5){
             discardPile.getCards().add(card);
         } else {
@@ -60,15 +63,27 @@ public class Table {
         if(list.isEmpty()){
             return new Move(null,null,null);
         }
-        Move bestMove = list.get(0);
+        Move bestMove = null;
+
         for(Move move : list){
-            if (move.card.isEqual(lastMove.card)){
-                if (move.getScore() > bestMove.getScore()){
-                bestMove = move;
+            boolean addToList = true;
+            for (Move lastMove : lastMoveList){
+                if (move.isInverse(lastMove)){
+                    addToList = false;
                 }
             }
+            if (bestMove == null && addToList){
+                bestMove = move;
+            }
+            else if (addToList && (move.getScore() > bestMove.getScore())){
+                bestMove = move;
+            }
+
         }
 
+        if (bestMove == null){
+            return new Move(null,null,null);
+        }
         return bestMove;
     }
 
@@ -153,13 +168,22 @@ public class Table {
                 }
             }
             for (Pile pile : buildPile) {
-                for (Card card : pileFrom.getCards()) {
-                    if (pile.isLegalMove(card)) {
-                        Move move = new Move(pileFrom, pile, card);
+                if(pile instanceof BasePile){
+                    if (pile.isLegalMove(pileFrom.getTopCard())) {
+                        Move move = new Move(pileFrom, pile, pileFrom.getTopCard());
                         move.setScore();
                         list.add(move);
                     }
+                }
+                else {
+                    for (Card card : pileFrom.getCards()) {
+                        if (pile.isLegalMove(card)) {
+                            Move move = new Move(pileFrom, pile, card);
+                            move.setScore();
+                            list.add(move);
+                        }
 
+                    }
                 }
             }
         }

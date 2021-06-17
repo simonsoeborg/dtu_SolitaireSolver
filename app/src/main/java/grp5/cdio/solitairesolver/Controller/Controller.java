@@ -3,6 +3,7 @@ package grp5.cdio.solitairesolver.Controller;
 import android.content.Context;
 import android.graphics.Bitmap;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -21,7 +22,6 @@ public class Controller {
      */
     private Table table;
     private HashMap<String, Bitmap> EmptyMap = new HashMap<>();
-    private Move lastMove;
     private static Controller single_instance = null;
 
     private Controller() {
@@ -78,12 +78,9 @@ public class Controller {
      */
     public Move getMove(){
         ArrayList<Move> moves = testPossibleMoves();
-        if (moves.isEmpty()) {
-            return new Move(null,null,null);
-        } else {
-            Move move = bestMove(moves);
-            return move;
-        }
+        Move move = bestMove(moves);
+        return move;
+
     }
 
     /**
@@ -93,21 +90,7 @@ public class Controller {
      * @return the Move with highest score
      */
    private Move bestMove(ArrayList<Move> moves){
-       if (moves.isEmpty()){
-           return null;
-       }
-
-       Move best = table.getBestMove(moves);
-       if(lastMove != null && lastMove.isInverseMove(best)){
-           moves.remove(best);
-           if (moves.isEmpty()){
-               return null;
-           }
-
-           return table.getBestMove(moves);
-       }
-       return best;
-
+            return table.getBestMove(moves);
     }
 
     /**
