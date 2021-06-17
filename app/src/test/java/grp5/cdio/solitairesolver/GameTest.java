@@ -21,7 +21,7 @@ public class GameTest {
 
     @Test
     public void testGame(){
-        for (int j = 0 ; j < 1; j ++){
+        for (int j = 0 ; j < 10000; j ++){
             runGame();
         }
 
@@ -39,7 +39,7 @@ public class GameTest {
         ArrayList<Card> cardsInDiscard = new ArrayList<>();
 
         Table table = makeTestTable(cardsOnBoard);
-            for (int i = 0; i < 10000; i++) {
+            for (int i = 0; i < 5000; i++) {
                 ArrayList<Move> legalMoves = table.getLegalMoves();
                 Move move = table.getBestMove(legalMoves);
 
@@ -104,7 +104,7 @@ public class GameTest {
                     cardsInDiscard.clear();
                     table.discardPile.getCards().clear();
                 }
-                if (i == 3999){
+                if (i == 4999){
                     lost++;
                     System.out.println("lost");
                 }
