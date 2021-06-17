@@ -168,7 +168,7 @@ public class Table {
                 }
             }
             for (Pile pile : buildPile) {
-                if(pile instanceof BasePile){
+                if(pileFrom instanceof BasePile){
                     if (pile.isLegalMove(pileFrom.getTopCard())) {
                         Move move = new Move(pileFrom, pile, pileFrom.getTopCard());
                         move.setScore();

@@ -21,10 +21,11 @@ public class GameTest {
 
     @Test
     public void testGame(){
-        for (int j = 0 ; j < 1; j ++){
+        int amountOfTests = 9999;
+        for (int j = 0 ; j < amountOfTests; j ++){
             runGame();
         }
-
+        System.out.println("Tests: " + amountOfTests);
         System.out.println("Won: " + won);
         System.out.println("Lost: " + lost);
     }
@@ -39,7 +40,7 @@ public class GameTest {
         ArrayList<Card> cardsInDiscard = new ArrayList<>();
 
         Table table = makeTestTable(cardsOnBoard);
-            for (int i = 0; i < 10000; i++) {
+            for (int i = 0; i < 5000; i++) {
                 ArrayList<Move> legalMoves = table.getLegalMoves();
                 Move move = table.getBestMove(legalMoves);
 
@@ -47,7 +48,6 @@ public class GameTest {
                 if (move.getScore() == -1 || move.getScore() == 5) {
                     if (cardsInDraw.isEmpty()) {
                         lost++;
-                        System.out.println("lost");
                         break;
                     }
                     cardToAddToBoard = cardsInDraw.get(0);
@@ -95,7 +95,6 @@ public class GameTest {
 
                 if (done || buildPileIsEmpty && discardAndDrawIsEmpty) {
                     won++;
-                    System.out.println("won");
                     break;
                 }
 
@@ -104,9 +103,8 @@ public class GameTest {
                     cardsInDiscard.clear();
                     table.discardPile.getCards().clear();
                 }
-                if (i == 3999){
+                if (i == 4999){
                     lost++;
-                    System.out.println("lost");
                 }
                 //System.out.println(table);
                 //System.out.println(move);
