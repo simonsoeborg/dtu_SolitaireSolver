@@ -20,7 +20,7 @@ public class Controller {
      * <p>
      * Used to mange the data model {@link Table}
      */
-    private Table table;
+    public Table table;
     private HashMap<String, Bitmap> EmptyMap = new HashMap<>();
     private Move lastMove;
     private static Controller single_instance = null;

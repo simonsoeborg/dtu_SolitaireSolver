@@ -59,6 +59,7 @@ public class Move {
     public void setScore() {
         if (card == null) {
             score = -1;
+            return;
         }
         int value = card.getIntValue();
 
@@ -118,7 +119,7 @@ public class Move {
     @Override
     public String toString() {
         if (card == null) {
-            return "Draw new card";
+            return "Draw new cards";
         }
         return "Move " + card + " from pile " + moveFrom.toString() + " to pile " + moveTo.toString();
     }
