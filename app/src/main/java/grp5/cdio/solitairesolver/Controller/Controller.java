@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -22,7 +23,6 @@ public class Controller {
      */
     public Table table;
     private HashMap<String, Bitmap> EmptyMap = new HashMap<>();
-    private Move lastMove;
     private static Controller single_instance = null;
     private ObjectDetection dect;
 
@@ -75,21 +75,7 @@ public class Controller {
      * @return the Move with highest score
      */
    private Move bestMove(ArrayList<Move> moves){
-       if (moves.isEmpty()){
-           return null;
-       }
-
-       Move best = table.getBestMove(moves);
-       if(lastMove != null && lastMove.isInverseMove(best)){
-           moves.remove(best);
-           if (moves.isEmpty()){
-               return null;
-           }
-
-           return table.getBestMove(moves);
-       }
-       return best;
-
+            return table.getBestMove(moves);
     }
 
     /**

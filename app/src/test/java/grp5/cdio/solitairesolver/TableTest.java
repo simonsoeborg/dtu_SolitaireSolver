@@ -43,7 +43,6 @@ public class TableTest {
         Card cardTenHearts = new Card(Suit.HEARTS, FaceValue.TEN);
         Card cardJackClubs = new Card(Suit.CLUBS, FaceValue.ELEVEN);
 
-        table.buildPile.get(0).removeCard();
         table.buildPile.get(1).setCard(1, cardKingClubs);
         table.buildPile.get(2).setCard(2, cardTenHearts);
         table.buildPile.get(3).setCard(3, cardJackClubs);

@@ -125,8 +125,6 @@ public class CardControl extends Fragment {
         }
 
 
-
-
         tagBillede.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,7 +144,6 @@ public class CardControl extends Fragment {
 
                 Bundle argumemt = new Bundle();
                 String bestMove = con.getMove().toString();
-
                 argumemt.putString("bestMove", bestMove);
 
                 Resultat resultatFrag = new Resultat();

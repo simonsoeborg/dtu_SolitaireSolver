@@ -1,5 +1,7 @@
 package grp5.cdio.solitairesolver.Model;
 
+import java.util.ArrayList;
+
 public class Move {
     /**
      * Move class.
@@ -10,10 +12,10 @@ public class Move {
      * card - card to move
      * score - value of move, use to determine best move
      */
-    private Pile moveFrom;
-    private Pile moveTo;
-    private Card card;
-    private int score;
+    public Pile moveFrom;
+    protected Pile moveTo;
+    public Card card;
+    protected int score;
 
     /**
      * Create card, score is set by {@link #setScore}
@@ -49,8 +51,20 @@ public class Move {
      * make move from piles movefrom -> moveto
      */
     public void makeMove() {
-        moveFrom.removeCard();
-        moveTo.makeMove(card);
+        ArrayList<Card> listToMove = new ArrayList<>();
+        boolean addToList = false;
+
+        for(Card cardInList: moveFrom.getCards()){
+            if (cardInList.equals(card)){
+                addToList = true;
+            }
+            if (addToList){
+                listToMove.add(cardInList);
+            }
+
+        }
+        moveFrom.removeCard(listToMove);
+        moveTo.makeMove(listToMove);
     }
 
     /**
@@ -58,7 +72,7 @@ public class Move {
      */
     public void setScore() {
         if (card == null) {
-            score = -1;
+            score = 5;
             return;
         }
         int value = card.getIntValue();
@@ -76,7 +90,7 @@ public class Move {
         }
 
         // Test if king can move to Empty BuildPile
-        if (value == 13 && moveFrom instanceof BuildPile && moveTo instanceof BuildPile && moveTo.isEmpty()) {
+        if (value == 13 && moveFrom instanceof BuildPile && moveTo instanceof BuildPile && moveTo.isEmpty() && !moveFrom.isEmpty()) {
             score = 75 + moveFrom.size();
             return;
         }
@@ -87,7 +101,7 @@ public class Move {
         }
 
         // Test if card can move from BuildPile to BuildPile
-        if (moveFrom instanceof BuildPile && moveTo instanceof BuildPile) {
+        if (value != 13 && moveFrom instanceof BuildPile && moveTo instanceof BuildPile) {
             score = moveFrom.size() + 30;
             return;
         }
@@ -104,6 +118,10 @@ public class Move {
             return;
         }
 
+        score = -1;
+        card = null;
+
+
     }
 
     /**
@@ -111,6 +129,20 @@ public class Move {
      */
     public int getScore() {
         return score;
+    }
+
+    public boolean isInverse(Move move){
+        if (move == null || move.card == null || move.moveFrom == null || move.moveTo == null){
+            return false;
+        }
+        if (card == null || moveFrom == null || moveTo == null){
+            return false;
+        }
+
+        if (moveFrom.equals(move.moveTo) && moveTo.equals(move.moveFrom) && card.isEqual(move.card)){
+            return true;
+        }
+        return false;
     }
 
     /**
