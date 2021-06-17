@@ -37,7 +37,7 @@ public class ObjectDetectionTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         ObjectDetection objectDetection = new ObjectDetection(appContext);
         AssetManager am = appContext.getAssets();
-        InputStream is = am.open("img_test6_original_black.jpg");
+        InputStream is = am.open("img_test5_build.jpg");
         BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
         bit = BitmapFactory.decodeStream(bufferedInputStream);
         ArrayList<Result> resultArrayList = objectDetection.analyzeBitmap(bit);

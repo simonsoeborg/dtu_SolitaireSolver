@@ -213,7 +213,7 @@ public class ObjectDetection {
         int width = total.getWidth() * 7/8;
 
         for (Result o : result) {
-            int x = o.getRect().left;
+            int x = o.getRect().left + total.getWidth() / 28;
             if (0 < x && x < width/7) {
                 b0.add(o);
             } else if (width/7 < x && x < 2*width/7) {
@@ -270,7 +270,7 @@ public class ObjectDetection {
         Card card;
 
         for (Result o : result) {
-            int x = o.getRect().left;
+            int x = o.getRect().left + total.getWidth() / 28;
             card = getNames(o);
             if (0 < x && x < width/4) {
                 table.groundPile.get(0).addCard(card);

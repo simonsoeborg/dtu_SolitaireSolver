@@ -43,7 +43,7 @@ public class CardControl extends Fragment {
         Button fortsaet = controlFrag.findViewById(R.id.Continue);
 
         Controller con = Controller.getInstance();
-        //String bestMove = con.getMove().toString();
+
         drawPileExist = controlFrag.findViewById(R.id.cardback);
 
         discardPile = controlFrag.findViewById(R.id.Waste3Cards);
