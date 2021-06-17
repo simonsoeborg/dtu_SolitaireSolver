@@ -79,9 +79,18 @@ public class CardControl extends Fragment {
 
         PileAdapter adapter;
 
+
+        // Make Table from ObjDect
+        //Table table = con.getTable();
+        // Make Table from ObjDect
+
+
         // Test Table
-        Table table = con.getTable();
+        Table table = genTable();
+        con.table = table;
         // Test Table
+
+
 
         if (table.getDrawPile() != null) {
             drawPileExist.setVisibility(View.VISIBLE);
@@ -137,6 +146,7 @@ public class CardControl extends Fragment {
 
                 Bundle argumemt = new Bundle();
                 String bestMove = con.getMove().toString();
+
                 argumemt.putString("bestMove", bestMove);
 
                 Resultat resultatFrag = new Resultat();
@@ -201,12 +211,6 @@ public class CardControl extends Fragment {
 
             return convertView;
         }
-
-        private void addItem(Card card){
-            items.add(card);
-            notifyDataSetChanged();
-        }
-
 
         private void findCardValues(Card item) {
             // finds suit and color of the card
@@ -286,45 +290,38 @@ public class CardControl extends Fragment {
     public Table genTable(){
         Table table = new Table();
         Card cardQueenHearts = new Card(Suit.HEARTS, FaceValue.TWELVE);
-        Card cardKingHearts = new Card(Suit.DIAMONDS, FaceValue.THIRTEEN);
+        Card cardKingDiamonds = new Card(Suit.DIAMONDS, FaceValue.THIRTEEN);
         Card cardThreeDiamonds = new Card(Suit.DIAMONDS, FaceValue.THREE);
 
         Card cardTenHearts = new Card(Suit.HEARTS, FaceValue.TEN);
         Card cardJackHearts = new Card(Suit.HEARTS, FaceValue.ELEVEN);
         Card cardJackDiamonds = new Card(Suit.DIAMONDS, FaceValue.ELEVEN);
 
-        Card cardFiveHearts = new Card(Suit.HEARTS, FaceValue.FIVE);
         Card cardFiveClubs = new Card(Suit.CLUBS, FaceValue.FIVE);
         Card cardFiveSpades = new Card(Suit.SPADES, FaceValue.FIVE);
 
-        table.setDiscardPile(new BasePile(3));
-        table.setBuildPile(6, 11);
-        table.setGroundPile(0,1);
-        table.setGroundPile(1,1);
-        table.setGroundPile(2,1);
-        table.setGroundPile(3,1);
-        table.getDiscardPile().setCard(0, cardThreeDiamonds);
-        table.getDiscardPile().setCard(1, cardJackDiamonds);
-        table.getDiscardPile().setCard(2, new Card(Suit.CLUBS, FaceValue.TWO));
+        table.getDiscardPile().addCard(cardThreeDiamonds);
+        table.getDiscardPile().addCard(cardJackDiamonds);
+        //table.getDiscardPile().addCard(new Card(Suit.CLUBS, FaceValue.TWO));
 
 
-        table.buildPile.get(0).setCard(0, cardQueenHearts);
-        table.buildPile.get(0).removeCard();
-        table.buildPile.get(1).setCard(1, cardKingHearts);
-        table.buildPile.get(2).setCard(2, cardTenHearts);
-        table.buildPile.get(3).setCard(3, cardJackHearts);
-        table.buildPile.get(4).setCard(4, cardFiveClubs);
-        table.buildPile.get(5).setCard(5, cardFiveHearts);
-        table.buildPile.get(6).setCard(6, new Card(Suit.DIAMONDS, FaceValue.EIGHT));
-        table.buildPile.get(6).setCard(7, new Card(Suit.SPADES, FaceValue.SEVEN));
-        table.buildPile.get(6).setCard(8, new Card(Suit.HEARTS, FaceValue.SIX));
-        table.buildPile.get(6).setCard(9, cardFiveSpades);
-        table.buildPile.get(6).setCard(10, new Card(Suit.DIAMONDS, FaceValue.FOUR));
+        table.buildPile.get(0).addCard(cardQueenHearts);
+        table.buildPile.get(1).addCard(cardKingDiamonds);
+        table.buildPile.get(2).addCard(cardTenHearts);
+        //table.buildPile.get(3).addCard(new Card(Suit.CLUBS, FaceValue.THREE));
+        table.buildPile.get(4).addCard(cardFiveClubs);
+        table.buildPile.get(1).addCard(new Card(Suit.CLUBS, FaceValue.TWELVE));
+        table.buildPile.get(1).addCard(cardJackHearts);
+        table.buildPile.get(6).addCard(new Card(Suit.DIAMONDS, FaceValue.EIGHT));
+        table.buildPile.get(6).addCard(new Card(Suit.SPADES, FaceValue.SEVEN));
+        table.buildPile.get(6).addCard(new Card(Suit.HEARTS, FaceValue.SIX));
+        table.buildPile.get(6).addCard(cardFiveSpades);
+        //table.buildPile.get(6).addCard(new Card(Suit.DIAMONDS, FaceValue.FOUR));
 
-        table.groundPile.get(0).setCard(0, new Card(Suit.HEARTS, FaceValue.ONE));
-        table.groundPile.get(1).setCard(0, new Card(Suit.SPADES, FaceValue.THREE));
-        table.groundPile.get(2).setCard(0, new Card(Suit.DIAMONDS, FaceValue.TWO));
-        table.groundPile.get(3).setCard(0, new Card(Suit.CLUBS, FaceValue.ONE));
+        table.groundPile.get(0).addCard(new Card(Suit.HEARTS, FaceValue.TWO));
+        table.groundPile.get(1).addCard(new Card(Suit.SPADES, FaceValue.THREE));
+        table.groundPile.get(2).addCard(new Card(Suit.DIAMONDS, FaceValue.TWO));
+        table.groundPile.get(3).addCard(new Card(Suit.CLUBS, FaceValue.THREE));
 
 
 
