@@ -1,5 +1,6 @@
 package grp5.cdio.solitairesolver.Model;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 public class Table {
     /**
@@ -15,6 +16,7 @@ public class Table {
     public ArrayList<BuildPile> buildPile;
     public Pile drawPile;
     public Pile discardPile;
+    private Move lastMove;
 
     /**
      * Set up game table with 52 cards
@@ -38,6 +40,7 @@ public class Table {
     }
 
     public void makeMove(Move move, Card card){
+        lastMove = move;
         if (move.card == null || move.getScore() == -1 ||  move.getScore() == 5){
             discardPile.getCards().add(card);
         } else {
@@ -59,8 +62,10 @@ public class Table {
         }
         Move bestMove = list.get(0);
         for(Move move : list){
-            if (move.getScore() > bestMove.getScore()){
+            if (move.card.isEqual(lastMove.card)){
+                if (move.getScore() > bestMove.getScore()){
                 bestMove = move;
+                }
             }
         }
 
@@ -89,6 +94,10 @@ public class Table {
             return buildPile.get(index);
         }
         return null;
+    }
+
+    public ArrayList<BuildPile> getBuildPiles(){
+        return buildPile;
     }
 
     public void setBuildPile(int index, int cards) {
@@ -133,21 +142,24 @@ public class Table {
      * @param pileFrom, the {@link Pile} to test for legal moves
      * @return ArrayList of all legal {@link Move}
      */
-    public ArrayList<Move> getLegalMove (Pile pileFrom){
+    public ArrayList<Move> getLegalMove (Pile pileFrom) {
         ArrayList<Move> list = new ArrayList<Move>();
-        if (!pileFrom.isEmpty() && pileFrom.getTopCard().isVisible()){
-            for (Pile pile: groundPile){
-                if (pile.isLegalMove(pileFrom.getTopCard())){
+        if (!pileFrom.isEmpty() && pileFrom.getTopCard().isVisible()) {
+            for (Pile pile : groundPile) {
+                if (pile.isLegalMove(pileFrom.getTopCard())) {
                     Move move = new Move(pileFrom, pile, pileFrom.getTopCard());
                     move.setScore();
                     list.add(move);
                 }
             }
-            for (Pile pile: buildPile){
-                if (pile.isLegalMove(pileFrom.getTopCard())){
-                    Move move = new Move(pileFrom, pile,pileFrom.getTopCard());
-                    move.setScore();
-                    list.add(move);
+            for (Pile pile : buildPile) {
+                for (Card card : pileFrom.getCards()) {
+                    if (pile.isLegalMove(card)) {
+                        Move move = new Move(pileFrom, pile, card);
+                        move.setScore();
+                        list.add(move);
+                    }
+
                 }
             }
         }

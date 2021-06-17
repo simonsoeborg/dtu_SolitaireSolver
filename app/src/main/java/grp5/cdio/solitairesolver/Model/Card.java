@@ -127,4 +127,13 @@ public class Card {
         this.value = value;
     }
 
+
+    public boolean equals(Card obj) {
+        if(Suit.isEqual(this.getSuit(), obj.getSuit()) ){
+            if (this.getIntValue() == obj.getIntValue()){
+                return true;
+            }
+        }
+        return false;
+    }
 }

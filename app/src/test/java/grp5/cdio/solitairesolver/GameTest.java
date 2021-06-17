@@ -21,7 +21,7 @@ public class GameTest {
 
     @Test
     public void testGame(){
-        for (int j = 0 ; j < 100; j ++){
+        for (int j = 0 ; j < 1; j ++){
             runGame();
         }
 
@@ -65,6 +65,16 @@ public class GameTest {
                 }
 
                 table.makeMove(move, cardToAddToBoard);
+
+                for (BuildPile pile : table.getBuildPiles()){
+                    if (!pile.isEmpty() && !pile.getTopCard().isVisible()){
+                        cardToAddToBoard = cardsHiddenOnBoard.get(0);
+                        cardsHiddenOnBoard.remove(cardToAddToBoard);
+                        pile.setCard(pile.getCards().size()-1, cardToAddToBoard);
+                    }
+                }
+
+
                 boolean done = true;
                 for (GroundPile pile : table.getGroundPiles()) {
                     if (pile.size() != 13) {
@@ -72,7 +82,18 @@ public class GameTest {
                     }
                 }
 
-                if (done) {
+                boolean buildPileIsEmpty = false;
+                for (BuildPile pile : table.getBuildPiles()) {
+                    if (!pile.isEmpty()) {
+                        buildPileIsEmpty = true;
+                    }
+                }
+                boolean discardAndDrawIsEmpty = false;
+                if(cardsInDiscard.isEmpty() && cardsInDraw.isEmpty()){
+                    discardAndDrawIsEmpty = true;
+                }
+
+                if (done || buildPileIsEmpty && discardAndDrawIsEmpty) {
                     won++;
                     System.out.println("won");
                     break;
@@ -83,7 +104,14 @@ public class GameTest {
                     cardsInDiscard.clear();
                     table.discardPile.getCards().clear();
                 }
+                if (i == 3999){
+                    lost++;
+                    System.out.println("lost");
+                }
+                System.out.println(table);
+                System.out.println(move);
             }
+
         }
     public Table makeTestTable(List<Card> cards){
         Table table = new Table();

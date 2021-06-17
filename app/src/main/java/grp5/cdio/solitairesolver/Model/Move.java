@@ -1,5 +1,7 @@
 package grp5.cdio.solitairesolver.Model;
 
+import java.util.ArrayList;
+
 public class Move {
     /**
      * Move class.
@@ -49,8 +51,20 @@ public class Move {
      * make move from piles movefrom -> moveto
      */
     public void makeMove() {
-        moveFrom.removeCard();
-        moveTo.makeMove(card);
+        ArrayList<Card> listToMove = new ArrayList<>();
+        boolean addToList = false;
+
+        for(Card cardInList: moveFrom.getCards()){
+            if (cardInList.equals(card)){
+                addToList = true;
+            }
+            if (addToList){
+                listToMove.add(cardInList);
+            }
+
+        }
+        moveFrom.removeCard(listToMove);
+        moveTo.makeMove(listToMove);
     }
 
     /**

@@ -1,5 +1,7 @@
 package grp5.cdio.solitairesolver.Model;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public abstract class Pile {
     /**
@@ -32,6 +34,10 @@ public abstract class Pile {
         cards.set(index, card);
     }
 
+    public Card getCard(int index){
+        return cards.get(index);
+    }
+
     /**
      * Test if top card and toCard are the same
      *
@@ -53,21 +59,18 @@ public abstract class Pile {
      * Test if move is legal
      *
      * @param cardToMove, card to move(put on top)
-     * @return boolean, true = made move
      */
-    public boolean makeMove(Card cardToMove){
-        if (isLegalMove(cardToMove)){
-            cards.add(cardToMove);
-            return true;
-        }
-        return false;
+    public void makeMove(List<Card> cardToMove){
+            cards.addAll(cardToMove);
     }
 
     /**
      * remove top card
      */
-    public void removeCard(){
-        cards.remove(cards.get(cards.size()-1));
+    public void removeCard(List<Card> cardToMove){
+        for (Card card : cardToMove){
+            cards.remove(card);
+        }
     }
 
     /**

@@ -307,7 +307,6 @@ public class CardControl extends Fragment {
 
 
         table.buildPile.get(0).setCard(0, cardQueenHearts);
-        table.buildPile.get(0).removeCard();
         table.buildPile.get(1).setCard(1, cardKingHearts);
         table.buildPile.get(2).setCard(2, cardTenHearts);
         table.buildPile.get(3).setCard(3, cardJackHearts);
