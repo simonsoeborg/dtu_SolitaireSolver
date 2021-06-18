@@ -37,7 +37,7 @@ public class ObjectDetectionTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         ObjectDetection objectDetection = new ObjectDetection(appContext);
         AssetManager am = appContext.getAssets();
-        InputStream is = am.open("img_test5_build.jpg");
+        InputStream is = am.open("test1.png");
         BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
         bit = BitmapFactory.decodeStream(bufferedInputStream);
         ArrayList<Result> resultArrayList = objectDetection.analyzeBitmap(bit);
@@ -162,7 +162,7 @@ public class ObjectDetectionTest {
         int width = bit.getWidth() * 7/8;
 
         for (Result o : result) {
-            int x = o.getRect().left;
+            int x = o.getRect().left + bit.getWidth() / 28;
             if (0 < x && x < width/7) {
                 b0.add(o);
             } else if (width/7 < x && x < 2*width/7) {
