@@ -71,11 +71,8 @@ public class Card {
      */
     @Override
     public String toString(){
-        if (visible){
-            return "["+suit+"-"+value+"]";
-        } else {
-            return "[X-X]";
-        }
+        return suit+" "+value;
+
     }
 
     /**

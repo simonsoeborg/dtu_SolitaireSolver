@@ -153,6 +153,9 @@ public class Move {
         if (card == null) {
             return "Draw new card";
         }
-        return "Move " + card + " from pile " + moveFrom.toString() + " to pile " + moveTo.toString();
+        if (moveTo.getCards().isEmpty()){
+            return "Flyt " + card + " til bunke " + moveTo.toString();
+        }
+        return "Flyt " + card + " til bunke " + moveTo.getTopCard().toString();
     }
 }

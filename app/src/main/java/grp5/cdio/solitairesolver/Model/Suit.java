@@ -70,5 +70,26 @@ public enum Suit {
         return suit.ordinal();
     }
 
-
+    /**
+     * Override toString
+     */
+    @Override
+    public String toString(){
+        if (this.ordinal() == 0){
+            return "Ukendt";
+        }
+        else if (this.ordinal() == 1){
+            return "Hjerter";
+        }
+        else if (this.ordinal() == 2){
+            return "Klør";
+        }
+        else if (this.ordinal() == 3){
+            return "Ruder";
+        }
+        else if (this.ordinal() == 4){
+            return "Spar";
+        }
+        return "Ukendt";
+    }
 }

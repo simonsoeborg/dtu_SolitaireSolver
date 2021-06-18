@@ -37,6 +37,7 @@ public class MoveTest {
         newMove = new Move(pileFrom, pileToNew, cardQueenHearts);
         oldMove = new Move(pileTo, pileFrom, cardQueenHearts);
         assertFalse(oldMove.isInverseMove(newMove));
+
     }
 
     @Test
@@ -68,7 +69,7 @@ public class MoveTest {
         assertEquals(86, move.getScore());
 
         move = new Move(pileFrom, pileTo, cardQueenHearts);
-        assertEquals(53, move.getScore());
+        assertEquals(41, move.getScore());
 
 
         pileTo = new BuildPile(0);
@@ -80,13 +81,13 @@ public class MoveTest {
         pileTo = new GroundPile(0);
         pileFrom = new BasePile(1);
         move = new Move(pileFrom, pileTo, cardKingClubs);
-        assertEquals(34, move.getScore());
+        assertEquals(21, move.getScore());
 
 
         pileTo = new BuildPile(0);
         pileFrom = new BasePile(1);
         move = new Move(pileFrom, pileTo, cardKingClubs);
-        assertEquals(24, move.getScore());
+        assertEquals(11, move.getScore());
 
 
 
