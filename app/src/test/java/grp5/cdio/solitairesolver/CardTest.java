@@ -15,8 +15,8 @@ public class CardTest {
     public void testToString() {
         Card cardOneHearts = new Card(Suit.HEARTS, FaceValue.ONE);
         Card cardUnknown = new Card();
-        assertEquals("[HEARTS-ONE]", cardOneHearts.toString());
-        assertEquals("[X-X]", cardUnknown.toString());
+        assertEquals("Hjerter Es", cardOneHearts.toString());
+        assertEquals("Ukendt Ukendt", cardUnknown.toString());
     }
 
     @Test
@@ -49,7 +49,6 @@ public class CardTest {
         Card cardQueenHearts = new Card(Suit.HEARTS, FaceValue.TWELVE);
         Card cardKingHearts = new Card(Suit.HEARTS, FaceValue.THIRTEEN);
         Card cardUnknown = new Card();
-
 
         assertTrue(cardOneHearts.isRed());
         assertTrue(cardTwoClubs.isBlack());

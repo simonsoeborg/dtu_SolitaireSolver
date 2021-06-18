@@ -112,10 +112,10 @@ public abstract class Pile {
     public String toString(){
         String returnValue = "";
         if (isEmpty()){
-            return "Empty Pile";
+            return "tom bunke";
         }
         for (Card card: cards){
-            returnValue = returnValue + card.toString();
+            returnValue = returnValue + card.toString() + ", ";
         }
         return returnValue;
     }

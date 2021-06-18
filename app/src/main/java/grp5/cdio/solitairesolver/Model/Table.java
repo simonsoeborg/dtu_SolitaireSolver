@@ -195,20 +195,20 @@ public class Table {
      */
     @Override
     public String toString(){
-        StringBuilder returnValue = new StringBuilder("Table: \n");
+        StringBuilder returnValue = new StringBuilder("Bord: \n");
 
-        returnValue.append("Draw Pile: \n");
+        returnValue.append("Vende bunke: \n");
         returnValue.append(drawPile.toString()).append("\n");
 
-        returnValue.append("Discard Pile: \n");
+        returnValue.append("Træk bunke: \n");
         returnValue.append(discardPile.toString()).append("\n");
 
-        returnValue.append("Ground Pile: \n");
+        returnValue.append("Kulør bunke: \n");
         for(Pile pile : groundPile){
             returnValue.append(pile.toString()).append("\n");
         }
 
-        returnValue.append("Build Pile: \n");
+        returnValue.append("Bygge bunke: \n");
         for(Pile pile : buildPile){
             returnValue.append(pile.toString()).append("\n");
         }

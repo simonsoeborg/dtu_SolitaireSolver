@@ -20,7 +20,7 @@ public class PileTest {
         Pile pile = new BuildPile(2);
         Card cardOneHearts = new Card(Suit.HEARTS, FaceValue.ONE);
         pile.setCard(0,cardOneHearts);
-        assertEquals("[HEARTS-ONE][X-X]", pile.toString());
+        assertEquals("Hjerter Es, Ukendt Ukendt, ", pile.toString());
 
     }
 
