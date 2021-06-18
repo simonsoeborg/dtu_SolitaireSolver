@@ -60,7 +60,7 @@ public class CameraFragment extends Fragment {
             ((Activity) getContext()).getWindowManager()
                     .getDefaultDisplay()
                     .getMetrics(displayMetrics);
-            mCamera = getCameraInstance(displayMetrics);
+            mCamera = getCameraInstance();
             mPreview = new CameraPreview(context, mCamera);
             FrameLayout preview = (FrameLayout) cameraFrag.findViewById(R.id.camera_preview);
             preview.addView(mPreview);
@@ -103,7 +103,7 @@ public class CameraFragment extends Fragment {
     }
 
     /** A safe way to get an instance of the Camera object. */
-    public Camera getCameraInstance(DisplayMetrics displayMetrics){
+    public Camera getCameraInstance(){
         Camera c = null;
         try {
             int i = findRearFacingCamera();
@@ -113,14 +113,36 @@ public class CameraFragment extends Fragment {
                 c = Camera.open(i);
             Camera.Parameters params = c.getParameters();
             params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+            Camera.Size size = findHighestRes(params);
             params.setPreviewSize(1920, 1080);
-            params.setPictureSize(1920, 1080);
+            params.setPictureSize(size.width, size.height);
             c.setParameters(params);
         }
         catch (Exception e){
             // Camera is not available (in use or does not exist)
         }
         return c; // returns null if camera is unavailable
+    }
+
+    /**
+     * Finds the largest 16:9 image size, supported by the camera
+     *
+     * @param params Params from the camera in use
+     * @return The largest supported size, or 1920x1080
+     */
+    private Camera.Size findHighestRes(Camera.Parameters params) {
+        List<Camera.Size> supportedSizes = params.getSupportedPictureSizes();
+        System.out.println(supportedSizes);
+        for (Camera.Size size : supportedSizes) {
+            if ((size.width / 16) == (size.height / 9)) {
+                return size;
+            }
+        }
+        // Hvis den ikke finder en, tving 1920x1080
+        Camera.Size b = supportedSizes.get(0);
+        b.width = 1920;
+        b.height = 1080;
+        return b;
     }
 
     /** Finds ID for a read facing camera, just in case the default camera is a font-facing one */
@@ -174,5 +196,13 @@ public class CameraFragment extends Fragment {
             mCamera = null;
         }
         super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        if (mCamera == null) {
+            mCamera = getCameraInstance();
+        }
+        super.onResume();
     }
 }

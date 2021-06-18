@@ -121,7 +121,7 @@ public class PhotoHandler implements PictureCallback {
             orgPic = orgPic.copy(Bitmap.Config.ARGB_8888, true);
         }
         Bitmap background = null;
-        Bitmap originalPic = Bitmap.createScaledBitmap(orgPic, PrePostProcessor.mInputWidth, PrePostProcessor.mInputHeight, false);
+        Bitmap originalPic = Bitmap.createScaledBitmap(orgPic, PrePostProcessor.mInputWidth, PrePostProcessor.mInputWidth/16*9, false);
         try {
             AssetManager am = context.getAssets();
             InputStream is = am.open("blackBackground.jpg");
