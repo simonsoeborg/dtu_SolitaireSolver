@@ -21,8 +21,8 @@ public class PrePostProcessor {
     static float[] NO_STD_RGB = new float[] {1.0f, 1.0f, 1.0f};
 
     // model input image size
-    static int mInputWidth = 640;
-    static int mInputHeight = 640;
+    public static int mInputWidth = 640;
+    public static int mInputHeight = 640;
 
     // model output is of size 25200*57
     private static int mOutputRow = 25200; // as decided by the YOLOv5 model for input image of size 640*640

@@ -30,6 +30,7 @@ import java.util.HashMap;
 import grp5.cdio.solitairesolver.Controller.Controller;
 import grp5.cdio.solitairesolver.Service.ObjectDetection.ObjectDetection;
 import grp5.cdio.solitairesolver.R;
+import grp5.cdio.solitairesolver.Service.ObjectDetection.PrePostProcessor;
 import grp5.cdio.solitairesolver.View.Fragments.CardControl;
 
 public class PhotoHandler implements PictureCallback {
@@ -114,13 +115,13 @@ public class PhotoHandler implements PictureCallback {
         return file;
     }
 
-    private HashMap<String, Bitmap> splitImg(String filename, Bitmap originalPic){
+    private HashMap<String, Bitmap> splitImg(String filename, Bitmap orgPic){
         // Hvis billedet af en eller anden grund ikke er mutable, lav en kopi af den selv
         if (!originalPic.isMutable()) {
-            originalPic = originalPic.copy(Bitmap.Config.ARGB_8888, true);
+            orgPic = orgPic.copy(Bitmap.Config.ARGB_8888, true);
         }
         Bitmap background = null;
-        //Bitmap originalPic = Bitmap.createScaledBitmap(orgPic, 1920, 360, false);
+        Bitmap originalPic = Bitmap.createScaledBitmap(orgPic, PrePostProcessor.mInputWidth, PrePostProcessor.mInputHeight, false);
         try {
             AssetManager am = context.getAssets();
             InputStream is = am.open("blackBackground.jpg");
@@ -132,10 +133,10 @@ public class PhotoHandler implements PictureCallback {
 
         //  Bitmap orginialPic = BitmapFactory.decodeFile(filename);
         HashMap<String, Bitmap> piles = new HashMap<>();
-        Bitmap bmOverlayDraw =  Bitmap.createBitmap(background.getWidth()/3, background.getHeight()/3, background.getConfig()); // 1/3 bredde af 1920 er nok
-        Bitmap bmOverlayFound = Bitmap.createBitmap(background.getWidth()/2, background.getHeight()/2, background.getConfig()); // halv bredde af 1920 er nok
-        Bitmap bmOverlayBuild = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig()); // Fuld bredde
-        Bitmap bmOverlayTotal = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig()); // Fuld bredde
+        Bitmap bmOverlayDraw =  Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig());
+        Bitmap bmOverlayFound = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig());
+        Bitmap bmOverlayBuild = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig());
+        Bitmap bmOverlayTotal = Bitmap.createBitmap(background.getWidth(), background.getHeight(), background.getConfig());
 
 
         Bitmap drawPile = Bitmap.createBitmap(originalPic, 0, 0, originalPic.getWidth() * 3 / 8, (originalPic.getHeight() / 3));
@@ -161,7 +162,7 @@ public class PhotoHandler implements PictureCallback {
         canvasFull.drawBitmap(originalPic, 0, 0, null);
         piles.put("total", bmOverlayTotal);
         return piles;
-        }
+    }
 
     // for at gamme vores delte billeder.
     private void saveSplitImg(HashMap<String, Bitmap>  map) {
