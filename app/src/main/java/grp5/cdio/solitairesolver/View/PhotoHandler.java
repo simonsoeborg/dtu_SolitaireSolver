@@ -70,7 +70,7 @@ public class PhotoHandler implements PictureCallback {
             opt.inMutable = true;
             originalPic = BitmapFactory.decodeFile(filename, opt);
             //pictureFile.delete();
-            Toast.makeText(context, "New Image er taget, passed og slettet igen:" + photoFile, Toast.LENGTH_LONG).show();
+            //Toast.makeText(context, "New Image er taget, passed og slettet igen:" + photoFile, Toast.LENGTH_LONG).show();
         } catch (Exception error) {
             Log.d("PhotoHandler", "File" + filename + "not saved: " + error.getMessage());
             lastPicture = null;
@@ -79,7 +79,7 @@ public class PhotoHandler implements PictureCallback {
 
         Controller con = Controller.getInstance();
         HashMap<String, Bitmap> list = splitImg(lastPicture, originalPic);
-        saveSplitImg(list);
+        //saveSplitImg(list);
         try {
             con.loadCards(context, list);
         } catch (IOException e) {
