@@ -5,6 +5,7 @@
 // LICENSE file in the root directory of this source tree.
 
 /*
+// From https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection
 Author: FaceBook
 Collaborator(s): Theis Folkmann, Elinor Mohr Mikkelsen
  */

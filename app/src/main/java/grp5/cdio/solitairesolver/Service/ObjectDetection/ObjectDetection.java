@@ -1,4 +1,5 @@
 /*
+// Based https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection
 Author: Simon Fridolf
 Collaborator(s): Karl Emil Hansen, Simon Søborg, Elinor Mohr Mikkelsen
  */
@@ -29,7 +30,7 @@ import grp5.cdio.solitairesolver.Model.FaceValue;
 import grp5.cdio.solitairesolver.Model.Suit;
 import grp5.cdio.solitairesolver.Model.Table;
 
-// Based https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection
+
 public class ObjectDetection {
     private Module mModule = null;
     private final Context context;
