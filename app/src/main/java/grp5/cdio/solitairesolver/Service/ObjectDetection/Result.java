@@ -1,4 +1,5 @@
 /*
+// From https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection
 Author: Karl Emil Hansen
 Collaborator(s): Simon Fridolf
  */
@@ -23,7 +24,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-// From https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection
 public class Result implements Comparable<Result>{
     int classIndex;
     Float score;
