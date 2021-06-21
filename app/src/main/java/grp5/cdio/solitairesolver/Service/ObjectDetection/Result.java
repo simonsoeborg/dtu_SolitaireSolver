@@ -1,3 +1,8 @@
+/*
+Author: Karl Emil Hansen
+Collaborator(s): Simon Fridolf
+ */
+
 package grp5.cdio.solitairesolver.Service.ObjectDetection;
 
 import android.graphics.Rect;

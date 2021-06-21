@@ -1,3 +1,7 @@
+/*
+Author: Simon Fridolf
+Collaborator(s): Karl Emil Hansen, Simon Søborg, Elinor Mohr Mikkelsen
+ */
 package grp5.cdio.solitairesolver.Service.ObjectDetection;
 
 import android.content.Context;

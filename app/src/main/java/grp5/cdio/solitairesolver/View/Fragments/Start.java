@@ -1,3 +1,7 @@
+/*
+Author: Simon Søborg
+Collaborator(s): Kristoffer Baumgarten, Theis Folkmann
+ */
 package grp5.cdio.solitairesolver.View.Fragments;
 
 import android.content.Context;

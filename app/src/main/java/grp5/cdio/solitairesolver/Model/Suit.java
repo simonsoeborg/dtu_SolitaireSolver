@@ -1,3 +1,7 @@
+/*
+Author: Elinor Mohr Mikkelsen
+Collaborator(s): Simon Søborg
+ */
 package grp5.cdio.solitairesolver.Model;
 public enum Suit {
     /**

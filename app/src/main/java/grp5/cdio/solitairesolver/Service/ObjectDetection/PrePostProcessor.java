@@ -4,6 +4,11 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
+/*
+Author: FaceBook
+Collaborator(s): Theis Folkmann, Elinor Mohr Mikkelsen
+ */
+
 package grp5.cdio.solitairesolver.Service.ObjectDetection;
 
 import android.graphics.Rect;

@@ -1,3 +1,7 @@
+/*
+Author: Elinor Mohr Mikkelsen
+Collaborator(s):
+ */
 package grp5.cdio.solitairesolver;
 
 import grp5.cdio.solitairesolver.Model.BasePile;
