@@ -1,3 +1,7 @@
+/*
+Author: Simon Søborg
+Collaborator(s): Kristoffer Baumgarten
+ */
 package grp5.cdio.solitairesolver.View;
 
 import androidx.appcompat.app.AppCompatActivity;

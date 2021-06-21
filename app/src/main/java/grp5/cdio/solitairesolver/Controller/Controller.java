@@ -1,3 +1,7 @@
+/*
+Author: Elinor Mohr Mikkelsen
+Collaborator(s): Karl Emil Hansen, Simon Fridolf, Simon Søborg
+ */
 package grp5.cdio.solitairesolver.Controller;
 
 import android.content.Context;

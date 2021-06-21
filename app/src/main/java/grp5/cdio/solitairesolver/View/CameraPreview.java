@@ -1,3 +1,7 @@
+/*
+Author: Theis Folkmann
+Collaborator(s):
+ */
 package grp5.cdio.solitairesolver.View;
 
 import android.content.Context;

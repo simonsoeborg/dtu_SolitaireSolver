@@ -1,3 +1,7 @@
+/*
+Author: Christine Nielsen
+Collaborator(s): Elinor Mohr Mikkelsen, Simon Søborg
+ */
 package grp5.cdio.solitairesolver.Model;
 
 import java.util.ArrayList;

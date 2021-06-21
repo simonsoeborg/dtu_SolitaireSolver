@@ -1,3 +1,7 @@
+/*
+Author: Elinor Mohr Mikkelsen
+Collaborator(s): Christine Nielsen
+ */
 package grp5.cdio.solitairesolver;
 
 import org.junit.Test;

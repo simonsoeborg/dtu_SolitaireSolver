@@ -1,3 +1,7 @@
+/*
+Author: Elinor Mohr Mikkelsen
+Collaborator(s): Simon Søborg, Karl Emil Hansen
+ */
 package grp5.cdio.solitairesolver.Model;
 import java.util.ArrayList;
 import java.util.Iterator;
