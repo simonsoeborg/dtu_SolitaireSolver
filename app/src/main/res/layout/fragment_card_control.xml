@@ -44,9 +44,10 @@ Collaborator(s): Kristoffer Baumgarten
         <View
             android:id="@+id/TableauLine1"
             android:layout_width="2dp"
-            android:layout_height="411dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:background="#E91E1E"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -102,11 +103,12 @@ Collaborator(s): Kristoffer Baumgarten
         <View
             android:id="@+id/TableauLine3"
             android:layout_width="2dp"
-            android:layout_height="411dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="300dp"
             android:background="#E91E1E"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
@@ -131,11 +133,12 @@ Collaborator(s): Kristoffer Baumgarten
         <View
             android:id="@+id/TableauLine4"
             android:layout_width="2dp"
-            android:layout_height="411dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="400dp"
             android:background="#E91E1E"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
@@ -160,11 +163,12 @@ Collaborator(s): Kristoffer Baumgarten
         <View
             android:id="@+id/TableauLine5"
             android:layout_width="2dp"
-            android:layout_height="411dp"
+            android:layout_height="0dp"
             android:layout_marginStart="500dp"
             android:background="#E91E1E"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
@@ -189,11 +193,12 @@ Collaborator(s): Kristoffer Baumgarten
         <View
             android:id="@+id/TableauLine6"
             android:layout_width="2dp"
-            android:layout_height="411dp"
+            android:layout_height="0dp"
             android:layout_marginStart="600dp"
             android:background="#E91E1E"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Tableau7txt"
@@ -217,11 +222,12 @@ Collaborator(s): Kristoffer Baumgarten
         <View
             android:id="@+id/TableauLine7"
             android:layout_width="2dp"
-            android:layout_height="411dp"
+            android:layout_height="0dp"
             android:layout_marginStart="700dp"
             android:background="#E91E1E"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/Adskilleren"

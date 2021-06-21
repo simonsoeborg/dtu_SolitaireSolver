@@ -181,10 +181,11 @@ Collaborator(s): Simon Fridolf, Karl Emil Hansen
 
             <View
                 android:id="@+id/Adskilleren"
-                android:layout_width="725dp"
+                android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:background="#E91E1E"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.3333333" />

@@ -167,11 +167,12 @@
 
             <View
                 android:id="@+id/Adskilleren"
-                android:layout_width="595dp"
+                android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginBottom="270dp"
                 android:background="#E91E1E"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
 
