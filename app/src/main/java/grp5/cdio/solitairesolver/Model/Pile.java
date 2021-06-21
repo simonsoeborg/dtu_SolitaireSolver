@@ -4,7 +4,6 @@ Collaborator(s): Simon Søborg, Karl Emil Hansen
  */
 package grp5.cdio.solitairesolver.Model;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public abstract class Pile {
@@ -36,10 +35,6 @@ public abstract class Pile {
      */
     public void setCard(int index, Card card){
         cards.set(index, card);
-    }
-
-    public Card getCard(int index){
-        return cards.get(index);
     }
 
     /**
@@ -99,14 +94,6 @@ public abstract class Pile {
             return cards.get(cards.size()-1);
         }
         return null;
-    }
-
-    /**
-     * get card below top card
-     * @return Card
-     */
-    public Card getBelowTopCard(){
-        return cards.get(cards.size()-2);
     }
 
     /**
