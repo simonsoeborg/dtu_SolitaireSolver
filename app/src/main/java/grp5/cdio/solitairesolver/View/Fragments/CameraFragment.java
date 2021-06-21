@@ -1,6 +1,6 @@
 /*
 Author: Theis Folkmann
-Collaborator(s): Karl Emil Hansen, Kristoffer Baumgarten, Simon Fridolf, Simon Søborg
+Collaborator(s): Karl Emil Hansen, Kristoffer Baumgarten, Simon Fridolf, Simon Søborg, Christine Nielsen
  */
 package grp5.cdio.solitairesolver.View.Fragments;
 
