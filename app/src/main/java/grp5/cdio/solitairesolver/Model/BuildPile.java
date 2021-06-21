@@ -4,8 +4,6 @@ Collaborator(s): Elinor Mohr Mikkelsen, Simon Søborg
  */
 package grp5.cdio.solitairesolver.Model;
 
-import java.util.ArrayList;
-
 /**
  * BuildPile, Seven piles that make up the main table.
  */

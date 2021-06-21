@@ -7,7 +7,6 @@ package grp5.cdio.solitairesolver.Service.ObjectDetection;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import org.pytorch.IValue;
@@ -56,14 +55,6 @@ public class ObjectDetection {
         Bitmap ground = map.get(GROUND_PILE);
         total = map.get("total");
 
-      /*  Float totalScore = new Float(0);
-        for(Result result : resultArrayList){
-            totalScore = totalScore + result.getScore();
-        }
-        Float acc = totalScore/resultArrayList.size();*/
-
-        // Collections.sort(resultArrayListBuild);
-
         ArrayList<Result> resultArrayListBuild = analyzeBitmap(build);
         resultArrayListBuild = sortList(resultArrayListBuild);
         resultArrayListBuild = removeDuplicates(resultArrayListBuild);
@@ -103,12 +94,6 @@ public class ObjectDetection {
 
         mImgScaleX = (float)bitmap.getWidth() / PrePostProcessor.mInputWidth;
         mImgScaleY = (float)bitmap.getHeight() / PrePostProcessor.mInputHeight;
-
-        //mIvScaleX = 1;
-        //mIvScaleY  = 1;
-
-        //mStartX = bitmap.getWidth()/2;
-        //mStartY = bitmap.getHeight()/2;
 
         mIvScaleX = (bitmap.getWidth() > bitmap.getHeight() ? (float)bitmap.getWidth() / bitmap.getWidth() : (float)bitmap.getHeight() / bitmap.getHeight());
         mIvScaleY  = (bitmap.getHeight() > bitmap.getWidth() ? (float)bitmap.getHeight() / bitmap.getHeight() : (float)bitmap.getWidth() / bitmap.getWidth());

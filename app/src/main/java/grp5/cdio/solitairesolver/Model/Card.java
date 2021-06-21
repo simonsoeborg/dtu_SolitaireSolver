@@ -13,9 +13,9 @@ public class Card {
      * suit - suit of the card
      * value - The face value of the card
      */
-    private boolean visible;
+    private final boolean visible;
     private Suit suit;
-    private FaceValue value;
+    private final FaceValue value;
 
     /**
      * Create visible card
@@ -42,12 +42,7 @@ public class Card {
      * @return boolean, true = same card
      */
     public boolean isEqual(Card card){
-        if(this.suit.equals(card.suit) && this.value.equals(card.value)){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.suit.equals(card.suit) && this.value.equals(card.value);
     }
 
     /**
@@ -87,13 +82,6 @@ public class Card {
     }
 
     /**
-     * Set visible
-     */
-    public void setVisible(boolean visible) {
-        this.visible = visible;
-    }
-
-    /**
      * Get Suit
      */
     public Suit getSuit() {
@@ -121,19 +109,9 @@ public class Card {
         return FaceValue.getValue(value);
     }
 
-    /**
-     * Set FaceValue
-     */
-    public void setValue(FaceValue value) {
-        this.value = value;
-    }
-
-
     public boolean equals(Card obj) {
         if(Suit.isEqual(this.getSuit(), obj.getSuit()) ){
-            if (this.getIntValue() == obj.getIntValue()){
-                return true;
-            }
+            return this.getIntValue() == obj.getIntValue();
         }
         return false;
     }
