@@ -81,7 +81,7 @@ public class ObjectDetection {
     public ArrayList<Result> analyzeBitmap(Bitmap bitmap) throws IOException {
         float mImgScaleX, mImgScaleY, mIvScaleX, mIvScaleY, mStartX, mStartY;
         if (mModule == null) {
-            mModule = PyTorchAndroid.loadModuleFromAsset(context.getAssets(), "new.model.1585.torchscript.pt");
+            mModule = PyTorchAndroid.loadModuleFromAsset(context.getAssets(), "model.2800.torchscript.pt");
         }
         BufferedReader br = new BufferedReader(new InputStreamReader(context.getAssets().open("cards.classes.2.txt")));
         String line;
