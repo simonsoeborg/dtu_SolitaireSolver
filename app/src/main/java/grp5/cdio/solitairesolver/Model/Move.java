@@ -155,7 +155,7 @@ public class Move {
     @Override
     public String toString() {
         if (card == null) {
-            return "Draw new cards";
+            return "Træk et nyt kort";
         }
         if (moveTo.getCards().isEmpty()){
             return "Flyt " + card + " til bunke " + moveTo.toString();
