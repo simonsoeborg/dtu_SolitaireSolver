@@ -1,3 +1,7 @@
+/*
+Author: Theis Folkmann
+Collaborator(s): Simon Søborg, Simon Fridolf, Kristoffer Baumgarten, Elinor Mohr Mikkelsen
+ */
 package grp5.cdio.solitairesolver.View;
 
 import android.content.Context;

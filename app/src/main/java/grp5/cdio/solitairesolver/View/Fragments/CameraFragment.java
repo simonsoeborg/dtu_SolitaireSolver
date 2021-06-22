@@ -1,3 +1,7 @@
+/*
+Author: Theis Folkmann
+Collaborator(s): Karl Emil Hansen, Kristoffer Baumgarten, Simon Fridolf, Simon Søborg, Christine Nielsen
+ */
 package grp5.cdio.solitairesolver.View.Fragments;
 
 import android.Manifest;

@@ -1,3 +1,7 @@
+/*
+Author: Karl Emil Hansen
+Collaborator(s): Simon Søborg, Elinor Mohr Mikkelsen, Simon Fridolf
+ */
 package grp5.cdio.solitairesolver;
 
 import android.content.Context;

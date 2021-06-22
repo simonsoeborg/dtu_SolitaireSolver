@@ -1,3 +1,7 @@
+/*
+Author: Elinor Mohr Mikkelsen
+Collaborator(s): Simon Søborg, Simon Fridolf, Karl Emil Hansen, Kristoffer Baumgarten
+ */
 package grp5.cdio.solitairesolver.Model;
 
 import java.util.ArrayList;
@@ -15,7 +19,7 @@ public class Table {
     public ArrayList<BuildPile> buildPile;
     public Pile drawPile;
     public Pile discardPile;
-    private ArrayList<Move> lastMoveList;
+    private final ArrayList<Move> lastMoveList;
 
     /**
      * Set up game table with 52 cards
@@ -87,38 +91,13 @@ public class Table {
         return bestMove;
     }
 
-    public GroundPile getGroundPile(int index) {
-        if (index <= 3) {
-        return groundPile.get(index);
-        }
-        return null;
-    }
-
     public ArrayList<GroundPile> getGroundPiles() {
         return groundPile;
     }
 
-    public void setGroundPile(int index, int cards) {
-        if (index <= 3) {
-            this.groundPile.set(index, new GroundPile(cards));
-        }
-    }
-
-    public BuildPile getBuildPile(int index) {
-        if (index <= 6) {
-            return buildPile.get(index);
-        }
-        return null;
-    }
 
     public ArrayList<BuildPile> getBuildPiles(){
         return buildPile;
-    }
-
-    public void setBuildPile(int index, int cards) {
-        if (index <= 6) {
-            this.buildPile.set(index, new BuildPile(cards));
-        }
     }
 
     public Pile getDrawPile() {
@@ -127,10 +106,6 @@ public class Table {
 
     public Pile getDiscardPile() {
         return discardPile;
-    }
-
-    public void setDiscardPile(Pile discardPile) {
-        this.discardPile = discardPile;
     }
 
     /**

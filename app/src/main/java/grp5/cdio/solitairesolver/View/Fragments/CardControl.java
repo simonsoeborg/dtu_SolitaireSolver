@@ -1,3 +1,7 @@
+/*
+Author: Karl Emil Hansen
+Collaborator(s): Simon Fridolf, Kristoffer Baumgarten, Elinor Mohr Mikkelsen, Simon Søborg
+ */
 package grp5.cdio.solitairesolver.View.Fragments;
 
 import android.os.Bundle;
