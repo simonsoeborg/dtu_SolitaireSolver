@@ -41,7 +41,7 @@ public class ObjectDetectionTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         ObjectDetection objectDetection = new ObjectDetection(appContext);
         AssetManager am = appContext.getAssets();
-        InputStream is = am.open("img_test6_draw.png");
+        InputStream is = am.open("img_test6_build.jpg");
         BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
         bit = BitmapFactory.decodeStream(bufferedInputStream);
         ArrayList<Result> resultArrayList = objectDetection.analyzeBitmap(bit);
@@ -76,7 +76,7 @@ public class ObjectDetectionTest {
 
         System.out.println(table.toString());
 
-        System.out.println("havelåge");
+        System.out.println("Sæt debuggere her for info");
     }
 
     public ArrayList<Result> sortList(ArrayList<Result> arr) {
